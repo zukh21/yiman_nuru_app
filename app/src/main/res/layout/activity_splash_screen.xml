@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#015B38"
+    tools:context=".SplashScreen">
+
+    <ImageView
+        android:id="@+id/logo_yiman_nuru"
+        android:layout_width="242dp"
+        android:layout_height="196dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="107dp"
+        android:contentDescription="TODO"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.259"
+        app:srcCompat="@drawable/ic_yiman_nuru"
+        tools:ignore="ContentDescription,HardcodedText" />
+
+    <TextView
+        android:id="@+id/text_assalamu_alaykum_arab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logo_yiman_nuru"
+        android:layout_marginTop="20dp"
+        android:text="ٱلسَّلَامُ عَلَيْكُمْ"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="45sp"
+        android:textStyle="bold|italic"
+        tools:ignore="MissingConstraints" />
+    <TextView
+        android:id="@+id/text_assalamu_alaykum_kg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_assalamu_alaykum_arab"
+        android:text="Ассаламу алайкум"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:textStyle="bold|italic"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="match_parent"
+        android:layout_height="33dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        app:srcCompat="@drawable/designed_by" />
+
+</RelativeLayout>

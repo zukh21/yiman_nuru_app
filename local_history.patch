@@ -1,0 +1,2766 @@
+Index: app/src/main/res/menu/menu.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/menu/menu.xml b/app/src/main/res/menu/menu.xml
+--- a/app/src/main/res/menu/menu.xml	(date 1655851764165)
++++ b/app/src/main/res/menu/menu.xml	(date 1655851764165)
+@@ -1,25 +1,19 @@
+ <?xml version="1.0" encoding="utf-8"?>
+ <menu xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto">
+-    <item android:id="@+id/menu"
+-        android:title="Menu"
+-        android:icon="@drawable/ic_baseline_menu_24"
+-        app:showAsAction="always"/>
+-    <item
+-        android:id="@+id/id_home_activity"
+-        android:checkable="true"
+-        android:checked="true"
+-        android:icon="@drawable/ic_baseline_home_24"
+-        android:title="@string/home" />
+-    <item
+-        android:id="@+id/id_about_us_activity"
+-        android:checkable="true"
+-        android:icon="@drawable/ic_baseline_people_24"
+-        android:title="@string/about_us" />
+-    <item
+-        android:id="@+id/id_settings_activity"
+-        android:checkable="true"
+-        android:icon="@drawable/ic_baseline_settings_24"
+-        android:title="@string/settings" />
++        <item
++            android:id="@+id/id_home_activity"
++            android:icon="@drawable/ic_baseline_home_24"
++            android:title="@string/home"
++            android:iconTint="@color/black"
++            />
++        <item
++            android:id="@+id/id_about_us_activity"
++            android:icon="@drawable/ic_baseline_people_24"
++            android:title="@string/about_us" />
++        <item
++            android:id="@+id/id_settings_activity"
++            android:icon="@drawable/ic_baseline_settings_24"
++            android:title="@string/settings" />
+ 
+ </menu>
+\ No newline at end of file
+Index: app/src/main/res/layout/menu_lay.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/menu_lay.xml b/app/src/main/res/layout/menu_lay.xml
+new file mode 100644
+--- /dev/null	(date 1655850875023)
++++ b/app/src/main/res/layout/menu_lay.xml	(date 1655850875023)
+@@ -0,0 +1,27 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent">
++
++    <LinearLayout
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:padding="10dp"
++        tools:ignore="MissingConstraints">
++        <ImageView
++            android:layout_width="32dp"
++            android:layout_height="32dp"
++            android:src="@drawable/ic_baseline_people_24"/>
++
++        <TextView
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:fontFamily="sans-serif-light"
++            android:paddingLeft="10dp"
++            android:text="Settings"
++            android:textSize="22sp"
++            android:textStyle="bold" />
++    </LinearLayout>
++
++</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/res/layout/fragment_main.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/fragment_main.xml b/app/src/main/res/layout/fragment_main.xml
+new file mode 100644
+--- /dev/null	(date 1655851764180)
++++ b/app/src/main/res/layout/fragment_main.xml	(date 1655851764180)
+@@ -0,0 +1,17 @@
++<?xml version="1.0" encoding="utf-8"?>
++<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    tools:context=".MainFragment">
++
++    <TextView
++        android:layout_width="match_parent"
++        android:layout_height="match_parent"
++        android:gravity="center"
++        android:text="@string/main_page"
++        android:textSize="40sp"
++        />
++
++
++</FrameLayout>
+\ No newline at end of file
+Index: app/src/main/res/layout/fragment_tasbih.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/fragment_tasbih.xml b/app/src/main/res/layout/fragment_tasbih.xml
+new file mode 100644
+--- /dev/null	(date 1655851764176)
++++ b/app/src/main/res/layout/fragment_tasbih.xml	(date 1655851764176)
+@@ -0,0 +1,104 @@
++<?xml version="1.0" encoding="utf-8"?>
++<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:tools="http://schemas.android.com/tools"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    android:layout_width="match_parent"
++    android:layout_height="300dp"
++    tools:context=".TasbihFragment">
++
++
++    <LinearLayout
++        android:layout_width="match_parent"
++        android:layout_height="match_parent"
++        android:gravity="center"
++        tools:ignore="UselessParent">
++        <RelativeLayout
++            android:id="@+id/talking_tasbih_layout"
++            android:layout_width="250dp"
++            android:layout_height="280dp"
++            >
++
++            <ImageView
++                android:id="@+id/talking_tasbih"
++                android:layout_width="250dp"
++                android:layout_height="280dp"
++                android:layout_centerInParent="true"
++                app:srcCompat="@drawable/ic_talking_tasbih"
++                tools:ignore="ContentDescription" />
++
++            <ImageView
++                android:id="@+id/talking_tasbih_count"
++                android:layout_width="90dp"
++                android:layout_height="90dp"
++                android:layout_alignParentBottom="true"
++                android:layout_marginBottom="31dp"
++                android:layout_centerHorizontal="true"
++                app:srcCompat="@drawable/ic_talkin_tasbih_count"
++                tools:ignore="ContentDescription" />
++
++            <TextView
++                android:id="@+id/count_tasbih_view"
++                android:layout_width="120dp"
++                android:layout_height="wrap_content"
++                android:layout_centerHorizontal="true"
++                android:layout_marginTop="43dp"
++                android:fontFamily="sans-serif-medium"
++                android:padding="5dp"
++                android:text="0"
++                android:textAlignment="textEnd"
++                android:textSize="50sp"
++                android:visibility="visible" />
++            <ImageView
++                android:id="@+id/talking_tasbih_clear"
++                android:layout_width="50dp"
++                android:layout_height="50dp"
++                android:layout_marginStart="45dp"
++                android:layout_marginTop="122dp"
++                android:src="@drawable/ic_talking_tasbih_clear" />
++            <ImageView
++                android:id="@+id/talking_tasbih_volume_off"
++                android:layout_width="40dp"
++                android:layout_height="40dp"
++                android:layout_marginStart="52dp"
++                android:layout_alignTop="@+id/talking_tasbih_change"
++                android:visibility="invisible"
++                android:src="@drawable/ic_baseline_volume_off_24" />
++
++            <ImageView
++                android:id="@+id/talking_tasbih_volume_up"
++                android:layout_width="40dp"
++                android:layout_height="40dp"
++                android:layout_marginStart="52dp"
++                android:layout_alignTop="@+id/talking_tasbih_change"
++                android:src="@drawable/ic_baseline_volume_up_24" />
++
++
++
++            <ImageView
++                android:id="@+id/talking_tasbih_change"
++                android:layout_width="36dp"
++                android:layout_height="36dp"
++                android:layout_alignParentEnd="true"
++                android:layout_marginTop="125dp"
++                android:layout_marginEnd="52dp"
++                android:src="@drawable/ic_talking_tasbih_change" />
++
++
++        </RelativeLayout>
++    </LinearLayout>
++
++<!--    <TextView-->
++<!--        android:id="@+id/zikir_view_talkin_tasbih"-->
++<!--        android:layout_width="match_parent"-->
++<!--        android:layout_height="wrap_content"-->
++<!--        android:layout_above="@id/talking_tasbih_layout"-->
++<!--        android:layout_marginBottom="40dp"-->
++<!--        android:background="#015B38"-->
++<!--        android:padding="5dp"-->
++<!--        android:text="@string/txt_subxaanallah"-->
++<!--        android:textAlignment="center"-->
++<!--        android:textColor="@color/white"-->
++<!--        android:textSize="30sp"-->
++<!--        android:textStyle="bold" />-->
++
++</FrameLayout>
+\ No newline at end of file
+Index: app/src/main/res/layout/fragment_zikir_types.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/fragment_zikir_types.xml b/app/src/main/res/layout/fragment_zikir_types.xml
+new file mode 100644
+--- /dev/null	(date 1655851764171)
++++ b/app/src/main/res/layout/fragment_zikir_types.xml	(date 1655851764171)
+@@ -0,0 +1,355 @@
++<?xml version="1.0" encoding="utf-8"?>
++<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++
++    tools:context=".ZikirTypesFragment">
++
++
++        <ScrollView
++            android:id="@+id/zikir_blog_scroll"
++            android:layout_width="match_parent"
++            android:layout_height="match_parent"
++            tools:ignore="UselessParent">
++
++            <RelativeLayout
++                android:layout_width="match_parent"
++                android:layout_height="wrap_content">
++
++                <RelativeLayout
++                    android:id="@+id/zikir_blog_relative_in_scroll"
++                    android:layout_width="match_parent"
++                    android:layout_height="wrap_content"
++                    android:padding="10dp">
++
++                    <androidx.cardview.widget.CardView
++                        android:id="@+id/subhaanallah"
++                        android:layout_width="match_parent"
++                        android:layout_height="wrap_content"
++                        android:layout_marginBottom="20dp"
++                        android:backgroundTint="#393939"
++                        app:cardCornerRadius="20dp">
++
++                        <LinearLayout
++                            android:layout_width="match_parent"
++                            android:layout_height="wrap_content"
++                            android:orientation="vertical"
++                            android:padding="10dp">
++
++                            <TextView
++                                android:layout_width="match_parent"
++                                android:layout_height="wrap_content"
++                                android:text="Субханаллах!"
++                                android:textAlignment="center"
++                                android:textColor="#00BBD3"
++                                android:textSize="30sp"
++                                android:textStyle="bold" />
++
++                            <TextView
++                                android:layout_width="match_parent"
++                                android:layout_height="wrap_content"
++                                android:text="( Аллах баардык айып-кемчиликтерден таза! )"
++                                android:textAlignment="center"
++                                android:textColor="#FFFFFF"
++                                android:textSize="12sp" />
++                        </LinearLayout>
++                    </androidx.cardview.widget.CardView>
++
++                    <androidx.cardview.widget.CardView
++                        android:id="@+id/alhamdulillah"
++                        android:layout_width="match_parent"
++                        android:layout_height="wrap_content"
++                        android:layout_below="@+id/subhaanallah"
++                        android:layout_marginBottom="20dp"
++                        android:backgroundTint="#393939"
++                        app:cardCornerRadius="20dp">
++
++                        <LinearLayout
++                            android:layout_width="match_parent"
++                            android:layout_height="wrap_content"
++                            android:orientation="vertical"
++                            android:padding="10dp">
++
++                            <TextView
++                                android:layout_width="match_parent"
++                                android:layout_height="wrap_content"
++                                android:text="Алхамдулиллах!"
++                                android:textAlignment="center"
++                                android:textColor="#00BBD3"
++                                android:textSize="30sp"
++                                android:textStyle="bold" />
++
++                            <TextView
++                                android:layout_width="match_parent"
++                                android:layout_height="wrap_content"
++                                android:text="( Аллахка шүгүрлөр болсун! )"
++                                android:textAlignment="center"
++                                android:textColor="#fff"
++                                android:textSize="12sp" />
++                        </LinearLayout>
++                    </androidx.cardview.widget.CardView>
++
++                    <androidx.cardview.widget.CardView
++                        android:id="@+id/allohu_akbar"
++                        android:layout_width="match_parent"
++                        android:layout_height="wrap_content"
++                        android:layout_below="@+id/alhamdulillah"
++                        android:layout_marginBottom="20dp"
++                        android:backgroundTint="#393939"
++                        app:cardCornerRadius="20dp">
++
++                        <LinearLayout
++                            android:layout_width="match_parent"
++                            android:layout_height="wrap_content"
++                            android:orientation="vertical"
++                            android:padding="10dp">
++
++                            <TextView
++                                android:layout_width="match_parent"
++                                android:layout_height="wrap_content"
++                                android:text="Аллаху Акбар!"
++                                android:textAlignment="center"
++                                android:textColor="#00BBD3"
++                                android:textSize="30sp"
++                                android:textStyle="bold" />
++
++                            <TextView
++                                android:layout_width="match_parent"
++                                android:layout_height="wrap_content"
++                                android:text="( Аллах улук! )"
++                                android:textAlignment="center"
++                                android:textColor="#fff"
++                                android:textSize="12sp" />
++                        </LinearLayout>
++                    </androidx.cardview.widget.CardView>
++
++                    <androidx.cardview.widget.CardView
++                        android:id="@+id/shahadat"
++                        android:layout_width="match_parent"
++                        android:layout_height="wrap_content"
++                        android:layout_below="@+id/allohu_akbar"
++                        android:layout_marginBottom="20dp"
++                        android:backgroundTint="#393939"
++                        app:cardCornerRadius="20dp">
++
++                        <LinearLayout
++                            android:layout_width="match_parent"
++                            android:layout_height="wrap_content"
++                            android:orientation="vertical"
++                            android:padding="10dp">
++
++                            <TextView
++                                android:layout_width="match_parent"
++                                android:layout_height="wrap_content"
++                                android:text="Лаа Илааха Иллаллох!"
++                                android:textAlignment="center"
++                                android:textColor="#00BBD3"
++                                android:textSize="30sp"
++                                android:textStyle="bold" />
++
++                            <TextView
++                                android:layout_width="match_parent"
++                                android:layout_height="wrap_content"
++                                android:text="( Аллахтан башка кудай жок! )"
++                                android:textAlignment="center"
++                                android:textColor="#fff"
++                                android:textSize="12sp" />
++                        </LinearLayout>
++                    </androidx.cardview.widget.CardView>
++
++                    <androidx.cardview.widget.CardView
++                        android:id="@+id/laa_havla"
++                        android:layout_width="match_parent"
++                        android:layout_height="wrap_content"
++                        android:layout_below="@+id/shahadat"
++                        android:layout_marginBottom="20dp"
++                        android:backgroundTint="#393939"
++                        app:cardCornerRadius="20dp">
++
++                        <LinearLayout
++                            android:layout_width="match_parent"
++                            android:layout_height="wrap_content"
++                            android:orientation="vertical"
++                            android:padding="10dp">
++
++                            <TextView
++                                android:layout_width="match_parent"
++                                android:layout_height="wrap_content"
++                                android:text="Ла хавла вала куввата илла биллах!"
++                                android:textAlignment="center"
++                                android:textColor="#00BBD3"
++                                android:textSize="30sp"
++                                android:textStyle="bold" />
++
++                            <TextView
++                                android:layout_width="match_parent"
++                                android:layout_height="wrap_content"
++                                android:text="( Сактоочу жана күч кубат берүүчү бир гана Аллах! )"
++                                android:textAlignment="center"
++                                android:textColor="#fff"
++                                android:textSize="12sp" />
++                        </LinearLayout>
++                    </androidx.cardview.widget.CardView>
++
++                    <androidx.cardview.widget.CardView
++                        android:id="@+id/salavat"
++                        android:layout_width="match_parent"
++                        android:layout_height="wrap_content"
++                        android:layout_below="@+id/laa_havla"
++                        android:layout_marginBottom="20dp"
++                        android:backgroundTint="#393939"
++                        app:cardCornerRadius="20dp">
++
++                        <LinearLayout
++                            android:layout_width="match_parent"
++                            android:layout_height="wrap_content"
++                            android:orientation="vertical"
++                            android:padding="10dp">
++
++                            <TextView
++                                android:layout_width="match_parent"
++                                android:layout_height="wrap_content"
++                                android:text="Саллаллаху ъалайхи ва саллам!"
++                                android:textAlignment="center"
++                                android:textColor="#00BBD3"
++                                android:textSize="30sp"
++                                android:textStyle="bold" />
++
++                            <TextView
++                                android:layout_width="match_parent"
++                                android:layout_height="wrap_content"
++                                android:text="( Алланын элчисине салам салаваттар болсун! )"
++                                android:textAlignment="center"
++                                android:textColor="#fff"
++                                android:textSize="12sp" />
++                        </LinearLayout>
++                    </androidx.cardview.widget.CardView>
++
++                    <androidx.cardview.widget.CardView
++                        android:id="@+id/astagfirullah"
++                        android:layout_width="match_parent"
++                        android:layout_height="wrap_content"
++                        android:layout_below="@+id/salavat"
++                        android:layout_marginBottom="20dp"
++                        android:backgroundTint="#393939"
++                        app:cardCornerRadius="20dp">
++
++                        <LinearLayout
++                            android:layout_width="match_parent"
++                            android:layout_height="wrap_content"
++                            android:orientation="vertical"
++                            android:padding="10dp">
++
++                            <TextView
++                                android:layout_width="match_parent"
++                                android:layout_height="wrap_content"
++                                android:text="Астагфируллах!"
++                                android:textAlignment="center"
++                                android:textColor="#00BBD3"
++                                android:textSize="30sp"
++                                android:textStyle="bold" />
++
++                            <TextView
++                                android:layout_width="match_parent"
++                                android:layout_height="wrap_content"
++                                android:text="( Аллах кечир! )"
++                                android:textAlignment="center"
++                                android:textColor="#fff"
++                                android:textSize="12sp" />
++                        </LinearLayout>
++                    </androidx.cardview.widget.CardView>
++
++                    <androidx.cardview.widget.CardView
++                        android:id="@+id/laa_ilaaha_illa_anta"
++                        android:layout_width="match_parent"
++                        android:layout_height="wrap_content"
++                        android:layout_below="@+id/astagfirullah"
++                        android:layout_marginBottom="20dp"
++                        android:backgroundTint="#393939"
++                        app:cardCornerRadius="20dp">
++
++                        <LinearLayout
++                            android:layout_width="match_parent"
++                            android:layout_height="wrap_content"
++                            android:orientation="vertical"
++                            android:padding="10dp">
++
++                            <TextView
++                                android:layout_width="match_parent"
++                                android:layout_height="wrap_content"
++                                android:text="Ла илаха илла анта Субханака инни кунту миназ золимин!"
++                                android:textAlignment="center"
++                                android:textColor="#00BBD3"
++                                android:textSize="30sp"
++                                android:textStyle="bold" />
++
++                            <TextView
++                                android:layout_width="match_parent"
++                                android:layout_height="wrap_content"
++                                android:text="( Сенден башка кудай жок, Кемчиликсизсиң, Албетте, Мен заалымдардан болдум! )"
++                                android:textAlignment="center"
++                                android:textColor="#fff"
++                                android:textSize="12sp" />
++                        </LinearLayout>
++                    </androidx.cardview.widget.CardView>
++
++                    <androidx.cardview.widget.CardView
++                        android:id="@+id/contact"
++                        android:layout_width="match_parent"
++                        android:layout_height="wrap_content"
++                        android:layout_below="@+id/laa_ilaaha_illa_anta"
++                        android:backgroundTint="#393939"
++                        app:cardCornerRadius="20dp">
++
++                        <LinearLayout
++                            android:layout_width="match_parent"
++                            android:layout_height="wrap_content"
++                            android:layout_below="@+id/zikir_blog_relative_in_scroll"
++                            android:layout_alignParentBottom="true"
++                            android:orientation="vertical"
++                            android:padding="8dp">
++
++                            <TextView
++                                android:layout_width="match_parent"
++                                android:layout_height="wrap_content"
++                                android:text="Катачылыктар болсо бул жака жазыңыз, Аллах ыраазы болсун!"
++                                android:textAlignment="center"
++                                android:textColor="@color/white"
++                                android:textSize="10sp"
++                                tools:ignore="SmallSp" />
++
++                            <LinearLayout
++                                android:id="@+id/my_telegram_btn"
++                                android:layout_width="match_parent"
++                                android:layout_height="wrap_content"
++                                android:gravity="center"
++                                android:padding="5dp">
++
++                                <ImageView
++                                    android:layout_width="16dp"
++                                    android:layout_height="16dp"
++                                    android:src="@drawable/ic_telegram_logo" />
++
++                                <TextView
++                                    android:layout_width="wrap_content"
++                                    android:layout_height="wrap_content"
++                                    android:padding="2dp"
++                                    android:text="Telegram"
++                                    android:textAlignment="center"
++                                    android:textColor="#20C9F1"
++                                    android:textSize="12sp"
++                                    tools:ignore="SmallSp" />
++                            </LinearLayout>
++                        </LinearLayout>
++                    </androidx.cardview.widget.CardView>
++
++
++                </RelativeLayout>
++
++            </RelativeLayout>
++
++        </ScrollView>
++
++</FrameLayout>
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_allahtyn_ysymdary.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_allahtyn_ysymdary.xml b/app/src/main/res/layout/activity_allahtyn_ysymdary.xml
+new file mode 100644
+--- /dev/null	(date 1655851764196)
++++ b/app/src/main/res/layout/activity_allahtyn_ysymdary.xml	(date 1655851764196)
+@@ -0,0 +1,9 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    tools:context=".AllahtynYsymdary">
++
++</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_main.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_main.xml b/app/src/main/res/layout/activity_main.xml
+--- a/app/src/main/res/layout/activity_main.xml	(date 1655851764191)
++++ b/app/src/main/res/layout/activity_main.xml	(date 1655851764191)
+@@ -8,15 +8,6 @@
+     tools:context=".MainActivity"
+     android:id="@+id/drawer"
+     >
+-    <com.google.android.material.navigation.NavigationView
+-        android:id="@+id/navigation_view"
+-        android:layout_width="wrap_content"
+-        android:layout_height="match_parent"
+-        android:layout_gravity="start"
+-        app:headerLayout="@layout/header_layout"
+-        app:menu="@menu/menu"
+-
+-        />
+ 
+     <androidx.constraintlayout.widget.ConstraintLayout
+         android:layout_width="match_parent"
+@@ -49,371 +40,144 @@
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_below="@id/banner_img"
++                android:layout_marginTop="-8dp"
++                android:layout_marginBottom="0dp"
+                 android:background="#015B38"
+                 android:fontFamily="cursive"
+                 android:padding="5dp"
+-                android:layout_marginTop="-8dp"
+                 android:text="@string/text_yiman_nuru"
+                 android:textAlignment="center"
+                 android:textColor="@color/white"
+-                android:textSize="15sp"
+-                android:layout_marginBottom="0dp"
++                android:textSize="20sp"
+                 tools:ignore="MissingConstraints,SmallSp" />
+-        </RelativeLayout>
+ 
+ 
+-
+-            <RelativeLayout
++            <HorizontalScrollView
++                android:layout_margin="5dp"
++                android:layout_below="@+id/text_yiman_nuru"
++                android:id="@+id/horizontal_scroll_activity"
+                 android:layout_width="match_parent"
+-                android:layout_height="0dp"
+-                app:layout_constraintTop_toBottomOf="@+id/banner_block"
+-                app:layout_constraintBottom_toTopOf="@+id/imageView3"
+-                >
+-                <ScrollView
+-
+-                    android:layout_width="match_parent"
+-                    android:layout_height="match_parent"
+-                    tools:ignore="UselessParent">
+-
+-                    <RelativeLayout
+-                        android:layout_width="match_parent"
+-                        android:layout_height="wrap_content"
+-                        >
+-
+-                        <RelativeLayout
+-                            android:id="@+id/btn_first_line"
+-                            android:layout_width="wrap_content"
+-                            android:layout_height="wrap_content"
+-                            android:layout_centerHorizontal="true"
+-                            android:padding="10dp">
+-
+-                            <androidx.cardview.widget.CardView
+-                                android:id="@+id/btn_islam_test"
+-                                android:layout_width="150dp"
+-                                android:layout_height="130dp"
+-                                android:layout_alignTop="@+id/btn_masnun_dubalar"
+-                                android:layout_marginEnd="5dp"
+-                                app:cardCornerRadius="20dp"
+-                                app:cardElevation="6dp">
+-
+-                                <LinearLayout
+-                                    android:layout_width="match_parent"
+-                                    android:layout_height="match_parent"
+-                                    android:background="#015B38"
+-                                    android:gravity="center"
+-                                    android:orientation="vertical"
+-                                    android:padding="1dp">
+-
+-                                    <ImageView
+-                                        android:layout_width="80dp"
+-                                        android:layout_height="80dp"
+-                                        android:contentDescription="TODO"
+-                                        android:src="@drawable/ic_quiz"
+-                                        tools:ignore="ContentDescription,HardcodedText" />
+-
+-                                    <TextView
+-                                        android:layout_width="wrap_content"
+-                                        android:layout_height="wrap_content"
+-                                        android:layout_marginTop="5dp"
+-                                        android:fontFamily="sans-serif-medium"
+-                                        android:text="@string/text_test"
+-                                        android:textAlignment="center"
+-                                        android:textColor="@color/white"
+-                                        android:textSize="16sp" />
+-
+-                                </LinearLayout>
+-                            </androidx.cardview.widget.CardView>
+-
+-                            <androidx.cardview.widget.CardView
+-                                android:id="@+id/btn_masnun_dubalar"
+-                                android:layout_width="150dp"
+-                                android:layout_height="130dp"
+-                                android:layout_marginStart="5dp"
+-                                android:layout_toEndOf="@id/btn_islam_test"
+-                                app:cardCornerRadius="20dp"
+-                                app:cardElevation="6dp">
+-
+-                                <LinearLayout
+-                                    android:layout_width="match_parent"
+-                                    android:layout_height="match_parent"
+-                                    android:background="#015B38"
+-                                    android:gravity="center"
+-                                    android:orientation="vertical"
+-                                    android:padding="1dp">
++                android:layout_height="wrap_content"
++                android:background="@color/white"
++                android:scrollbars="horizontal"
++                android:scrollbarSize="01dp"
++                android:scrollbarStyle="outsideOverlay"
++                android:scrollbarThumbHorizontal="@color/dark_blue_1"
++                >
++            <LinearLayout
++                android:layout_width="wrap_content"
++                android:layout_height="wrap_content"
+ 
+-                                    <ImageView
+-                                        android:layout_width="80dp"
+-                                        android:layout_height="80dp"
+-                                        android:contentDescription="TODO"
+-                                        android:src="@drawable/ic_masnun_dubalar"
+-                                        tools:ignore="ContentDescription,HardcodedText" />
+-
+-                                    <TextView
+-                                        android:layout_width="wrap_content"
+-                                        android:layout_height="wrap_content"
+-                                        android:layout_marginTop="5dp"
+-                                        android:fontFamily="sans-serif-medium"
+-                                        android:text="@string/masnun_dubalar"
+-                                        android:textColor="@color/white"
+-                                        android:textSize="16sp" />
++                >
++                    <Button
++                        android:id="@+id/horizontal_btn_main"
++                        android:layout_width="wrap_content"
++                        android:layout_height="wrap_content"
++                        android:text="@string/main_page"
++                        android:textSize="18sp"
++                        android:textStyle="bold"
++                        android:textColor="@color/dark_blue_1"
++                        android:textAllCaps="false"
++                        android:padding="10dp"
++                        android:background="@drawable/bg_button_outline"
++                        android:layout_margin="10dp"
++                        style="?android:attr/buttonBarButtonStyle" />
+ 
+-                                </LinearLayout>
+-                            </androidx.cardview.widget.CardView>
+-                        </RelativeLayout>
+-                        <!--    Buttons Second Line-->
+-                        <RelativeLayout
+-                            android:id="@+id/btn_second_line"
+-                            android:layout_width="wrap_content"
+-                            android:layout_height="wrap_content"
+-                            android:layout_below="@id/btn_first_line"
+-                            android:layout_centerHorizontal="true"
+-                            android:padding="10dp">
+-
+-                            <androidx.cardview.widget.CardView
+-                                android:id="@+id/btn_zikir"
+-                                android:layout_width="150dp"
+-                                android:layout_height="130dp"
+-                                android:layout_alignTop="@+id/btn_alty_sypat"
+-                                android:layout_marginEnd="5dp"
+-                                app:cardCornerRadius="20dp"
+-                                app:cardElevation="6dp">
++                    <Button
++                        android:id="@+id/horizontal_btn_tasbih"
++                        android:layout_width="wrap_content"
++                        android:layout_height="wrap_content"
++                        android:text="@string/tasbih"
++                        android:textSize="18sp"
++                        android:textStyle="bold"
++                        android:padding="10dp"
++                        android:textColor="@color/dark_blue_1"
++                        android:background="@drawable/bg_button_outline"
++                        android:layout_margin="10dp"
++                        android:textAllCaps="false"
++                        style="?android:attr/buttonBarButtonStyle" />
+ 
+-                                <LinearLayout
+-                                    android:layout_width="match_parent"
+-                                    android:layout_height="match_parent"
+-                                    android:background="#015B38"
+-                                    android:gravity="center"
+-                                    android:orientation="vertical"
+-                                    android:padding="1dp">
+ 
+-                                    <ImageView
+-                                        android:layout_width="80dp"
+-                                        android:layout_height="80dp"
+-                                        android:contentDescription="TODO"
+-                                        android:src="@drawable/ic_zikir"
+-                                        tools:ignore="ContentDescription,HardcodedText" />
+-
+-                                    <TextView
+-                                        android:layout_width="wrap_content"
+-                                        android:layout_height="wrap_content"
+-                                        android:layout_marginTop="5dp"
+-                                        android:fontFamily="sans-serif-medium"
+-                                        android:text="@string/zikirdin_turloru"
+-                                        android:textAlignment="center"
+-                                        android:textColor="@color/white"
+-                                        android:textSize="16sp" />
+-
+-                                </LinearLayout>
+-                            </androidx.cardview.widget.CardView>
+-                            <androidx.cardview.widget.CardView
+-                                android:id="@+id/btn_alty_sypat"
+-                                android:layout_width="150dp"
+-                                android:layout_height="130dp"
+-                                android:layout_marginEnd="5dp"
+-                                android:layout_toEndOf="@+id/btn_zikir"
+-                                app:cardCornerRadius="20dp"
+-                                app:cardElevation="6dp">
++                    <Button
++                        android:id="@+id/horizontal_btn_zikir"
++                        android:layout_width="wrap_content"
++                        android:layout_height="wrap_content"
++                        android:text="@string/zikirdin_turloru"
++                        android:textSize="18sp"
++                        android:textStyle="bold"
++                        android:textColor="@color/dark_blue_1"
++                        android:background="@drawable/bg_button_outline"
++                        android:layout_margin="10dp"
++                        android:textAllCaps="false"
++                        android:padding="10dp"
++                        style="?android:attr/buttonBarButtonStyle" />
+ 
+-                                <LinearLayout
+-                                    android:layout_width="match_parent"
+-                                    android:layout_height="match_parent"
+-                                    android:background="#015B38"
+-                                    android:gravity="center"
+-                                    android:orientation="vertical"
+-                                    android:padding="1dp">
+-
+-                                    <ImageView
+-                                        android:layout_width="80dp"
+-                                        android:layout_height="80dp"
+-                                        android:contentDescription="TODO"
+-                                        android:src="@drawable/ic___sypat"
+-                                        tools:ignore="ContentDescription,HardcodedText" />
+-
+-                                    <TextView
+-                                        android:layout_width="wrap_content"
+-                                        android:layout_height="wrap_content"
+-                                        android:layout_marginTop="5dp"
+-                                        android:fontFamily="sans-serif-medium"
+-                                        android:text="@string/alty_sypat"
+-                                        android:textAlignment="center"
+-                                        android:textColor="@color/white"
+-                                        android:textSize="16sp" />
+-
+-                                </LinearLayout>
+-                            </androidx.cardview.widget.CardView>
+-
+-                            <!--            <androidx.cardview.widget.CardView-->
+-                            <!--                android:id="@+id/btn_namaz"-->
+-                            <!--                android:layout_width="150dp"-->
+-                            <!--                android:layout_height="130dp"-->
+-                            <!--                android:layout_marginStart="5dp"-->
+-                            <!--                android:layout_toEndOf="@id/btn_zikir"-->
+-                            <!--                app:cardCornerRadius="20dp"-->
+-                            <!--                app:cardElevation="6dp">-->
+-
+-                            <!--                <LinearLayout-->
+-                            <!--                    android:layout_width="match_parent"-->
+-                            <!--                    android:layout_height="match_parent"-->
+-                            <!--                    android:background="#015B38"-->
+-                            <!--                    android:gravity="center"-->
+-                            <!--                    android:orientation="vertical"-->
+-                            <!--                    android:padding="1dp">-->
+-
+-                            <!--                    <ImageView-->
+-                            <!--                        android:layout_width="80dp"-->
+-                            <!--                        android:layout_height="80dp"-->
+-                            <!--                        android:contentDescription="TODO"-->
+-                            <!--                        android:src="@drawable/ic_btn_namaz"-->
+-                            <!--                        android:layout_marginTop="3dp"-->
+-                            <!--                        tools:ignore="ContentDescription,HardcodedText" />-->
+-
+-                            <!--                    <TextView-->
+-                            <!--                        android:layout_width="wrap_content"-->
+-                            <!--                        android:layout_height="wrap_content"-->
+-                            <!--                        android:fontFamily="sans-serif-medium"-->
+-                            <!--                        android:text="@string/text_namaz_uyronuu"-->
+-                            <!--                        android:textAlignment="center"-->
+-                            <!--                        android:textColor="@color/white"-->
+-                            <!--                        android:textSize="16sp" />-->
+-
+-                            <!--                </LinearLayout>-->
+-                            <!--            </androidx.cardview.widget.CardView>-->
+-                        </RelativeLayout>
+-
+-                        <!--    Buttons Third line  -->
+-                        <RelativeLayout
+-                            android:id="@+id/btn_third_line"
+-                            android:layout_width="wrap_content"
+-                            android:layout_height="wrap_content"
+-                            android:layout_below="@id/btn_second_line"
+-                            android:layout_centerHorizontal="true"
+-                            android:padding="10dp">
+-
+-                            <androidx.cardview.widget.CardView
+-                                android:id="@+id/btn_allanyn_ysymdary"
+-                                android:layout_width="150dp"
+-                                android:layout_height="130dp"
+-                                android:layout_alignTop="@+id/btn_tasbih"
+-                                android:layout_marginEnd="5dp"
+-                                app:cardCornerRadius="20dp"
+-                                app:cardElevation="6dp">
++                    <Button
++                        android:id="@+id/horizontal_btn_masnun_duba"
++                        android:layout_width="wrap_content"
++                        android:layout_height="wrap_content"
++                        android:text="@string/masnun_dubalar"
++                        android:textSize="18sp"
++                        android:textStyle="bold"
++                        android:textColor="@color/dark_blue_1"
++                        android:background="@drawable/bg_button_outline"
++                        android:layout_margin="10dp"
++                        android:padding="10dp"
++                        android:textAllCaps="false"
++                        style="?android:attr/buttonBarButtonStyle" />
++                    <Button
++                        android:id="@+id/horizontal_btn_alty_sypat"
++                        android:layout_width="wrap_content"
++                        android:layout_height="wrap_content"
++                        android:text="@string/alty_sypat"
++                        android:textSize="18sp"
++                        android:textStyle="bold"
++                        android:textColor="@color/dark_blue_1"
++                        android:background="@drawable/bg_button_outline"
++                        android:layout_margin="10dp"
++                        android:padding="10dp"
++                        android:textAllCaps="false"
++                        style="?android:attr/buttonBarButtonStyle" />
+ 
+-                                <LinearLayout
+-                                    android:layout_width="match_parent"
+-                                    android:layout_height="match_parent"
+-                                    android:background="#015B38"
+-                                    android:gravity="center"
+-                                    android:orientation="vertical"
+-                                    android:padding="1dp">
+-
+-                                    <ImageView
+-                                        android:layout_width="80dp"
+-                                        android:layout_height="80dp"
+-                                        android:contentDescription="TODO"
+-                                        android:src="@drawable/ic_allanyny_99_ysymy"
+-                                        tools:ignore="ContentDescription,HardcodedText" />
+-
+-                                    <TextView
+-                                        android:layout_width="wrap_content"
+-                                        android:layout_height="wrap_content"
+-                                        android:layout_marginTop="5dp"
+-                                        android:fontFamily="sans-serif-medium"
+-                                        android:text="@string/allanyn_99_ysymy"
+-                                        android:textAlignment="center"
+-                                        android:textColor="@color/white"
+-                                        android:textSize="16sp" />
+-
+-                                </LinearLayout>
+-                            </androidx.cardview.widget.CardView>
+-
+-                            <androidx.cardview.widget.CardView
+-                                android:id="@+id/btn_tasbih"
+-                                android:layout_width="150dp"
+-                                android:layout_height="130dp"
+-                                android:layout_marginStart="5dp"
+-                                android:layout_toEndOf="@id/btn_allanyn_ysymdary"
+-                                app:cardCornerRadius="20dp"
+-                                app:cardElevation="6dp">
+-
+-                                <LinearLayout
+-                                    android:layout_width="match_parent"
+-                                    android:layout_height="match_parent"
+-                                    android:background="#015B38"
+-                                    android:gravity="center"
+-                                    android:orientation="vertical"
+-                                    android:padding="1dp">
++                    <Button
++                        android:id="@+id/horizontal_btn_allahtyn_ysymdary"
++                        android:layout_width="wrap_content"
++                        android:layout_height="wrap_content"
++                        android:text="@string/allanyn_99_ysymy"
++                        android:textSize="18sp"
++                        android:textStyle="bold"
++                        android:textColor="@color/dark_blue_1"
++                        android:background="@drawable/bg_button_outline"
++                        android:layout_margin="10dp"
++                        android:padding="10dp"
++                        android:textAllCaps="false"
++                        style="?android:attr/buttonBarButtonStyle" />
+ 
+-                                    <ImageView
+-                                        android:layout_width="80dp"
+-                                        android:layout_height="80dp"
+-                                        android:contentDescription="TODO"
+-                                        android:src="@drawable/ic_tasbih"
+-                                        tools:ignore="ContentDescription,HardcodedText" />
+-
+-                                    <TextView
+-                                        android:layout_width="wrap_content"
+-                                        android:layout_height="wrap_content"
+-                                        android:layout_marginTop="5dp"
+-                                        android:fontFamily="sans-serif-medium"
+-                                        android:text="@string/tasbih"
+-                                        android:textAlignment="center"
+-                                        android:textColor="@color/white"
+-                                        android:textSize="16sp" />
+ 
+-                                </LinearLayout>
+-                            </androidx.cardview.widget.CardView>
+-                        </RelativeLayout>
+-
+-                        <!--    Buttons Fourth line  -->
+-                        <!--        <RelativeLayout-->
+-                        <!--            android:id="@+id/btn_fourth_line"-->
+-                        <!--            android:layout_width="wrap_content"-->
+-                        <!--            android:layout_height="wrap_content"-->
+-                        <!--            android:layout_below="@id/btn_third_line"-->
+-                        <!--            android:layout_centerHorizontal="true"-->
+-                        <!--            android:padding="10dp">-->
+-                        <!--            -->
+-                        <!--&lt;!&ndash;            <androidx.cardview.widget.CardView&ndash;&gt;-->
+-                        <!--&lt;!&ndash;                android:id="@+id/btn_count_kaza"&ndash;&gt;-->
+-                        <!--&lt;!&ndash;                android:layout_width="150dp"&ndash;&gt;-->
+-                        <!--&lt;!&ndash;                android:layout_height="130dp"&ndash;&gt;-->
+-                        <!--&lt;!&ndash;                android:layout_toEndOf="@+id/btn_alty_sypat"&ndash;&gt;-->
+-                        <!--&lt;!&ndash;                android:layout_marginStart="5dp"&ndash;&gt;-->
+-                        <!--&lt;!&ndash;                app:cardCornerRadius="20dp"&ndash;&gt;-->
+-                        <!--&lt;!&ndash;                app:cardElevation="6dp">&ndash;&gt;-->
+-
+-                        <!--&lt;!&ndash;                <LinearLayout&ndash;&gt;-->
+-                        <!--&lt;!&ndash;                    android:layout_width="match_parent"&ndash;&gt;-->
+-                        <!--&lt;!&ndash;                    android:layout_height="match_parent"&ndash;&gt;-->
+-                        <!--&lt;!&ndash;                    android:background="#015B38"&ndash;&gt;-->
+-                        <!--&lt;!&ndash;                    android:gravity="center"&ndash;&gt;-->
+-                        <!--&lt;!&ndash;                    android:orientation="vertical"&ndash;&gt;-->
+-                        <!--&lt;!&ndash;                    android:padding="1dp">&ndash;&gt;-->
+-
+-                        <!--&lt;!&ndash;                    <ImageView&ndash;&gt;-->
+-                        <!--&lt;!&ndash;                        android:layout_width="80dp"&ndash;&gt;-->
+-                        <!--&lt;!&ndash;                        android:layout_height="80dp"&ndash;&gt;-->
+-                        <!--&lt;!&ndash;                        android:contentDescription="TODO"&ndash;&gt;-->
+-                        <!--&lt;!&ndash;                        android:src="@drawable/ic___sypat"&ndash;&gt;-->
+-                        <!--&lt;!&ndash;                        tools:ignore="ContentDescription,HardcodedText" />&ndash;&gt;-->
+-
+-                        <!--&lt;!&ndash;                    <TextView&ndash;&gt;-->
+-                        <!--&lt;!&ndash;                        android:layout_width="wrap_content"&ndash;&gt;-->
+-                        <!--&lt;!&ndash;                        android:layout_height="wrap_content"&ndash;&gt;-->
+-                        <!--&lt;!&ndash;                        android:layout_marginTop="5dp"&ndash;&gt;-->
+-                        <!--&lt;!&ndash;                        android:fontFamily="sans-serif-medium"&ndash;&gt;-->
+-                        <!--&lt;!&ndash;                        android:text="Сиздин каза\nнамаздар"&ndash;&gt;-->
+-                        <!--&lt;!&ndash;                        android:textAlignment="center"&ndash;&gt;-->
+-                        <!--&lt;!&ndash;                        android:textColor="@color/white"&ndash;&gt;-->
+-                        <!--&lt;!&ndash;                        android:textSize="16sp" />&ndash;&gt;-->
+-
+-                        <!--&lt;!&ndash;                </LinearLayout>&ndash;&gt;-->
+-                        <!--&lt;!&ndash;            </androidx.cardview.widget.CardView>&ndash;&gt;-->
+-                        <!--        </RelativeLayout>-->
+-
+-                    </RelativeLayout>
+-                </ScrollView>
+-            </RelativeLayout>
++            </LinearLayout>
++            </HorizontalScrollView>
++        </RelativeLayout>
++
++
++        <RelativeLayout
++            android:id="@+id/fragments_block"
++            app:layout_constraintTop_toBottomOf="@+id/banner_block"
++            android:padding="10dp"
++            android:layout_width="match_parent"
++            android:layout_height="0dp"
++            android:background="@color/white"
++            app:layout_constraintBottom_toTopOf="@+id/imageView3"
++            tools:ignore="MissingConstraints">
++
++            <ScrollView
++                android:layout_width="match_parent"
++                android:layout_height="wrap_content">
++                <androidx.fragment.app.FragmentContainerView
++                    android:id="@+id/place_holder"
++                    android:layout_width="match_parent"
++                    android:layout_height="wrap_content" />
++            </ScrollView>
++        </RelativeLayout>
+ 
+ 
+             <ImageView
+@@ -430,7 +194,15 @@
+ 
+     </androidx.constraintlayout.widget.ConstraintLayout>
+ 
++    <com.google.android.material.navigation.NavigationView
++        android:id="@+id/navigation_view"
++        android:layout_width="wrap_content"
++        android:layout_height="match_parent"
++        android:layout_gravity="start"
++        app:headerLayout="@layout/header_layout"
++        app:menu="@menu/menu"
+ 
++        />
+ 
+ 
+ </androidx.drawerlayout.widget.DrawerLayout>
+\ No newline at end of file
+Index: app/src/main/res/layout/my_toolbar.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/my_toolbar.xml b/app/src/main/res/layout/my_toolbar.xml
+--- a/app/src/main/res/layout/my_toolbar.xml	(date 1655850875025)
++++ b/app/src/main/res/layout/my_toolbar.xml	(date 1655850875025)
+@@ -7,8 +7,26 @@
+         android:elevation="4dp"
+         android:background="@null"
+         app:popupTheme="@style/ThemeOverlay.AppCompat.Dark"
+-    app:title="@string/app_name"
+-    app:navigationIcon="@drawable/ic_baseline_menu_24"
++
++        >
+ 
++    <LinearLayout
++        android:layout_width="match_parent"
++        android:layout_height="match_parent"
++        android:gravity="center"
+         >
++        <ImageView
++            android:id="@+id/btn_menu"
++            android:layout_width="36dp"
++            android:layout_height="36dp"
++            android:src="@drawable/ic_baseline_menu_24"
++            />
++        <TextView
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:text="@string/app_name"
++            android:layout_marginLeft="20dp"
++            android:textAppearance="@style/Theme.YimanNuru.Toolbar"
++            />
++    </LinearLayout>
+ </androidx.appcompat.widget.Toolbar >
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_zikir.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_zikir.xml b/app/src/main/res/layout/activity_zikir.xml
+--- a/app/src/main/res/layout/activity_zikir.xml	(date 1655851764185)
++++ b/app/src/main/res/layout/activity_zikir.xml	(date 1655851764185)
+@@ -15,338 +15,7 @@
+         app:menu="@menu/menu"
+ 
+         />
+-    <RelativeLayout
+-        android:layout_width="match_parent"
+-        android:layout_height="match_parent">
+-
+-        <androidx.constraintlayout.widget.ConstraintLayout
+-            android:id="@+id/top_bar_block_menu"
+-            android:layout_width="match_parent"
+-            android:layout_height="wrap_content">
+-
+-            <include
+-                android:id="@+id/toolbar_top"
+-                layout="@layout/my_toolbar"
+-                app:layout_constraintEnd_toEndOf="parent"
+-                app:layout_constraintStart_toStartOf="parent"
+-                app:layout_constraintTop_toTopOf="parent" />
+-        </androidx.constraintlayout.widget.ConstraintLayout>
+-
+-        <ScrollView
+-            android:id="@+id/zikir_blog_scroll"
+-            android:layout_width="match_parent"
+-            android:layout_height="match_parent"
+-            android:layout_below="@+id/top_bar_block_menu"
+-            tools:ignore="UselessParent">
+-
+-            <RelativeLayout
+-                android:layout_width="match_parent"
+-                android:layout_height="wrap_content">
+-                <RelativeLayout
+-                    android:id="@+id/zikir_blog_relative_in_scroll"
+-                    android:layout_width="match_parent"
+-                    android:layout_height="wrap_content"
+-                    android:padding="10dp">
+-
+-                    <androidx.cardview.widget.CardView
+-                        android:id="@+id/subhaanallah"
+-                        android:layout_width="match_parent"
+-                        android:layout_height="wrap_content"
+-                        android:backgroundTint="#fff"
+-                        android:layout_marginBottom="20dp"
+-                        app:cardCornerRadius="20dp">
+-
+-                        <LinearLayout
+-                            android:layout_width="match_parent"
+-                            android:layout_height="wrap_content"
+-                            android:orientation="vertical"
+-                            android:padding="10dp">
+-
+-                            <TextView
+-                                android:layout_width="match_parent"
+-                                android:layout_height="wrap_content"
+-                                android:text="Субханаллах!"
+-                                android:textAlignment="center"
+-                                android:textColor="#00007A"
+-                                android:textStyle="bold"
+-                                android:textSize="30sp" />
+-
+-                            <TextView
+-                                android:layout_width="match_parent"
+-                                android:layout_height="wrap_content"
+-                                android:text="( Аллах баардык айып-кемчиликтерден таза! )"
+-                                android:textAlignment="center"
+-                                android:textColor="#FF0D00"
+-                                android:textSize="12sp" />
+-                        </LinearLayout>
+-                    </androidx.cardview.widget.CardView>
+-                    <androidx.cardview.widget.CardView
+-                        android:id="@+id/alhamdulillah"
+-                        android:layout_below="@+id/subhaanallah"
+-                        android:layout_width="match_parent"
+-                        android:layout_height="wrap_content"
+-                        android:backgroundTint="#fff"
+-                        android:layout_marginBottom="20dp"
+-                        app:cardCornerRadius="20dp">
+-
+-                        <LinearLayout
+-                            android:layout_width="match_parent"
+-                            android:layout_height="wrap_content"
+-                            android:orientation="vertical"
+-                            android:padding="10dp">
+-
+-                            <TextView
+-                                android:layout_width="match_parent"
+-                                android:layout_height="wrap_content"
+-                                android:text="Алхамдулиллах!"
+-                                android:textAlignment="center"
+-                                android:textColor="#00007A"
+-                                android:textStyle="bold"
+-                                android:textSize="30sp" />
+-
+-                            <TextView
+-                                android:layout_width="match_parent"
+-                                android:layout_height="wrap_content"
+-                                android:text="( Аллахка шүгүрлөр болсун! )"
+-                                android:textAlignment="center"
+-                                android:textColor="#FF0D00"
+-                                android:textSize="12sp" />
+-                        </LinearLayout>
+-                    </androidx.cardview.widget.CardView>
+-                    <androidx.cardview.widget.CardView
+-                        android:id="@+id/allohu_akbar"
+-                        android:layout_below="@+id/alhamdulillah"
+-                        android:layout_width="match_parent"
+-                        android:layout_height="wrap_content"
+-                        android:layout_marginBottom="20dp"
+-                        android:backgroundTint="#fff"
+-                        app:cardCornerRadius="20dp">
+-
+-                        <LinearLayout
+-                            android:layout_width="match_parent"
+-                            android:layout_height="wrap_content"
+-                            android:orientation="vertical"
+-                            android:padding="10dp">
+-
+-                            <TextView
+-                                android:layout_width="match_parent"
+-                                android:layout_height="wrap_content"
+-                                android:text="Аллаху Акбар!"
+-                                android:textAlignment="center"
+-                                android:textColor="#00007A"
+-                                android:textStyle="bold"
+-                                android:textSize="30sp" />
+-
+-                            <TextView
+-                                android:layout_width="match_parent"
+-                                android:layout_height="wrap_content"
+-                                android:text="( Аллах улук! )"
+-                                android:textAlignment="center"
+-                                android:textColor="#FF0D00"
+-                                android:textSize="12sp" />
+-                        </LinearLayout>
+-                    </androidx.cardview.widget.CardView>
+-                    <androidx.cardview.widget.CardView
+-                        android:id="@+id/shahadat"
+-                        android:layout_below="@+id/allohu_akbar"
+-                        android:layout_width="match_parent"
+-                        android:layout_height="wrap_content"
+-                        android:layout_marginBottom="20dp"
+-                        android:backgroundTint="#fff"
+-                        app:cardCornerRadius="20dp">
+-
+-                        <LinearLayout
+-                            android:layout_width="match_parent"
+-                            android:layout_height="wrap_content"
+-                            android:orientation="vertical"
+-                            android:padding="10dp">
+ 
+-                            <TextView
+-                                android:layout_width="match_parent"
+-                                android:layout_height="wrap_content"
+-                                android:text="Лаа Илааха Иллаллох!"
+-                                android:textAlignment="center"
+-                                android:textColor="#00007A"
+-                                android:textStyle="bold"
+-                                android:textSize="30sp" />
+-
+-                            <TextView
+-                                android:layout_width="match_parent"
+-                                android:layout_height="wrap_content"
+-                                android:text="( Аллахтан башка кудай жок! )"
+-                                android:textAlignment="center"
+-                                android:textColor="#FF0D00"
+-                                android:textSize="12sp" />
+-                        </LinearLayout>
+-                    </androidx.cardview.widget.CardView>
+-                    <androidx.cardview.widget.CardView
+-                        android:id="@+id/laa_havla"
+-                        android:layout_below="@+id/shahadat"
+-                        android:layout_width="match_parent"
+-                        android:layout_height="wrap_content"
+-                        android:layout_marginBottom="20dp"
+-                        android:backgroundTint="#fff"
+-                        app:cardCornerRadius="20dp">
+-
+-                        <LinearLayout
+-                            android:layout_width="match_parent"
+-                            android:layout_height="wrap_content"
+-                            android:orientation="vertical"
+-                            android:padding="10dp">
+-
+-                            <TextView
+-                                android:layout_width="match_parent"
+-                                android:layout_height="wrap_content"
+-                                android:text="Ла хавла вала куввата илла биллах!"
+-                                android:textAlignment="center"
+-                                android:textColor="#00007A"
+-                                android:textStyle="bold"
+-                                android:textSize="30sp" />
+-
+-                            <TextView
+-                                android:layout_width="match_parent"
+-                                android:layout_height="wrap_content"
+-                                android:text="( Сактоочу жана күч кубат берүүчү бир гана Аллах! )"
+-                                android:textAlignment="center"
+-                                android:textColor="#FF0D00"
+-                                android:textSize="12sp" />
+-                        </LinearLayout>
+-                    </androidx.cardview.widget.CardView>
+-                    <androidx.cardview.widget.CardView
+-                        android:id="@+id/salavat"
+-                        android:layout_below="@+id/laa_havla"
+-                        android:layout_width="match_parent"
+-                        android:layout_height="wrap_content"
+-                        android:layout_marginBottom="20dp"
+-                        android:backgroundTint="#fff"
+-                        app:cardCornerRadius="20dp">
+-
+-                        <LinearLayout
+-                            android:layout_width="match_parent"
+-                            android:layout_height="wrap_content"
+-                            android:orientation="vertical"
+-                            android:padding="10dp">
+-
+-                            <TextView
+-                                android:layout_width="match_parent"
+-                                android:layout_height="wrap_content"
+-                                android:text="Саллаллаху ъалайхи ва саллам!"
+-                                android:textAlignment="center"
+-                                android:textColor="#00007A"
+-                                android:textStyle="bold"
+-                                android:textSize="30sp" />
+-
+-                            <TextView
+-                                android:layout_width="match_parent"
+-                                android:layout_height="wrap_content"
+-                                android:text="( Алланын элчисине салам салаваттар болсун! )"
+-                                android:textAlignment="center"
+-                                android:textColor="#FF0D00"
+-                                android:textSize="12sp" />
+-                        </LinearLayout>
+-                    </androidx.cardview.widget.CardView>
+-                    <androidx.cardview.widget.CardView
+-                        android:id="@+id/astagfirullah"
+-                        android:layout_below="@+id/salavat"
+-                        android:layout_width="match_parent"
+-                        android:layout_height="wrap_content"
+-                        android:layout_marginBottom="20dp"
+-                        android:backgroundTint="#fff"
+-                        app:cardCornerRadius="20dp">
+-
+-                        <LinearLayout
+-                            android:layout_width="match_parent"
+-                            android:layout_height="wrap_content"
+-                            android:orientation="vertical"
+-                            android:padding="10dp">
+-
+-                            <TextView
+-                                android:layout_width="match_parent"
+-                                android:layout_height="wrap_content"
+-                                android:text="Астагфируллах!"
+-                                android:textAlignment="center"
+-                                android:textColor="#00007A"
+-                                android:textStyle="bold"
+-                                android:textSize="30sp" />
+-
+-                            <TextView
+-                                android:layout_width="match_parent"
+-                                android:layout_height="wrap_content"
+-                                android:text="( Аллах кечир! )"
+-                                android:textAlignment="center"
+-                                android:textColor="#FF0D00"
+-                                android:textSize="12sp" />
+-                        </LinearLayout>
+-                    </androidx.cardview.widget.CardView>
+-                    <androidx.cardview.widget.CardView
+-                        android:id="@+id/laa_ilaaha_illa_anta"
+-                        android:layout_below="@+id/astagfirullah"
+-                        android:layout_width="match_parent"
+-                        android:layout_height="wrap_content"
+-                        android:layout_marginBottom="20dp"
+-                        android:backgroundTint="#fff"
+-                        app:cardCornerRadius="20dp">
+-
+-                        <LinearLayout
+-                            android:layout_width="match_parent"
+-                            android:layout_height="wrap_content"
+-                            android:orientation="vertical"
+-                            android:padding="10dp">
+-
+-                            <TextView
+-                                android:layout_width="match_parent"
+-                                android:layout_height="wrap_content"
+-                                android:text="Ла илаха илла анта Субханака инни кунту миназ золимин!"
+-                                android:textAlignment="center"
+-                                android:textColor="#00007A"
+-                                android:textStyle="bold"
+-                                android:textSize="30sp" />
+-
+-                            <TextView
+-                                android:layout_width="match_parent"
+-                                android:layout_height="wrap_content"
+-                                android:text="( Сенден башка кудай жок, Кемчиликсизсиң, Албетте, Мен заалымдардан болдум! )"
+-                                android:textAlignment="center"
+-                                android:textColor="#FF0D00"
+-                                android:textSize="12sp" />
+-                        </LinearLayout>
+-                    </androidx.cardview.widget.CardView>
+-
+-
+-                </RelativeLayout>
+-                <LinearLayout
+-                    android:layout_below="@+id/zikir_blog_relative_in_scroll"
+-                    android:layout_alignParentBottom="true"
+-                    android:layout_width="match_parent"
+-                    android:layout_height="wrap_content"
+-                    android:background="#097869"
+-                    android:padding="8dp"
+-                    android:orientation="vertical"
+-                    >
+-                    <TextView
+-                        android:layout_width="match_parent"
+-                        android:layout_height="wrap_content"
+-                        android:textColor="@color/white"
+-                        android:textAlignment="center"
+-                        android:text="Катачылыктар болсо бул жака жазыңыз, Аллах ыраазы болсун!"
+-                        android:textSize="10sp"
+-                        tools:ignore="SmallSp" />
+-                    <TextView
+-                        android:layout_width="match_parent"
+-                        android:layout_height="wrap_content"
+-                        android:id="@+id/my_telegram_btn"
+-                        android:textAlignment="center"
+-                        android:textColor="#20C9F1"
+-                        android:textSize="12sp"
+-                        tools:ignore="SmallSp"
+-                        android:text="https://t.me/@zukh_kamchybekov"
+-                        android:padding="2dp"
+-                        />
+-                </LinearLayout>
+-            </RelativeLayout>
+-
+-        </ScrollView>
+-    </RelativeLayout>
+ 
+ 
+ <!--    <LinearLayout-->
+Index: app/src/main/res/layout/fragment_home.xml
+===================================================================
+diff --git a/app/src/main/res/layout/fragment_home.xml b/app/src/main/res/layout/fragment_home.xml
+deleted file mode 100644
+--- a/app/src/main/res/layout/fragment_home.xml	(date 0)
++++ /dev/null	(date 0)
+@@ -1,11 +0,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+-    xmlns:tools="http://schemas.android.com/tools"
+-    android:layout_width="match_parent"
+-    android:layout_height="match_parent"
+-    tools:context=".Fragments.HomeFragment">
+-
+-    <!-- TODO: Update blank fragment layout -->
+-
+-
+-</FrameLayout>
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_tasbih.xml
+===================================================================
+diff --git a/app/src/main/res/layout/activity_tasbih.xml b/app/src/main/res/layout/activity_tasbih.xml
+deleted file mode 100644
+--- a/app/src/main/res/layout/activity_tasbih.xml	(date 0)
++++ /dev/null	(date 0)
+@@ -1,104 +0,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+-    xmlns:app="http://schemas.android.com/apk/res-auto"
+-    xmlns:tools="http://schemas.android.com/tools"
+-    android:layout_width="match_parent"
+-    android:layout_height="match_parent"
+-    android:background="@drawable/bg_tasbih"
+-    tools:context=".Tasbih">
+-
+-    <TextView
+-        android:layout_width="match_parent"
+-        android:layout_height="30dp"
+-        android:background="#0E1005"
+-        android:layout_marginTop="-10dp" />
+-
+-    <RelativeLayout
+-        android:id="@+id/talking_tasbih_layout"
+-        android:layout_centerVertical="true"
+-        android:layout_width="250dp"
+-        android:layout_centerHorizontal="true"
+-        android:layout_height="280dp">
+-
+-        <ImageView
+-            android:id="@+id/talking_tasbih"
+-            android:layout_width="250dp"
+-            android:layout_height="280dp"
+-            android:layout_centerInParent="true"
+-            app:srcCompat="@drawable/ic_talking_tasbih"
+-            tools:ignore="ContentDescription" />
+-
+-        <ImageView
+-            android:id="@+id/talking_tasbih_count"
+-            android:layout_width="90dp"
+-            android:layout_height="90dp"
+-            android:layout_alignParentBottom="true"
+-            android:layout_marginBottom="31dp"
+-            android:layout_centerHorizontal="true"
+-            app:srcCompat="@drawable/ic_talkin_tasbih_count"
+-            tools:ignore="ContentDescription" />
+-
+-        <TextView
+-            android:id="@+id/count_tasbih_view"
+-            android:layout_width="120dp"
+-            android:layout_height="wrap_content"
+-            android:layout_centerHorizontal="true"
+-            android:layout_marginTop="43dp"
+-            android:fontFamily="sans-serif-medium"
+-            android:padding="5dp"
+-            android:text="0"
+-            android:textAlignment="textEnd"
+-            android:textSize="50sp"
+-            android:visibility="visible" />
+-        <ImageView
+-            android:id="@+id/talking_tasbih_clear"
+-            android:layout_width="50dp"
+-            android:layout_height="50dp"
+-            android:layout_marginStart="45dp"
+-            android:layout_marginTop="122dp"
+-            android:src="@drawable/ic_talking_tasbih_clear" />
+-        <ImageView
+-            android:id="@+id/talking_tasbih_volume_off"
+-            android:layout_width="40dp"
+-            android:layout_height="40dp"
+-            android:layout_marginStart="52dp"
+-            android:layout_alignTop="@+id/talking_tasbih_change"
+-            android:visibility="invisible"
+-            android:src="@drawable/ic_baseline_volume_off_24" />
+-
+-        <ImageView
+-            android:id="@+id/talking_tasbih_volume_up"
+-            android:layout_width="40dp"
+-            android:layout_height="40dp"
+-            android:layout_marginStart="52dp"
+-            android:layout_alignTop="@+id/talking_tasbih_change"
+-            android:src="@drawable/ic_baseline_volume_up_24" />
+-
+-
+-
+-        <ImageView
+-            android:id="@+id/talking_tasbih_change"
+-            android:layout_width="36dp"
+-            android:layout_height="36dp"
+-            android:layout_alignParentEnd="true"
+-            android:layout_marginTop="125dp"
+-            android:layout_marginEnd="52dp"
+-            android:src="@drawable/ic_talking_tasbih_change" />
+-
+-
+-    </RelativeLayout>
+-
+-    <TextView
+-        android:id="@+id/zikir_view_talkin_tasbih"
+-        android:layout_width="match_parent"
+-        android:layout_height="wrap_content"
+-        android:layout_above="@id/talking_tasbih_layout"
+-        android:layout_marginBottom="40dp"
+-        android:background="#015B38"
+-        android:padding="5dp"
+-        android:text="@string/txt_subxaanallah"
+-        android:textAlignment="center"
+-        android:textColor="@color/white"
+-        android:textSize="30sp"
+-        android:textStyle="bold" />
+-</RelativeLayout>
+\ No newline at end of file
+Index: app/src/main/res/values/colors.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values/colors.xml b/app/src/main/res/values/colors.xml
+--- a/app/src/main/res/values/colors.xml	(date 1655851764163)
++++ b/app/src/main/res/values/colors.xml	(date 1655851764163)
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="utf-8"?>
+ <resources>
++    <color name="main_color_yiman_nuru">#015B38</color>
+     <color name="purple_200">#FFBB86FC</color>
+     <color name="purple_500">#FF6200EE</color>
+     <color name="purple_700">#FF3700B3</color>
+@@ -8,4 +9,5 @@
+     <color name="black">#FF000000</color>
+     <color name="blackW">#393939</color>
+     <color name="white">#FFFFFFFF</color>
++    <color name="dark_blue_1">#1776A6</color>
+ </resources>
+\ No newline at end of file
+Index: app/src/main/res/values/themes.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values/themes.xml b/app/src/main/res/values/themes.xml
+--- a/app/src/main/res/values/themes.xml	(date 1655850875018)
++++ b/app/src/main/res/values/themes.xml	(date 1655850875018)
+@@ -39,7 +39,6 @@
+         <item name="background">@color/white</item>
+         <item name="theme">@style/Theme.YimanNuru.Day</item>
+         <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
+-        <item name="android:textStyle">bold</item>
+         <item name="android:textSize">24sp</item>
+ 
+     </style>
+Index: app/src/main/res/values/strings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values/strings.xml b/app/src/main/res/values/strings.xml
+--- a/app/src/main/res/values/strings.xml	(date 1655851764161)
++++ b/app/src/main/res/values/strings.xml	(date 1655851764161)
+@@ -19,4 +19,7 @@
+     <string name="about_us">About us</string>
+     <string name="home">Home</string>
+     <string name="settings">Settings</string>
++    <string name="open">Open</string>
++    <string name="close">Close</string>
++    <string name="main_page">Башкы бет</string>
+ </resources>
+\ No newline at end of file
+Index: app/src/main/res/drawable/ic_line.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/drawable/ic_line.xml b/app/src/main/res/drawable/ic_line.xml
+new file mode 100644
+--- /dev/null	(date 1655851764205)
++++ b/app/src/main/res/drawable/ic_line.xml	(date 1655851764205)
+@@ -0,0 +1,9 @@
++<vector xmlns:android="http://schemas.android.com/apk/res/android"
++    android:width="0.1102dp"
++    android:height="6.35dp"
++    android:viewportWidth="0.01"
++    android:viewportHeight="0.35">
++  <path
++      android:pathData="M0.005,0L0.005,0A0.005,0.175 0,0 1,0.01 0.175L0.01,0.175A0.005,0.175 0,0 1,0.005 0.35L0.005,0.35A0.005,0.175 0,0 1,0 0.175L0,0.175A0.005,0.175 0,0 1,0.005 0z"
++      android:fillColor="#000000"/>
++</vector>
+Index: app/src/main/res/drawable/ic_fragment_bg.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/drawable/ic_fragment_bg.xml b/app/src/main/res/drawable/ic_fragment_bg.xml
+new file mode 100644
+--- /dev/null	(date 1655851764210)
++++ b/app/src/main/res/drawable/ic_fragment_bg.xml	(date 1655851764210)
+@@ -0,0 +1,37 @@
++<vector xmlns:android="http://schemas.android.com/apk/res/android"
++    android:width="96.4893dp"
++    android:height="106.013dp"
++    android:viewportWidth="352.32"
++    android:viewportHeight="387.09">
++  <path
++      android:pathData="M47.35,0l257.62,0c26.04,0 47.35,21.31 47.35,47.35l0,339.74 -352.32,0 0,-339.74c0,-26.04 21.31,-47.35 47.35,-47.35z"
++      android:fillColor="#E6E6E6"/>
++  <group>
++    <clip-path
++        android:pathData="M47.35,0l257.62,0c26.04,0 47.35,21.31 47.35,47.35l0,339.74 -352.32,0 0,-339.74c0,-26.04 21.31,-47.35 47.35,-47.35z"/>
++    <path
++        android:pathData="M-408.2,306.01c0.72,-1.01 1.71,-0.18 2.43,-1.46 -1.12,0.31 -2.57,0.53 -3.85,-0.1 -0.91,-0.45 -0.85,-1.22 -1.45,-1.79 -0.7,1.73 -0.05,2.19 1.74,2.86l-0.31,2.98c-0.31,0.58 -0.88,0.24 -0.68,1.21 0.27,1.28 2.42,1.03 -1.08,2.71 -1.04,0.5 -1.42,0.92 -1.54,1.95 -0.4,3.4 1.25,2.39 -2.4,4.19 0.04,0.85 0.65,1.53 0.42,2.89 -0.2,1.19 -0.85,0.88 -0.72,2.42 0.08,1.05 0.2,0.65 0.48,1.22 0.79,1.58 0.3,15.2 0.14,16.17l-3.06,0.09c0.56,1.21 2.75,2.56 3.09,3.7 0.33,1.11 0.07,4.18 0.07,5.5 0,1.77 0.48,3.92 -0.82,5.26 -1.41,1.45 -0.79,3.29 -0.88,5.1 -1.02,0.36 -1.75,-0.04 -1.96,0.66l0.01,20.57 285.46,-0.01 -0.09,-6.44c-2.29,-0.75 -1.84,-0.39 -2.24,-2.47l-1.75,-0.27 -0.1,-1.25 -2.39,-0.21c1.95,-0.87 4.42,-1.8 4.8,-3.77 0.81,-4.13 -6.98,-5.21 -10.91,-6.92 -1.68,-0.73 -3.41,-1.71 -3.28,-3.04 0.1,-0.96 -0.45,-0.17 0.84,-0.81 -1.03,-0.08 -1.11,-0.17 -1.66,-0.45 0.86,2.69 -0.37,3.24 -3.17,4.42 -4.23,1.77 -11.62,2.77 -10.56,6.98 0.46,1.84 2.67,2.59 4.69,3.59 -0.76,0.28 -1.23,0.17 -2.39,0.18l-0.34,1.43 -6.94,-0 -0.07,-1.78 -5.12,-0.07c0.79,-0.59 4.16,-1.86 5.73,-2.84 1.63,-1.02 3.13,-2.32 3.68,-4.11 2.79,-9.17 -18.34,-10.39 -25.19,-15.92 -0.38,-0.31 -0.28,-0.23 -0.55,-0.55 -1.23,-1.42 0.17,-0.68 -0.81,-3.56l0.93,-0.47c-1.42,-0.35 -1.76,-0.66 -2.24,-1.59 -0.91,1.35 1.03,1.24 0.27,3.7 -0.5,1.63 1.59,1.68 -4.5,4.52 -7.1,3.31 -22.98,5.9 -21.68,13.36 0.87,4.96 7.49,5.83 9.45,7.49l-5.17,0.16 -0.04,1.7 -7.1,-0.09 -0.15,-1.35 -2.42,-0.07c1.81,-0.99 4.26,-1.73 4.79,-3.68 1.12,-4.12 -6.16,-5.23 -10.21,-6.87 -2.04,-0.83 -5.46,-2.55 -3.18,-4.11 -1.21,-0.13 -0.89,-0.06 -1.58,-0.45 1.04,2.74 -0.71,3.41 -3.38,4.52 -1.62,0.67 -5.77,2.22 -7.42,2.61 -0.04,-3.45 0.27,-1.99 -1.95,-2.72 -0.07,-0.96 -0.04,-1.92 -0.03,-2.88 0.06,-3.69 -1.8,0.35 -1.8,-7.49 0,-1.12 -0.23,-4.83 0.12,-5.65 0.45,-1.09 2.61,-2.29 3.13,-3.6l-3.18,-0.05c-0.13,-1.18 -0.48,-14.22 -0.01,-15.81 0.13,-0.45 0.22,-0.44 0.25,-0.5 0.89,-1.67 -0.21,-2.3 -0.33,-3.71 -0.09,-1.07 0.26,-1.69 0.64,-2.48l-2.68,-1.34c-0.15,-1.31 0.4,-3.06 -0.41,-4.16 -0.64,-0.87 -2.23,-1.3 -3.11,-2.4 0.7,-1.03 -0.18,0.23 0.62,-0.61 1.06,-1.1 -0.01,-1.08 -0.29,-1.86l-0.03,-0.32c-0,-0.05 0.02,-0.12 0.02,-0.17 0.02,-0.64 -0.55,-1.18 -0.36,-1.89 0.53,-0.93 1.5,-0.2 2.59,-1.47 -1.22,0.28 -2.45,0.57 -3.83,-0.04 -0.7,-0.31 -0.86,-0.75 -1.28,-1.21 -0.26,-0.28 -0.24,-0.27 -0.47,-0.44 -0.32,1.94 0.12,1.77 1.94,2.71 0.13,1.26 -0.34,1.46 -0.31,2.34l-0,0.49c-0.01,0.04 -0.05,0.1 -0.07,0.14 -0.32,0.57 -0.92,0.22 -0.67,1.14 0.24,0.88 0.69,0.61 1.08,1.19 -1.23,1.53 -2.61,1.43 -3.32,2.44 -0.63,0.89 -0.27,3.11 -0.38,4.22 -1.18,0.4 -1.64,0.65 -2.45,1.28 0.45,0.96 0.32,-0.17 0.56,1.1 0.37,1.99 -0.97,2.29 -0.79,3.97 0.12,1.14 0.29,0.71 0.58,1.23 0.67,1.24 0.22,2.97 0.22,4.28 0,3.76 0.35,8.2 -0.06,11.88l-3.15,0.04c0.5,1.3 2.85,2.7 3.16,3.77 0.33,1.11 0.06,4.37 0.06,5.7 0,2.03 0.52,3.53 -1.01,5.08 -1.41,1.44 -0.6,3.47 -0.85,5.22l-3.83,0.01 -0.23,-1.79 -2.75,-0.05 1.86,-1.04c1.9,-0.84 3.45,-2.03 3.75,-3.69 0.9,-4.94 -7.65,-6.08 -12.63,-8.14 -1.2,-0.5 -2.64,-1.09 -3.54,-1.78 -0.69,-0.53 -0.76,-0.75 -0.81,-1.56 -0.08,-1.29 -0.32,-0.99 0.77,-1.37 -1.72,-0.49 -0.82,-0.22 -2.01,-0.86 0.27,1.04 1.06,2.19 0.07,3.42 -0.41,0.51 -2.58,1.61 -3.55,2.02 -2.62,1.11 -5.87,1.99 -8.54,3.1 -2.39,1 -5.31,2.63 -4.38,5.55 0.91,2.83 4.71,3.08 5.88,4.4l-3.16,0.03 -0.12,1.76 -8.66,-0.04 -0.04,-2.19 -6.65,-0.06c0.19,-0.18 3.33,-1.32 3.65,-1.46 1.49,-0.63 2.22,-1.03 3.47,-1.83 8.61,-5.49 4.93,-11.74 -3.73,-15.33 -5.23,-2.17 -19.85,-6.04 -22.66,-9.57 -1.35,-1.7 0.22,-0.91 -0.56,-2.69 -0.08,-0.19 -0.31,-1.14 -0.25,-1.41 0.24,-0.94 -0.04,-0.22 0.44,-0.5l0.78,-0.32c0.05,-0.09 0.21,-0.06 0.3,-0.11 -2.96,-0.07 -2.21,-0.63 -3.4,-1.71 -0.83,1.48 1.4,1.84 0.81,3.76 -0.76,2.49 0.01,0.94 -0.03,1.95 -0,0.07 -0.76,1.16 -1.03,1.41 -0.42,0.4 -0.95,0.7 -1.54,1.03 -11.13,6.16 -31.57,8.46 -29.28,18.09 0.78,3.31 4.1,5.47 8.06,7.15 0.67,0.29 3.24,1.11 3.66,1.57l-6.51,0.01 -0.06,2.22 -8.69,0.01 -0.1,-1.75 -3.07,-0.04c0.3,-0.36 2.85,-1.45 3.54,-1.89 4.62,-2.97 2.21,-6.23 -2.27,-8.11 -2.95,-1.24 -10.47,-3.12 -12.04,-5.15 -0.39,-0.51 -0.35,-0.78 -0.33,-1.4 0.04,-1.13 -0.45,-0.69 0.92,-1.17 -1.58,-0.12 -1.53,-0.22 -1.87,-1.08 -1.21,1.97 3.26,2.62 -3.42,5.6 -4.9,2.18 -15.03,3.5 -13.27,8.79 0.97,2.9 4.57,3.04 6.03,4.4l-3.28,0.11 -0.15,1.71 -3.85,-0.02c-0.19,-0.92 -0.12,-1.87 -0.11,-2.8 0.08,-4.18 -1.79,0.35 -1.79,-7.49 0,-1.37 -0.27,-4.56 0.07,-5.72 0.37,-1.28 2.6,-2.41 3.19,-3.75l-3.16,-0.02c-0.2,-1.37 -0.64,-14.69 0.25,-16.35 0.79,-1.47 -0.24,-2.37 -0.36,-3.69 -0.1,-1.04 0.4,-1.92 0.45,-2.68l-2.47,-1.06c-0.14,-1.14 0.18,-2.88 -0.23,-3.87 -0.56,-1.37 -1.58,-0.96 -2.73,-2.05 -1.49,-1.41 1.3,-1.2 0.12,-2.7 -1.01,-1.29 -0.35,0.01 -0.37,-1.31 -0.01,-0.8 -0.31,-0.55 -0.35,-1.56z"
++        android:fillColor="#015B38"/>
++  </group>
++  <group>
++    <clip-path
++        android:pathData="M47.35,0l257.62,0c26.04,0 47.35,21.31 47.35,47.35l0,339.74 -352.32,0 0,-339.74c0,-26.04 21.31,-47.35 47.35,-47.35z"/>
++    <path
++        android:pathData="M-134.34,375.62h73.58v7.33h-73.58z"
++        android:fillColor="#015B38"/>
++  </group>
++  <group>
++    <clip-path
++        android:pathData="M47.35,0l257.62,0c26.04,0 47.35,21.31 47.35,47.35l0,339.74 -352.32,0 0,-339.74c0,-26.04 21.31,-47.35 47.35,-47.35z"/>
++    <path
++        android:pathData="M7.63,264.92c0.72,-1.63 1.71,-0.3 2.43,-2.37 -1.12,0.5 -2.57,0.86 -3.85,-0.16 -0.91,-0.72 -0.85,-1.97 -1.45,-2.89 -0.7,2.8 -0.05,3.55 1.74,4.62l-0.31,4.82c-0.31,0.95 -0.88,0.38 -0.68,1.96 0.27,2.08 2.42,1.66 -1.08,4.38 -1.04,0.81 -1.42,1.49 -1.54,3.16 -0.4,5.5 1.25,3.86 -2.4,6.78 0.04,1.38 0.65,2.48 0.42,4.68 -0.2,1.92 -0.85,1.43 -0.72,3.91 0.08,1.7 0.2,1.05 0.48,1.97 0.79,2.55 0.3,24.59 0.14,26.17l-3.06,0.15c0.56,1.95 2.75,4.14 3.09,5.98 0.33,1.8 0.07,6.77 0.07,8.9 0,2.86 0.48,6.35 -0.82,8.51 -1.41,2.35 -0.79,5.32 -0.88,8.26 -1.02,0.58 -1.75,-0.06 -1.96,1.07l0.01,33.28 285.46,-0.02 -0.09,-10.42c-2.29,-1.21 -1.84,-0.62 -2.24,-3.99l-1.75,-0.43 -0.1,-2.02 -2.39,-0.34c1.95,-1.41 4.42,-2.91 4.8,-6.1 0.81,-6.68 -6.98,-8.44 -10.91,-11.19 -1.68,-1.18 -3.41,-2.76 -3.28,-4.91 0.1,-1.55 -0.45,-0.28 0.84,-1.32 -1.03,-0.13 -1.11,-0.27 -1.66,-0.72 0.86,4.35 -0.37,5.25 -3.17,7.14 -4.23,2.87 -11.62,4.49 -10.56,11.29 0.46,2.98 2.67,4.2 4.69,5.81 -0.76,0.45 -1.23,0.28 -2.39,0.3l-0.34,2.32 -6.94,-0 -0.07,-2.88 -5.12,-0.12c0.79,-0.96 4.16,-3.01 5.73,-4.59 1.63,-1.64 3.13,-3.75 3.68,-6.66 2.79,-14.84 -18.34,-16.82 -25.19,-25.76 -0.38,-0.5 -0.28,-0.38 -0.55,-0.9 -1.23,-2.29 0.17,-1.1 -0.81,-5.76l0.93,-0.76c-1.42,-0.56 -1.76,-1.07 -2.24,-2.58 -0.91,2.18 1.03,2 0.27,5.98 -0.5,2.64 1.59,2.72 -4.5,7.31 -7.1,5.35 -22.98,9.55 -21.68,21.61 0.87,8.02 7.49,9.44 9.45,12.11l-5.17,0.26 -0.04,2.75 -7.1,-0.15 -0.15,-2.19 -2.42,-0.12c1.81,-1.61 4.26,-2.8 4.79,-5.95 1.12,-6.67 -6.16,-8.46 -10.21,-11.12 -2.04,-1.34 -5.46,-4.13 -3.18,-6.66 -1.21,-0.21 -0.89,-0.09 -1.58,-0.73 1.04,4.44 -0.71,5.51 -3.38,7.31 -1.62,1.09 -5.77,3.6 -7.42,4.22 -0.04,-5.58 0.27,-3.22 -1.95,-4.39 -0.07,-1.55 -0.04,-3.1 -0.03,-4.65 0.06,-5.96 -1.8,0.57 -1.8,-12.12 0,-1.82 -0.23,-7.82 0.12,-9.15 0.45,-1.76 2.61,-3.7 3.13,-5.82l-3.18,-0.09c-0.13,-1.9 -0.48,-23.01 -0.01,-25.58 0.13,-0.73 0.22,-0.71 0.25,-0.8 0.89,-2.7 -0.21,-3.73 -0.33,-6.01 -0.09,-1.73 0.26,-2.73 0.64,-4.01l-2.68,-2.16c-0.15,-2.12 0.4,-4.95 -0.41,-6.73 -0.64,-1.41 -2.23,-2.11 -3.11,-3.89 0.7,-1.67 -0.18,0.37 0.62,-0.99 1.06,-1.78 -0.01,-1.75 -0.29,-3.01l-0.03,-0.51c-0,-0.08 0.02,-0.19 0.02,-0.28 0.02,-1.03 -0.55,-1.9 -0.36,-3.06 0.53,-1.51 1.5,-0.32 2.59,-2.38 -1.22,0.45 -2.45,0.92 -3.83,-0.06 -0.7,-0.5 -0.86,-1.21 -1.28,-1.95 -0.26,-0.46 -0.24,-0.43 -0.47,-0.71 -0.32,3.15 0.12,2.86 1.94,4.39 0.13,2.04 -0.34,2.37 -0.31,3.78l-0,0.79c-0.01,0.07 -0.05,0.17 -0.07,0.23 -0.32,0.93 -0.92,0.36 -0.67,1.84 0.24,1.42 0.69,0.99 1.08,1.93 -1.23,2.48 -2.61,2.32 -3.32,3.95 -0.63,1.44 -0.27,5.03 -0.38,6.82 -1.18,0.65 -1.64,1.05 -2.45,2.07 0.45,1.55 0.32,-0.28 0.56,1.79 0.37,3.21 -0.97,3.7 -0.79,6.42 0.12,1.85 0.29,1.14 0.58,1.99 0.67,2.01 0.22,4.8 0.22,6.93 0,6.08 0.35,13.26 -0.06,19.23l-3.15,0.06c0.5,2.11 2.85,4.37 3.16,6.1 0.33,1.79 0.06,7.07 0.06,9.22 0,3.29 0.52,5.71 -1.01,8.22 -1.41,2.32 -0.6,5.62 -0.85,8.45l-3.83,0.02 -0.23,-2.9 -2.75,-0.08 1.86,-1.68c1.9,-1.36 3.45,-3.28 3.75,-5.97 0.9,-7.99 -7.65,-9.83 -12.63,-13.18 -1.2,-0.81 -2.64,-1.76 -3.54,-2.88 -0.69,-0.85 -0.76,-1.22 -0.81,-2.52 -0.08,-2.08 -0.32,-1.6 0.77,-2.21 -1.72,-0.79 -0.82,-0.36 -2.01,-1.39 0.27,1.69 1.06,3.55 0.07,5.53 -0.41,0.82 -2.58,2.6 -3.55,3.26 -2.62,1.8 -5.87,3.22 -8.54,5.02 -2.39,1.61 -5.31,4.26 -4.38,8.98 0.91,4.58 4.71,4.98 5.88,7.12l-3.16,0.04 -0.12,2.85 -8.66,-0.07 -0.04,-3.55 -6.65,-0.1c0.19,-0.29 3.33,-2.14 3.65,-2.36 1.49,-1.03 2.22,-1.67 3.47,-2.95 8.61,-8.88 4.93,-18.99 -3.73,-24.81 -5.23,-3.51 -19.85,-9.78 -22.66,-15.49 -1.35,-2.75 0.22,-1.47 -0.56,-4.35 -0.08,-0.31 -0.31,-1.85 -0.25,-2.28 0.24,-1.53 -0.04,-0.36 0.44,-0.82l0.78,-0.51c0.05,-0.15 0.21,-0.1 0.3,-0.18 -2.96,-0.12 -2.21,-1.02 -3.4,-2.76 -0.83,2.39 1.4,2.98 0.81,6.09 -0.76,4.03 0.01,1.51 -0.03,3.15 -0,0.12 -0.76,1.87 -1.03,2.29 -0.42,0.66 -0.95,1.13 -1.54,1.66 -11.13,9.97 -31.57,13.69 -29.28,29.28 0.78,5.35 4.1,8.85 8.06,11.57 0.67,0.46 3.24,1.79 3.66,2.54l-6.51,0.02 -0.06,3.6 -8.69,0.02 -0.1,-2.83 -3.07,-0.07c0.3,-0.58 2.85,-2.34 3.54,-3.06 4.62,-4.8 2.21,-10.08 -2.27,-13.13 -2.95,-2.01 -10.47,-5.04 -12.04,-8.33 -0.39,-0.82 -0.35,-1.26 -0.33,-2.26 0.04,-1.83 -0.45,-1.12 0.92,-1.89 -1.58,-0.19 -1.53,-0.35 -1.87,-1.75 -1.21,3.18 3.26,4.23 -3.42,9.06 -4.9,3.54 -15.03,5.66 -13.27,14.22 0.97,4.7 4.57,4.93 6.03,7.11l-3.28,0.18 -0.15,2.77 -3.85,-0.04c-0.19,-1.49 -0.12,-3.03 -0.11,-4.54 0.08,-6.77 -1.79,0.56 -1.79,-12.12 0,-2.21 -0.27,-7.38 0.07,-9.25 0.37,-2.06 2.6,-3.9 3.19,-6.07l-3.16,-0.04c-0.2,-2.22 -0.64,-23.78 0.25,-26.46 0.79,-2.38 -0.24,-3.84 -0.36,-5.97 -0.1,-1.68 0.4,-3.11 0.45,-4.34l-2.47,-1.71c-0.14,-1.84 0.18,-4.67 -0.23,-6.27 -0.56,-2.21 -1.58,-1.55 -2.73,-3.32 -1.49,-2.28 1.3,-1.94 0.12,-4.38 -1.01,-2.09 -0.35,0.01 -0.37,-2.12 -0.01,-1.29 -0.31,-0.89 -0.35,-2.52z"
++        android:fillColor="#015B38"/>
++  </group>
++  <group>
++    <clip-path
++        android:pathData="M47.35,0l257.62,0c26.04,0 47.35,21.31 47.35,47.35l0,339.74 -352.32,0 0,-339.74c0,-26.04 21.31,-47.35 47.35,-47.35z"/>
++    <path
++        android:pathData="M281.48,377.56h73.58v11.85h-73.58z"
++        android:fillColor="#015B38"/>
++  </group>
++</vector>
+Index: app/src/main/res/drawable/ic_telegram_logo.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/drawable/ic_telegram_logo.xml b/app/src/main/res/drawable/ic_telegram_logo.xml
+new file mode 100644
+--- /dev/null	(date 1655851764201)
++++ b/app/src/main/res/drawable/ic_telegram_logo.xml	(date 1655851764201)
+@@ -0,0 +1,18 @@
++<vector xmlns:android="http://schemas.android.com/apk/res/android"
++    android:width="256dp"
++    android:height="256dp"
++    android:viewportWidth="256"
++    android:viewportHeight="256">
++  <path
++      android:pathData="M128,0C57.307,0 0,57.307 0,128L0,128C0,198.693 57.307,256 128,256L128,256C198.693,256 256,198.693 256,128L256,128C256,57.307 198.693,0 128,0L128,0Z"
++      android:fillColor="#40B3E0"/>
++  <path
++      android:pathData="M190.283,73.631L167.421,188.898C167.421,188.898 164.224,196.892 155.431,193.055L102.673,152.607L83.489,143.335L51.195,132.463C51.195,132.463 46.239,130.705 45.759,126.868C45.28,123.031 51.355,120.953 51.355,120.953L179.731,70.593C179.731,70.593 190.283,65.957 190.283,73.631"
++      android:fillColor="#FFFFFF"/>
++  <path
++      android:pathData="M98.618,187.604C98.618,187.604 97.078,187.46 95.159,181.383C93.241,175.309 83.489,143.335 83.489,143.335L161.026,94.094C161.026,94.094 165.503,91.377 165.343,94.094C165.343,94.094 166.142,94.574 163.744,96.812C161.346,99.05 102.833,151.648 102.833,151.648"
++      android:fillColor="#D2E5F1"/>
++  <path
++      android:pathData="M122.901,168.115L102.034,187.141C102.034,187.141 100.402,188.379 98.618,187.603L102.614,152.262"
++      android:fillColor="#B5CFE4"/>
++</vector>
+Index: app/src/main/res/drawable/bg_button_outline.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/drawable/bg_button_outline.xml b/app/src/main/res/drawable/bg_button_outline.xml
+new file mode 100644
+--- /dev/null	(date 1655851764215)
++++ b/app/src/main/res/drawable/bg_button_outline.xml	(date 1655851764215)
+@@ -0,0 +1,11 @@
++<?xml version="1.0" encoding="utf-8"?>
++<shape
++    xmlns:android="http://schemas.android.com/apk/res/android"
++    android:shape="rectangle">
++    <corners android:radius="10dp"/>
++
++    <stroke android:width="01dp"
++        android:color="@color/dark_blue_1"
++        />
++
++</shape>
+\ No newline at end of file
+Index: app/src/main/java/com/zim/yiman_nuru/MainFragment.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/zim/yiman_nuru/MainFragment.kt b/app/src/main/java/com/zim/yiman_nuru/MainFragment.kt
+new file mode 100644
+--- /dev/null	(date 1655851631738)
++++ b/app/src/main/java/com/zim/yiman_nuru/MainFragment.kt	(date 1655851631738)
+@@ -0,0 +1,22 @@
++package com.zim.yiman_nuru
++
++import android.os.Bundle
++import androidx.fragment.app.Fragment
++import android.view.LayoutInflater
++import android.view.View
++import android.view.ViewGroup
++class MainFragment : Fragment() {
++
++    override fun onCreateView(
++        inflater: LayoutInflater, container: ViewGroup?,
++        savedInstanceState: Bundle?,
++    ): View? {
++        // Inflate the layout for this fragment
++        return inflater.inflate(R.layout.fragment_main, container, false)
++    }
++
++    companion object {
++        @JvmStatic
++        fun newInstance() = MainFragment()
++    }
++}
+\ No newline at end of file
+Index: app/src/main/java/com/zim/yiman_nuru/TasbihFragment.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/zim/yiman_nuru/TasbihFragment.kt b/app/src/main/java/com/zim/yiman_nuru/TasbihFragment.kt
+new file mode 100644
+--- /dev/null	(date 1655851667436)
++++ b/app/src/main/java/com/zim/yiman_nuru/TasbihFragment.kt	(date 1655851667436)
+@@ -0,0 +1,95 @@
++package com.zim.yiman_nuru
++
++import android.content.Intent
++import android.graphics.Color
++import android.media.MediaPlayer
++import android.os.Bundle
++import android.os.Handler
++import android.os.Looper
++import androidx.fragment.app.Fragment
++import android.view.LayoutInflater
++import android.view.View
++import android.view.ViewGroup
++import android.widget.ImageView
++import android.widget.TextView
++import android.widget.Toast
++import com.google.android.material.dialog.MaterialAlertDialogBuilder
++import kotlinx.coroutines.Runnable
++
++class TasbihFragment : Fragment() {
++    private lateinit var handler: Handler
++    override fun onCreateView(
++        inflater: LayoutInflater, container: ViewGroup?,
++        savedInstanceState: Bundle?,
++    ): View? {
++        return inflater.inflate(R.layout.fragment_tasbih, container, false)
++    }
++
++//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
++//        super.onViewCreated(view, savedInstanceState)
++//        var i: Int = 0
++//        var count = 0
++//        val btn_talking_tasbih_count: ImageView = view.findViewById(R.id.talking_tasbih_count)
++//        val count_tasbih_view: TextView = view.findViewById(R.id.count_tasbih_view)
++//
++//        val talking_tasbih_change: ImageView = view.findViewById(R.id.talking_tasbih_change)
++//        val mediaSubhaanallah: MediaPlayer = MediaPlayer.create(activity, R.raw.subhaanallah)
++//        val mediaAlhamdulillah: MediaPlayer = MediaPlayer.create(activity, R.raw.alhamdulillah)
++//        val mediaAllohuakbar: MediaPlayer = MediaPlayer.create(activity, R.raw.allohuakbar)
++//        val talking_tasbih_volume_up: ImageView = view.findViewById(R.id.talking_tasbih_volume_up)
++//        val talking_tasbih_volume_off: ImageView = view.findViewById(R.id.talking_tasbih_volume_off)
++//        talking_tasbih_volume_up.setOnClickListener {
++//            mediaSubhaanallah.setVolume(0f, 0f)
++//            mediaAlhamdulillah.setVolume(0f, 0f)
++//            mediaAllohuakbar.setVolume(0f, 0f)
++//            talking_tasbih_volume_up.setVisibility(View.INVISIBLE)
++//            talking_tasbih_volume_off.setVisibility(View.VISIBLE)
++//        }
++//        talking_tasbih_volume_off.setOnClickListener {
++//            mediaSubhaanallah.setVolume(0.7f, 0.7f)
++//            mediaAlhamdulillah.setVolume(0.7f, 0.7f)
++//            mediaAllohuakbar.setVolume(0.7f, 0.7f)
++//            talking_tasbih_volume_up.setVisibility(View.VISIBLE)
++//            talking_tasbih_volume_off.setVisibility(View.INVISIBLE)
++//        }
++//        talking_tasbih_change.setOnClickListener{
++//                i++
++//                handler = Handler(Looper.getMainLooper())
++//                val runn = Runnable { i = 0}
++//                if (i == 1){
++//                    Toast.makeText(context, "Өчүрүү үчүн эки жолу басыңыз!", Toast.LENGTH_SHORT).show()
++//                    handler.postDelayed(runn, 500)
++//                }else if (i == 2){
++//                    count = 0
++//                    count_tasbih_view.text = "${count}"
++//                } else{
++//                    i = 0
++//                }
++//
++//        }
++//        btn_talking_tasbih_count.setOnClickListener {
++//            count++
++//            count_tasbih_view.text = "${count}"
++//            if (count in 0 .. 33){
++//                if (count == 1){
++//                    mediaSubhaanallah.start()
++//                }else if (count == 33){
++//                    mediaAlhamdulillah.start()
++//                }
++//            }else if (count in 34 .. 66) {
++//                if (count == 66){
++//                    mediaAllohuakbar.start()
++//                }
++//            }else if (count in 67 .. 99){
++//            }
++//
++//        }
++//
++//    }
++
++    companion object {
++        @JvmStatic
++        fun newInstance() = TasbihFragment()
++    }
++}
++
+Index: app/src/main/java/com/zim/yiman_nuru/AllahtynYsymdary.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/zim/yiman_nuru/AllahtynYsymdary.kt b/app/src/main/java/com/zim/yiman_nuru/AllahtynYsymdary.kt
+new file mode 100644
+--- /dev/null	(date 1655851631751)
++++ b/app/src/main/java/com/zim/yiman_nuru/AllahtynYsymdary.kt	(date 1655851631751)
+@@ -0,0 +1,11 @@
++package com.zim.yiman_nuru
++
++import androidx.appcompat.app.AppCompatActivity
++import android.os.Bundle
++
++class AllahtynYsymdary : AppCompatActivity() {
++    override fun onCreate(savedInstanceState: Bundle?) {
++        super.onCreate(savedInstanceState)
++        setContentView(R.layout.activity_allahtyn_ysymdary)
++    }
++}
+\ No newline at end of file
+Index: app/src/main/java/com/zim/yiman_nuru/ZikirTypesFragment.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/zim/yiman_nuru/ZikirTypesFragment.kt b/app/src/main/java/com/zim/yiman_nuru/ZikirTypesFragment.kt
+new file mode 100644
+--- /dev/null	(date 1655851667428)
++++ b/app/src/main/java/com/zim/yiman_nuru/ZikirTypesFragment.kt	(date 1655851667428)
+@@ -0,0 +1,36 @@
++package com.zim.yiman_nuru
++
++import android.content.Intent
++import android.net.Uri
++import android.os.Bundle
++import androidx.fragment.app.Fragment
++import android.view.LayoutInflater
++import android.view.View
++import android.view.ViewGroup
++import android.widget.LinearLayout
++import android.widget.TextView
++
++class ZikirTypesFragment : Fragment() {
++
++    override fun onCreateView(
++        inflater: LayoutInflater, container: ViewGroup?,
++        savedInstanceState: Bundle?,
++    ): View? {
++        // Inflate the layout for this fragment
++        return inflater.inflate(R.layout.fragment_zikir_types, container, false)
++    }
++
++//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
++//        val my_telegram_btn: LinearLayout = view.findViewById(R.id.my_telegram_btn)
++//        my_telegram_btn.setOnClickListener {
++//            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://t.me/YimanNuruSupport"))
++//            startActivity(intent)
++//        }
++//        super.onViewCreated(view, savedInstanceState)
++//    }
++
++    companion object {
++        @JvmStatic
++        fun newInstance() = ZikirTypesFragment()
++    }
++}
+\ No newline at end of file
+Index: app/src/main/java/com/zim/yiman_nuru/AltySypat.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/zim/yiman_nuru/AltySypat.kt b/app/src/main/java/com/zim/yiman_nuru/AltySypat.kt
+--- a/app/src/main/java/com/zim/yiman_nuru/AltySypat.kt	(date 1655851764222)
++++ b/app/src/main/java/com/zim/yiman_nuru/AltySypat.kt	(date 1655851764222)
+@@ -17,14 +17,5 @@
+             val intent = Intent(Intent.ACTION_VIEW, Uri.parse("http://t.me/zukh_kamchybekov"))
+             startActivity(intent)
+         }
+-        // Вверные меню старт
+-//        val menu_btn: ImageView = findViewById(R.id.menu_btn)
+-//        menu_btn.setOnClickListener {
+-//            Toast.makeText(this, "Азырынча меню даяр эмес!", Toast.LENGTH_LONG).show()
+-//        }
+-//        back_btn.setOnClickListener {
+-//            finish()
+-//        }
+-        // Вверные меню енд
+     }
+ }
+\ No newline at end of file
+Index: app/src/main/java/com/zim/yiman_nuru/MainActivity.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/zim/yiman_nuru/MainActivity.kt b/app/src/main/java/com/zim/yiman_nuru/MainActivity.kt
+--- a/app/src/main/java/com/zim/yiman_nuru/MainActivity.kt	(date 1655851667438)
++++ b/app/src/main/java/com/zim/yiman_nuru/MainActivity.kt	(date 1655851667438)
+@@ -1,138 +1,154 @@
+ package com.zim.yiman_nuru
+ 
+-import android.app.Activity
+ import android.content.Intent
+ import androidx.appcompat.app.AppCompatActivity
+ import android.os.Bundle
+-import android.view.MenuItem
+-import android.view.View
+-import android.widget.ImageView
+-import android.widget.Toast
+-import android.widget.Toolbar
+-import androidx.cardview.widget.CardView
++import android.widget.*
++import androidx.appcompat.app.AppCompatDelegate
+ import androidx.core.view.GravityCompat
+ import androidx.drawerlayout.widget.DrawerLayout
+-import androidx.navigation.NavController
+-import androidx.navigation.ui.AppBarConfiguration
+ import com.google.android.material.navigation.NavigationView
++import com.zim.yiman_nuru.databinding.ActivityMainBinding
+ 
+ class MainActivity : AppCompatActivity() {
++    lateinit var binding: ActivityMainBinding
+     private lateinit var drawerLayout: DrawerLayout
+-    private lateinit var toolbar: Toolbar
+     override fun onCreate(savedInstanceState: Bundle?) {
+         super.onCreate(savedInstanceState)
+-        setSupportActionBar(findViewById(R.id.my_toolbar))
+-        setContentView(R.layout.activity_main)
+-//        toolbar = findViewById(R.id.my_toolbar)
+-        // Вверные меню старт
+-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+-        // Вверные меню енд
++        binding = ActivityMainBinding.inflate(layoutInflater)
++        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
++        setContentView(binding.root)
+         drawerLayout = findViewById(R.id.drawer)
+-        buttons()
+-
+-        // Вверные меню старт
+-//        val menu_btn: ImageView = findViewById(R.id.menu_btn)
+-//        menu_btn.setOnClickListener {
+-//            openDrawer(drawerLayout)
+-//        }
++        val navView: NavigationView = findViewById(R.id.navigation_view)
+ 
+-        // Вверные меню енд
+-
+-    }
+-
+-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+-        val itemView = item.itemId
+-        when (itemView){
+-            android.R.id.home -> finish()
+-            R.id.menu -> Toast.makeText(this, "Меню даяр эмес!", Toast.LENGTH_LONG).show()
+-        }
+-        return true
+-    }
+-
+-    fun clickMenu(view: View){
+-    openDrawer(drawerLayout)
+-    }
+-
+-    private fun openDrawer(drawerLayout: DrawerLayout) {
+-        drawerLayout.openDrawer(GravityCompat.START)
+-    }
+-
+-    fun clickLogo(view: View){
+-        closeDrawer(drawerLayout)
+-    }
+-
+-    private fun closeDrawer(drawerLayout: DrawerLayout) {
+-        if (drawerLayout.isDrawerOpen(GravityCompat.START)){
+-            drawerLayout.closeDrawer(GravityCompat.END)
++        // Вверхные меню старт
++        val menu_btn: ImageView = findViewById(R.id.btn_menu)
++        menu_btn.setOnClickListener {
++            drawerLayout.openDrawer(GravityCompat.START)
+         }
+-    }
++        // Вверхные меню енд
+ 
+-    fun clickHome(view: View){
+-        recreate()
+-    }
++        // боковое меню старт
+ 
+-    fun clickSettings(view: View){
+-        redirectActivity(this, Settings::class.java)
+-    }
+-
+-    fun clickAboutUs(view: View){
+-        redirectActivity(this, AboutUs::class.java)
+-    }
+-
+-
+-    private fun redirectActivity(activity: Activity, classes: Class<*>  ) {
+-        val intent = Intent(activity, classes::class.java)
+-        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+-        startActivity(intent)
++        navView.setNavigationItemSelectedListener {
++            when (it.itemId){
++                R.id.id_home_activity -> {
++                    Toast.makeText(this, "zukh", Toast.LENGTH_LONG).show()
++                }
++                R.id.id_about_us_activity -> {
++                    val intent = Intent(this, AboutUs::class.java)
++                    startActivity(intent)
++                }
++            }
++            drawerLayout.closeDrawer(GravityCompat.START)
++            true
++
++        }
++
++        // боковое меню енд
++
++//        mainFragment()
++        buttons()
++//        onClickHorizontalActivity()
++
+     }
++
++//    fun mainFragment(){
++//        val text_yiman_nuru: TextView = findViewById(R.id.text_yiman_nuru)
++//        supportFragmentManager
++//            .beginTransaction()
++//            .replace(R.id.place_holder, MainFragment.newInstance())
++//            .commit()
++//        text_yiman_nuru.text = "Yiman nuru"
++//    }
++//
++//    fun onClickHorizontalActivity() {
++//    val text_yiman_nuru: TextView = findViewById(R.id.text_yiman_nuru)
++//    val horizontal_btn_tasbih = findViewById<Button>(R.id.horizontal_btn_tasbih)
++//    val horizontal_btn_zikir = findViewById<Button>(R.id.horizontal_btn_zikir)
++//    val horizontal_btn_masnun_duba = findViewById<Button>(R.id.horizontal_btn_masnun_duba)
++//    val horizontal_btn_alty_sypat = findViewById<Button>(R.id.horizontal_btn_alty_sypat)
++//    val horizontal_btn_allahtyn_ysymdary = findViewById<Button>(R.id.horizontal_btn_allahtyn_ysymdary)
++//    val horizontal_btn_main = findViewById<Button>(R.id.horizontal_btn_main)
++//
++//
++//    horizontal_btn_main.setOnClickListener {
++//        supportFragmentManager
++//            .beginTransaction()
++//            .replace(R.id.place_holder, MainFragment.newInstance())
++//            .commit()
++//        text_yiman_nuru.text = "Yiman nuru"
++//    }
++//
++//    horizontal_btn_tasbih.setOnClickListener {
++//        supportFragmentManager
++//            .beginTransaction()
++//            .replace(R.id.place_holder, TasbihFragment.newInstance())
++//            .commit()
++//        text_yiman_nuru.text = "Tasbih"
++//    }
++//    horizontal_btn_zikir.setOnClickListener {
++//        supportFragmentManager
++//            .beginTransaction()
++//            .replace(R.id.place_holder, ZikirTypesFragment.newInstance())
++//            .commit()
++//        text_yiman_nuru.text = "Zikirdin turloru"
++//    }
++//    horizontal_btn_masnun_duba.setOnClickListener {
++//        startActivity(Intent(this, MasnunDubalar::class.java))
++//    }
++//    horizontal_btn_alty_sypat.setOnClickListener {
++//        startActivity(Intent(this, AltySypat::class.java))
++//    }
++//    horizontal_btn_allahtyn_ysymdary.setOnClickListener {
++//        startActivity(Intent(this, AllahtynYsymdary::class.java))
++//    }
++//
++//
++//}
+ 
+ 
+     fun buttons() {
+ 
+-        val btnIslam_test: CardView = findViewById(R.id.btn_islam_test)
+-        val btnMasnunDubalar: CardView = findViewById(R.id.btn_masnun_dubalar)
+-        val btnTasbih: CardView = findViewById(R.id.btn_tasbih)
+-        val btn_alty_sypat: CardView = findViewById(R.id.btn_alty_sypat)
+-        val btn_zikir: CardView = findViewById(R.id.btn_zikir)
+-        val btn_allanyn_ysymdary: CardView = findViewById(R.id.btn_allanyn_ysymdary)
+-
+-        btn_allanyn_ysymdary.setOnClickListener {
+-            Toast.makeText(this, "Азыркы учурда бул баракча даяр эмес!", Toast.LENGTH_LONG).show()
+-        }
+-
+-        btn_zikir.setOnClickListener {
+-            val intent = Intent(this, Zikir::class.java)
+-            startActivity(intent)
+-        }
+-//        val btn_namaz: CardView = findViewById(R.id.btn_namaz)
+-
+-//        btn_namaz.setOnClickListener {
+-//            Toast.makeText(this, "Азыркы учурда бул баракча түзүүчүлөр тараптан иштелип жатат кудай буюрса тиркеменин кийинки версияларында даяр болот.", Toast.LENGTH_LONG).show()
++//        val btnIslam_test: CardView = findViewById(R.id.btn_islam_test)
++//        val btnMasnunDubalar: CardView = findViewById(R.id.btn_masnun_dubalar)
++//        val btnTasbih: CardView = findViewById(R.id.btn_tasbih)
++//        val btn_alty_sypat: CardView = findViewById(R.id.btn_alty_sypat)
++//        val btn_zikir: CardView = findViewById(R.id.btn_zikir)
++//        val btn_allanyn_ysymdary: CardView = findViewById(R.id.btn_allanyn_ysymdary)
++//
++//        btn_allanyn_ysymdary.setOnClickListener {
++//            Toast.makeText(this, "Азыркы учурда бул баракча даяр эмес!", Toast.LENGTH_LONG).show()
+ //        }
+-
+-        btn_alty_sypat.setOnClickListener{
+-            val intent = Intent(this, AltySypat::class.java)
+-            startActivity(intent)
+-        }
+-        btnIslam_test.setOnClickListener{
+-//            val intent = Intent(this, IslamTest::class.java)
++//
++//        btn_zikir.setOnClickListener {
++//            val intent = Intent(this, Zikir::class.java)
+ //            startActivity(intent)
+-            Toast.makeText(this, "Азыркы учурда бул баракча даяр эмес!", Toast.LENGTH_LONG).show()
+-        }
+-        btnMasnunDubalar.setOnClickListener{
+-//            val intent = Intent(this, MasnunDubalar::class.java)
++//        }
++////        val btn_namaz: CardView = findViewById(R.id.btn_namaz)
++//
++////        btn_namaz.setOnClickListener {
++////            Toast.makeText(this, "Азыркы учурда бул баракча түзүүчүлөр тараптан иштелип жатат кудай буюрса тиркеменин кийинки версияларында даяр болот.", Toast.LENGTH_LONG).show()
++////        }
++//
++//        btn_alty_sypat.setOnClickListener{
++//            val intent = Intent(this, AltySypat::class.java)
+ //            startActivity(intent)
+-            Toast.makeText(this, "Азыркы учурда бул баракча даяр эмес!", Toast.LENGTH_LONG).show()
+-        }
+-        btnTasbih.setOnClickListener{
+-            val intent = Intent(this, Tasbih::class.java)
+-            startActivity(intent)
+-        }
+-    }
+-
+-    override fun onPause() {
+-        super.onPause()
+-        closeDrawer(drawerLayout)
++//        }
++//        btnIslam_test.setOnClickListener{
++////            val intent = Intent(this, IslamTest::class.java)
++////            startActivity(intent)
++//            Toast.makeText(this, "Азыркы учурда бул баракча даяр эмес!", Toast.LENGTH_LONG).show()
++//        }
++//        btnMasnunDubalar.setOnClickListener{
++////            val intent = Intent(this, MasnunDubalar::class.java)
++////            startActivity(intent)
++//            Toast.makeText(this, "Азыркы учурда бул баракча даяр эмес!", Toast.LENGTH_LONG).show()
++//        }
++//        btnTasbih.setOnClickListener{
++//            val intent = Intent(this, Tasbih::class.java)
++//            startActivity(intent)
++//        }
+     }
+ 
+ }
+\ No newline at end of file
+Index: app/src/main/java/com/zim/yiman_nuru/MasnunDubalar.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/zim/yiman_nuru/MasnunDubalar.kt b/app/src/main/java/com/zim/yiman_nuru/MasnunDubalar.kt
+--- a/app/src/main/java/com/zim/yiman_nuru/MasnunDubalar.kt	(date 1655851764217)
++++ b/app/src/main/java/com/zim/yiman_nuru/MasnunDubalar.kt	(date 1655851764217)
+@@ -3,10 +3,6 @@
+ import androidx.appcompat.app.AppCompatActivity
+ import android.os.Bundle
+ import android.view.WindowManager
+-import android.widget.Toast
+-import com.google.firebase.database.*
+-import java.lang.ref.Reference
+-import com.zim.yiman_nuru.Data as Data1
+ 
+ class MasnunDubalar : AppCompatActivity() {
+     override fun onCreate(savedInstanceState: Bundle?) {
+Index: app/src/main/java/com/zim/yiman_nuru/AboutUs.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/zim/yiman_nuru/AboutUs.kt b/app/src/main/java/com/zim/yiman_nuru/AboutUs.kt
+--- a/app/src/main/java/com/zim/yiman_nuru/AboutUs.kt	(date 1655851631753)
++++ b/app/src/main/java/com/zim/yiman_nuru/AboutUs.kt	(date 1655851631753)
+@@ -2,10 +2,13 @@
+ 
+ import androidx.appcompat.app.AppCompatActivity
+ import android.os.Bundle
++import android.view.Window
++import androidx.appcompat.app.AppCompatDelegate
+ 
+ class AboutUs : AppCompatActivity() {
+     override fun onCreate(savedInstanceState: Bundle?) {
+         super.onCreate(savedInstanceState)
++        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+         setContentView(R.layout.activity_about_us)
+     }
+ }
+\ No newline at end of file
+Index: app/src/main/java/com/zim/yiman_nuru/Data.kt
+===================================================================
+diff --git a/app/src/main/java/com/zim/yiman_nuru/Data.kt b/app/src/main/java/com/zim/yiman_nuru/Data.kt
+deleted file mode 100644
+--- a/app/src/main/java/com/zim/yiman_nuru/Data.kt	(date 0)
++++ /dev/null	(date 0)
+@@ -1,15 +0,0 @@
+-package com.zim.yiman_nuru
+-
+-class Data{
+-    var title: String? = null
+-    var fullText: String? = null
+-    constructor(){}
+-
+-    constructor(
+-        title: String?,
+-        fullText: String?
+-    ){
+-        this.title = title
+-        this.fullText = fullText
+-    }
+-}
+\ No newline at end of file
+Index: app/src/main/java/com/zim/yiman_nuru/Zikir.kt
+===================================================================
+diff --git a/app/src/main/java/com/zim/yiman_nuru/Zikir.kt b/app/src/main/java/com/zim/yiman_nuru/Zikir.kt
+deleted file mode 100644
+--- a/app/src/main/java/com/zim/yiman_nuru/Zikir.kt	(date 0)
++++ /dev/null	(date 0)
+@@ -1,46 +0,0 @@
+-package com.zim.yiman_nuru
+-
+-import android.annotation.SuppressLint
+-import android.content.Intent
+-import android.net.Uri
+-import androidx.appcompat.app.AppCompatActivity
+-import android.os.Bundle
+-import android.view.Menu
+-import android.view.MenuItem
+-import android.widget.ImageView
+-import android.widget.LinearLayout
+-import android.widget.TextView
+-import android.widget.Toast
+-import androidx.appcompat.widget.Toolbar
+-
+-class Zikir : AppCompatActivity() {
+-    override fun onCreate(savedInstanceState: Bundle?) {
+-        super.onCreate(savedInstanceState)
+-        setContentView(R.layout.activity_zikir)
+-        val my_telegram_btn: TextView = findViewById(R.id.my_telegram_btn)
+-        // Вверные меню старт
+-        setSupportActionBar(findViewById(R.id.my_toolbar))
+-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+-        supportActionBar?.title = "Yiman Nuru"
+-        supportActionBar?.subtitle = "MyApp"
+-        // Вверные меню енд
+-        my_telegram_btn.setOnClickListener {
+-            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("http://t.me/zukh_kamchybekov"))
+-            startActivity(intent)
+-        }
+-    }
+-
+-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+-        menuInflater.inflate(R.menu.menu, menu)
+-        return true
+-    }
+-
+-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+-        val itemView = item.itemId
+-        when (itemView){
+-            android.R.id.home -> finish()
+-            R.id.menu -> Toast.makeText(this, "Меню даяр эмес!", Toast.LENGTH_LONG).show()
+-        }
+-        return true
+-    }
+-}
+\ No newline at end of file
+Index: app/src/main/java/com/zim/yiman_nuru/Tasbih.kt
+===================================================================
+diff --git a/app/src/main/java/com/zim/yiman_nuru/Tasbih.kt b/app/src/main/java/com/zim/yiman_nuru/Tasbih.kt
+deleted file mode 100644
+--- a/app/src/main/java/com/zim/yiman_nuru/Tasbih.kt	(date 0)
++++ /dev/null	(date 0)
+@@ -1,92 +0,0 @@
+-package com.zim.yiman_nuru
+-
+-import android.annotation.SuppressLint
+-import android.content.DialogInterface
+-import android.os.Handler
+-
+-import android.content.Intent
+-import android.graphics.Color
+-import android.media.MediaParser
+-import android.media.MediaPlayer
+-import androidx.appcompat.app.AppCompatActivity
+-import android.os.Bundle
+-import android.view.View
+-import android.widget.ImageView
+-import android.widget.TextView
+-import androidx.appcompat.app.AlertDialog
+-import androidx.core.view.isInvisible
+-import androidx.core.view.isVisible
+-import com.google.android.material.dialog.MaterialAlertDialogBuilder
+-
+-class Tasbih : AppCompatActivity() {
+-    @SuppressLint("UseCompatLoadingForDrawables")
+-    override fun onCreate(savedInstanceState: Bundle?) {
+-        super.onCreate(savedInstanceState)
+-        setContentView(R.layout.activity_tasbih)
+-        var count = 0
+-        val btn_talking_tasbih_count: ImageView = findViewById(R.id.talking_tasbih_count)
+-        val count_tasbih_view: TextView = findViewById(R.id.count_tasbih_view)
+-        val zikir_view_talkin_tasbih: TextView = findViewById(R.id.zikir_view_talkin_tasbih)
+-        val talking_tasbih_clear: ImageView = findViewById(R.id.talking_tasbih_clear)
+-        val talking_tasbih_change: ImageView = findViewById(R.id.talking_tasbih_change)
+-        val mediaSubhaanallah: MediaPlayer = MediaPlayer.create(this, R.raw.subhaanallah)
+-        val mediaAlhamdulillah: MediaPlayer = MediaPlayer.create(this, R.raw.alhamdulillah)
+-        val mediaAllohuakbar: MediaPlayer = MediaPlayer.create(this, R.raw.allohuakbar)
+-        val talking_tasbih_volume_up: ImageView = findViewById(R.id.talking_tasbih_volume_up)
+-        val talking_tasbih_volume_off: ImageView = findViewById(R.id.talking_tasbih_volume_off)
+-        talking_tasbih_volume_up.setOnClickListener {
+-            mediaSubhaanallah.setVolume(0f, 0f)
+-            mediaAlhamdulillah.setVolume(0f, 0f)
+-            mediaAllohuakbar.setVolume(0f, 0f)
+-            talking_tasbih_volume_up.setVisibility(View.INVISIBLE)
+-            talking_tasbih_volume_off.setVisibility(View.VISIBLE)
+-        }
+-        talking_tasbih_volume_off.setOnClickListener {
+-            mediaSubhaanallah.setVolume(0.7f, 0.7f)
+-            mediaAlhamdulillah.setVolume(0.7f, 0.7f)
+-            mediaAllohuakbar.setVolume(0.7f, 0.7f)
+-            talking_tasbih_volume_up.setVisibility(View.VISIBLE)
+-            talking_tasbih_volume_off.setVisibility(View.INVISIBLE)
+-        }
+-        talking_tasbih_change.setOnClickListener {
+-            if (count > 0) {
+-                val builder = MaterialAlertDialogBuilder(this)
+-                    .setTitle("Жаңыдан баштоо")
+-                    .setMessage("Эгер Жаңыдан баштасаңыз тасбих 0 дөн башталат! Жаңыдан баштайсызбы?")
+-                    .setNegativeButton("Жок") { dialog, which ->
+-
+-                    }
+-                    .setPositiveButton("Ооба") { dialog, bir ->
+-                        count = 0
+-                        count_tasbih_view.text = "${count}"
+-                        zikir_view_talkin_tasbih.text = "СубханАллах"
+-                        zikir_view_talkin_tasbih.setBackgroundColor(Color.parseColor("#015B38"))
+-                    }
+-                    .show()
+-            }
+-        }
+-        btn_talking_tasbih_count.setOnClickListener {
+-            count++
+-            count_tasbih_view.text = "${count}"
+-            if (count in 0 .. 33){
+-                zikir_view_talkin_tasbih.text = "СубханАллах"
+-                if (count == 1){
+-                    mediaSubhaanallah.start()
+-                }else if (count == 33){
+-                    mediaAlhamdulillah.start()
+-                }
+-            }else if (count in 34 .. 66) {
+-                zikir_view_talkin_tasbih.text = "Альхамдулиллах"
+-                if (count == 66){
+-                    mediaAllohuakbar.start()
+-                }
+-            }else if (count in 67 .. 99){
+-                zikir_view_talkin_tasbih.text = "Аллаху акбар"
+-            }else{
+-                zikir_view_talkin_tasbih.text = " "
+-                zikir_view_talkin_tasbih.setBackgroundColor(Color.TRANSPARENT)
+-            }
+-
+-        }
+-    }
+-}
+\ No newline at end of file
+Index: app/src/main/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/AndroidManifest.xml b/app/src/main/AndroidManifest.xml
+--- a/app/src/main/AndroidManifest.xml	(date 1655851764156)
++++ b/app/src/main/AndroidManifest.xml	(date 1655851764156)
+@@ -8,8 +8,10 @@
+         android:label="@string/app_name"
+         android:roundIcon="@mipmap/ic_launcher_round"
+         android:supportsRtl="true"
+-        android:theme="@style/Theme.YimanNuru.Day"
+-        >
++        android:theme="@style/Theme.YimanNuru.Day">
++        <activity
++            android:name=".AllahtynYsymdary"
++            android:exported="false" />
+         <activity
+             android:name=".Settings"
+             android:exported="false" />
+@@ -23,10 +25,6 @@
+             android:name=".AltySypat"
+             android:exported="false" />
+         <activity
+-            android:name=".Tasbih"
+-            android:exported="false"
+-            android:screenOrientation="portrait" />
+-        <activity
+             android:name=".MasnunDubalar"
+             android:exported="false" />
+         <activity
+@@ -35,8 +33,9 @@
+         <activity
+             android:name=".SplashScreen"
+             android:exported="true"
+-            android:theme="@style/Theme.AppCompat.NoActionBar"
+-            android:screenOrientation="portrait">
++            android:launchMode="singleInstance"
++            android:screenOrientation="portrait"
++            android:theme="@style/Theme.AppCompat.NoActionBar">
+             <intent-filter>
+                 <action android:name="android.intent.action.MAIN" />
+ 
+@@ -45,6 +44,7 @@
+         </activity>
+         <activity
+             android:name=".MainActivity"
++            android:launchMode="singleInstance"
+             android:exported="true"
+             android:screenOrientation="portrait">
+             <intent-filter>
+Index: app/build/generated/ap_generated_sources/debug/out/com/zim/yiman_nuru/databinding/ItemListDuaBindingImpl.java
+===================================================================
+diff --git a/app/build/generated/ap_generated_sources/debug/out/com/zim/yiman_nuru/databinding/ItemListDuaBindingImpl.java b/app/build/generated/ap_generated_sources/debug/out/com/zim/yiman_nuru/databinding/ItemListDuaBindingImpl.java
+deleted file mode 100644
+--- a/app/build/generated/ap_generated_sources/debug/out/com/zim/yiman_nuru/databinding/ItemListDuaBindingImpl.java	(date 0)
++++ /dev/null	(date 0)
+@@ -1,128 +0,0 @@
+-package com.zim.yiman_nuru.databinding;
+-import com.zim.yiman_nuru.R;
+-import com.zim.yiman_nuru.BR;
+-import androidx.annotation.NonNull;
+-import androidx.annotation.Nullable;
+-import android.view.View;
+-@SuppressWarnings("unchecked")
+-public class ItemListDuaBindingImpl extends ItemListDuaBinding  {
+-
+-    @Nullable
+-    private static final androidx.databinding.ViewDataBinding.IncludedLayouts sIncludes;
+-    @Nullable
+-    private static final android.util.SparseIntArray sViewsWithIds;
+-    static {
+-        sIncludes = null;
+-        sViewsWithIds = null;
+-    }
+-    // views
+-    @NonNull
+-    private final androidx.cardview.widget.CardView mboundView0;
+-    // variables
+-    // values
+-    // listeners
+-    // Inverse Binding Event Handlers
+-
+-    public ItemListDuaBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
+-        this(bindingComponent, root, mapBindings(bindingComponent, root, 3, sIncludes, sViewsWithIds));
+-    }
+-    private ItemListDuaBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
+-        super(bindingComponent, root, 0
+-            , (android.widget.TextView) bindings[2]
+-            , (android.widget.TextView) bindings[1]
+-            );
+-        this.fullText.setTag(null);
+-        this.mboundView0 = (androidx.cardview.widget.CardView) bindings[0];
+-        this.mboundView0.setTag(null);
+-        this.title.setTag(null);
+-        setRootTag(root);
+-        // listeners
+-        invalidateAll();
+-    }
+-
+-    @Override
+-    public void invalidateAll() {
+-        synchronized(this) {
+-                mDirtyFlags = 0x2L;
+-        }
+-        requestRebind();
+-    }
+-
+-    @Override
+-    public boolean hasPendingBindings() {
+-        synchronized(this) {
+-            if (mDirtyFlags != 0) {
+-                return true;
+-            }
+-        }
+-        return false;
+-    }
+-
+-    @Override
+-    public boolean setVariable(int variableId, @Nullable Object variable)  {
+-        boolean variableSet = true;
+-        if (BR.isDuas == variableId) {
+-            setIsDuas((com.zim.yiman_nuru.Data) variable);
+-        }
+-        else {
+-            variableSet = false;
+-        }
+-            return variableSet;
+-    }
+-
+-    public void setIsDuas(@Nullable com.zim.yiman_nuru.Data IsDuas) {
+-        this.mIsDuas = IsDuas;
+-        synchronized(this) {
+-            mDirtyFlags |= 0x1L;
+-        }
+-        notifyPropertyChanged(BR.isDuas);
+-        super.requestRebind();
+-    }
+-
+-    @Override
+-    protected boolean onFieldChange(int localFieldId, Object object, int fieldId) {
+-        switch (localFieldId) {
+-        }
+-        return false;
+-    }
+-
+-    @Override
+-    protected void executeBindings() {
+-        long dirtyFlags = 0;
+-        synchronized(this) {
+-            dirtyFlags = mDirtyFlags;
+-            mDirtyFlags = 0;
+-        }
+-        java.lang.String isDuasTitle = null;
+-        java.lang.String isDuasFullText = null;
+-        com.zim.yiman_nuru.Data isDuas = mIsDuas;
+-
+-        if ((dirtyFlags & 0x3L) != 0) {
+-
+-
+-
+-                if (isDuas != null) {
+-                    // read isDuas.title
+-                    isDuasTitle = isDuas.getTitle();
+-                    // read isDuas.fullText
+-                    isDuasFullText = isDuas.getFullText();
+-                }
+-        }
+-        // batch finished
+-        if ((dirtyFlags & 0x3L) != 0) {
+-            // api target 1
+-
+-            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.fullText, isDuasFullText);
+-            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.title, isDuasTitle);
+-        }
+-    }
+-    // Listener Stub Implementations
+-    // callback impls
+-    // dirty flag
+-    private  long mDirtyFlags = 0xffffffffffffffffL;
+-    /* flag mapping
+-        flag 0 (0x1L): isDuas
+-        flag 1 (0x2L): null
+-    flag mapping end*/
+-    //end
+-}
+\ No newline at end of file
+Index: app/build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/build.gradle b/app/build.gradle
+--- a/app/build.gradle	(date 1655851764149)
++++ b/app/build.gradle	(date 1655851764149)
+@@ -34,6 +34,10 @@
+     dataBinding{
+         enabled true
+     }
++
++    buildFeatures{
++        viewBinding true
++    }
+ }
+ 
+ dependencies {

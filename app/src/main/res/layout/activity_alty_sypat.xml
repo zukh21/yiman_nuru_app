@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/alty_sypat_bg"
+    tools:context=".AltySypat"
+    >
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+
+                android:id="@+id/sypat_blog"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp">
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/first_sypat_card"
+                    android:layout_marginBottom="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="30dp"
+                    android:backgroundTint="@color/white"
+                    >
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp"
+                        tools:ignore="UselessParent">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-black"
+                            android:padding="5dp"
+                            android:text="1-сыпат: Лаа Илааха Иллаллох, Мухаммадур Расулуллох"
+                            android:textAlignment="center"
+                            android:textColor="#FF00"
+                            android:textSize="25sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:background="@color/black"
+                            android:text="        "
+                            android:textAlignment="center"
+                            android:textColor="#999999"
+                            android:textSize="25sp" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            android:textAlignment="textStart"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="#000"
+                            android:text="Мааниси: Алладан башка сыйынууга ылайыктуу зат жок, Мухаммад саллаллооху алайхи ва саллам Алланын Элчиси."
+                            />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:layout_below="@+id/first_sypat_card"
+                    android:id="@+id/second_sypat_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="30dp"
+                    android:layout_marginBottom="20dp"
+                    android:backgroundTint="@color/white"
+                    >
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp"
+                        tools:ignore="UselessParent">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-black"
+                            android:padding="5dp"
+                            android:text="2-сыпат: Намаз"
+                            android:textAlignment="center"
+                            android:textColor="#FF00"
+                            android:textSize="25sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:background="@color/black"
+                            android:text="        "
+                            android:textAlignment="center"
+                            android:textColor="#999999"
+                            android:textSize="25sp" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            android:textAlignment="textStart"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="#000"
+                            android:text="Мааниси: түзөтүү. Намаз ыйман менен ширктин ортосундагы парда. Адам намазды өз убагында окуса, анын талаптарын ордуна койсо - чыныгы ыймандуу ошол."
+                            />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:layout_below="@+id/second_sypat_card"
+                    android:id="@+id/third_sypat_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="30dp"
+                    android:layout_marginBottom="20dp"
+                    android:backgroundTint="@color/white"
+                    >
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp"
+                        tools:ignore="UselessParent">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-black"
+                            android:padding="5dp"
+                            android:text="3-сыпат: Илим-Зикир"
+                            android:textAlignment="center"
+                            android:textColor="#FF00"
+                            android:textSize="25sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:background="@color/black"
+                            android:text="        "
+                            android:textAlignment="center"
+                            android:textColor="#999999"
+                            android:textSize="25sp" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            android:textAlignment="textStart"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="#000"
+                            android:text="Мааниси: үйрөнүү, билүү. Максаты - 24 саат убакыт ичиндеги жашоо.
+  Алланын кандай өкүмү бар жана Пайгамбарыбыз саллаллоху алайхи вассалламдын кандай сүннөттөрү бар, ошолорду билип, ага амал кылуу."
+                            />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:layout_below="@+id/third_sypat_card"
+                    android:id="@+id/fourth_sypat_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="30dp"
+                    android:layout_marginBottom="20dp"
+                    android:backgroundTint="@color/white"
+                    >
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp"
+                        tools:ignore="UselessParent">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-black"
+                            android:padding="5dp"
+                            android:text="4-сыпат: Икром Муслим"
+                            android:textAlignment="center"
+                            android:textColor="#FF00"
+                            android:textSize="25sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:background="@color/black"
+                            android:text="        "
+                            android:textAlignment="center"
+                            android:textColor="#999999"
+                            android:textSize="25sp" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            android:textAlignment="textStart"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="#000"
+                            android:text="Мааниси: мусулмандарды урматтап сыйлоо. Ал эми, максаты - ар бир нерсенин акысын берүү. Бүгүнкү күндөрдө икром муслим сыпаты ар бир пендеге абадай керек болуп турган учур, бул сыпаттын себеби менен амалдарыбыз сакталат Ин ша Аллах."
+                            />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:layout_below="@+id/fourth_sypat_card"
+                    android:id="@+id/fifth_sypat_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="30dp"
+                    android:layout_marginBottom="20dp"
+                    android:backgroundTint="@color/white"
+                    >
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp"
+                        tools:ignore="UselessParent">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-black"
+                            android:padding="5dp"
+                            android:text="5-сыпат: Ниет ыклас"
+                            android:textAlignment="center"
+                            android:textColor="#FF00"
+                            android:textSize="25sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:background="@color/black"
+                            android:text="        "
+                            android:textAlignment="center"
+                            android:textColor="#999999"
+                            android:textSize="25sp" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            android:textAlignment="textStart"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="#000"
+                            android:text="Ниет ыклас - бул ушундай сыпат, анын мааниси - ниетти Аллага түзөө. Максаты - Алланын ыраазычылыгын табуу."
+                            />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:layout_below="@+id/fifth_sypat_card"
+                    android:id="@+id/sixes_sypat_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="30dp"
+                    android:layout_marginBottom="20dp"
+                    android:backgroundTint="@color/white"
+                    >
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp"
+                        tools:ignore="UselessParent">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-black"
+                            android:padding="5dp"
+                            android:text="6-сыпат: Даават"
+                            android:textAlignment="center"
+                            android:textColor="#FF00"
+                            android:textSize="25sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:background="@color/black"
+                            android:text="        "
+                            android:textAlignment="center"
+                            android:textColor="#999999"
+                            android:textSize="25sp" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            android:textAlignment="textStart"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="#000"
+                            android:text="Мааниси: - чакыруу, максаты - өзүбүзгө, үй-бүлөбүзгө, айылыбызга, шаарыбызга, ошондой эле бүткүл дүйнөгө канткенде дин келет. Дааваттын пайдасы чон болгондуктан бул ишти пайгамбарлар кылган."
+                            />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:layout_below="@+id/sixes_sypat_card"
+                    android:id="@+id/contact"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="30dp"
+                    android:layout_marginBottom="20dp"
+                    android:backgroundTint="@color/white"
+                    >
+                </androidx.cardview.widget.CardView>
+            </RelativeLayout>
+            <LinearLayout
+                android:layout_below="@+id/sypat_blog"
+                android:layout_alignParentBottom="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#097869"
+                android:padding="8dp"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textAlignment="center"
+                    android:text="Катачылыктар болсо бул жака жазыңыз, Аллах ыраазы болсун!"
+                    android:textSize="10sp"
+                    tools:ignore="SmallSp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/my_telegram_btn"
+                    android:textAlignment="center"
+                    android:textColor="#20C9F1"
+                    android:textSize="12sp"
+                    tools:ignore="SmallSp"
+                    android:text="https://t.me/@zukh_kamchybekov"
+                    android:padding="2dp"
+                    />
+            </LinearLayout>
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>

@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Ыйман нуру</string>
+    <string name="bismilla">Бисмилла</string>
+    <string name="designed_by">zim - тарабынан жасалды</string>
+    <string name="text_test">Ислам негиздери\nбоюнча тест</string>
+    <string name="text_yiman_nuru_arab">يمان نورو</string>
+    <string name="text_kalima">لا اله الا الله محمد رسول الله</string>
+    <string name="text_bilmilla">أعوذ بالله من الشيطان الرجيم \nبسم الله الرحمن الرحيم</string>
+    <string name="text_yiman_nuru">Yiman Nuru</string>
+    <string name="masnun_dubalar">Маснун дубалар</string>
+    <string name="text_namaz_uyronuu">Намаз окуганды үйрөнүү</string>
+    <string name="allanyn_99_ysymy">Алланын 99 ысымы</string>
+    <string name="zikirdin_turloru">Зикирдин түрлөрү</string>
+    <string name="tasbih">Тасбих</string>
+    <string name="alty_sypat">Алты сыпат</string>
+    <string name="txt_subxaanallah">СубханАллах</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="about_us">About us</string>
+    <string name="home">Home</string>
+    <string name="settings">Settings</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="main_page">Башкы бет</string>
+</resources>
