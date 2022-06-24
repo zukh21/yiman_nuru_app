@@ -2,29 +2,30 @@ package com.zim.yiman_nuru
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
 import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_NO
 import androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_YES
 import androidx.appcompat.widget.SwitchCompat
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.GravityCompat
-import androidx.core.view.isInvisible
-import androidx.core.view.isVisible
 import androidx.drawerlayout.widget.DrawerLayout
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.navigation.NavigationView
 import com.zim.yiman_nuru.databinding.ActivityMainBinding
 
+
 class MainActivity : AppCompatActivity() {
     lateinit var switch: SwitchCompat
+    lateinit var text_modes: TextView
 
     lateinit var binding: ActivityMainBinding
     private lateinit var drawerLayout: DrawerLayout
-    @SuppressLint("SwitchIntDef")
+    @SuppressLint("SwitchIntDef", "SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -35,7 +36,7 @@ class MainActivity : AppCompatActivity() {
 
 
 
-        // запуск ввернего меню
+        // запуск вверхнего меню
 
         val menu_btn: ImageView = findViewById(R.id.btn_menu)
         menu_btn.setOnClickListener {
@@ -55,6 +56,17 @@ class MainActivity : AppCompatActivity() {
                     val intent = Intent(this, AboutUs::class.java)
                     startActivity(intent)
                 }
+                R.id.id_contacts -> {
+
+                    val view: View = layoutInflater.inflate(R.layout.activity_contacts_bottom_sheet, null)
+                    val dialog = BottomSheetDialog(this)
+                    dialog.setContentView(view)
+                    val close_sheet: ImageView = view.findViewById(R.id.close_sheet)
+                    dialog.show()
+                    close_sheet.setOnClickListener {
+                        dialog.dismiss()
+                    }
+                }
             }
             drawerLayout.closeDrawer(GravityCompat.START)
             true
@@ -63,41 +75,52 @@ class MainActivity : AppCompatActivity() {
 
         // конец бокового меню
 
-        mainFragment() // фрагмент главного экрана
-        onClickHorizontalActivity() // Горизонтальные кнопки (горизонтальное меню)
-
 //        Night mode switcher start
 
         switch = findViewById(R.id.switch_btn_night_mode)
-//        when (AppCompatDelegate.getDefaultNightMode()){
-//            MODE_NIGHT_YES -> AppCompatDelegate.setDefaultNightMode(MODE_NIGHT_NO)
-//        }
+        text_modes = findViewById(R.id.text_modes)
+        val text_yiman_nuru: TextView = findViewById(R.id.text_yiman_nuru)
 
-//        проверить ночной режим по умолчанию START
-        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_NO ||
-                AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM ||
-                AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_AUTO_BATTERY){
-            switch.isChecked = false // отключает кнопку Switch когда яркий режим телефона
-        }else if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_UNSPECIFIED ||
-            AppCompatDelegate.getDefaultNightMode() == MODE_NIGHT_YES
-        ){
-            switch.isChecked = true // включает кнопку Switch когда тёмный режим телефона
+// проверка цвета фона текста START
+
+        val cd = text_yiman_nuru.background as ColorDrawable
+        val color = cd.color
+        val alpha = cd.alpha
+        val red = Color.red(color)
+        val green = Color.green(color)
+        val blue = Color.blue(color)
+
+// проверка цвета фона текста END
+
+//        изменение текста Text_Modes START
+        if (alpha == 255 && red == 38 && green == 60 && blue == 81){
+            text_modes.text = "night"
+        }else if(alpha == 255 && red == 1 && green == 88 && blue == 54){
+            text_modes.text = "light"
+        }
+//        изменение текста Text_Modes END
+
+//        проверка Switcher START
+        if (text_modes.text == "night"){
+            switch.isChecked = true
+        }else if (text_modes.text == "light"){
+            switch.isChecked = false
         }
 
-        //        проверить ночной режим по умолчанию END
-
+        //        проверка Switcher END
 
 //        переключить ночной режим START
 
         switch.setOnCheckedChangeListener { compoundButton, b ->
             if (b) {
                 AppCompatDelegate.setDefaultNightMode(MODE_NIGHT_YES)
-                onRestart()
             } else {
                 AppCompatDelegate.setDefaultNightMode(MODE_NIGHT_NO)
-                onRestart()
             }
         }
+
+        mainFragment() // фрагмент главного экрана
+        onClickHorizontalActivity() // Горизонтальные кнопки (горизонтальное меню)
 
     }
 
