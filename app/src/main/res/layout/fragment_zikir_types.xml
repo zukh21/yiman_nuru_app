@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-
+    android:background="?attr/colorOnPrimary"
     tools:context=".ZikirTypesFragment">
 
 
@@ -29,7 +29,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="20dp"
-                        android:backgroundTint="#393939"
+                        android:backgroundTint="?attr/colorPrimaryVariant"
                         app:cardCornerRadius="20dp">
 
                         <LinearLayout
@@ -43,7 +43,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="Субханаллах!"
                                 android:textAlignment="center"
-                                android:textColor="#00BBD3"
+                                android:textColor="?attr/colorSecondary"
                                 android:textSize="30sp"
                                 android:textStyle="bold" />
 
@@ -63,7 +63,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/subhaanallah"
                         android:layout_marginBottom="20dp"
-                        android:backgroundTint="#393939"
+                        android:backgroundTint="?attr/colorPrimaryVariant"
                         app:cardCornerRadius="20dp">
 
                         <LinearLayout
@@ -77,7 +77,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="Алхамдулиллах!"
                                 android:textAlignment="center"
-                                android:textColor="#00BBD3"
+                                android:textColor="?attr/colorSecondary"
                                 android:textSize="30sp"
                                 android:textStyle="bold" />
 
@@ -97,7 +97,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/alhamdulillah"
                         android:layout_marginBottom="20dp"
-                        android:backgroundTint="#393939"
+                        android:backgroundTint="?attr/colorPrimaryVariant"
                         app:cardCornerRadius="20dp">
 
                         <LinearLayout
@@ -111,7 +111,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="Аллаху Акбар!"
                                 android:textAlignment="center"
-                                android:textColor="#00BBD3"
+                                android:textColor="?attr/colorSecondary"
                                 android:textSize="30sp"
                                 android:textStyle="bold" />
 
@@ -131,7 +131,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/allohu_akbar"
                         android:layout_marginBottom="20dp"
-                        android:backgroundTint="#393939"
+                        android:backgroundTint="?attr/colorPrimaryVariant"
                         app:cardCornerRadius="20dp">
 
                         <LinearLayout
@@ -145,7 +145,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="Лаа Илааха Иллаллох!"
                                 android:textAlignment="center"
-                                android:textColor="#00BBD3"
+                                android:textColor="?attr/colorSecondary"
                                 android:textSize="30sp"
                                 android:textStyle="bold" />
 
@@ -165,7 +165,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/shahadat"
                         android:layout_marginBottom="20dp"
-                        android:backgroundTint="#393939"
+                        android:backgroundTint="?attr/colorPrimaryVariant"
                         app:cardCornerRadius="20dp">
 
                         <LinearLayout
@@ -179,7 +179,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="Ла хавла вала куввата илла биллах!"
                                 android:textAlignment="center"
-                                android:textColor="#00BBD3"
+                                android:textColor="?attr/colorSecondary"
                                 android:textSize="30sp"
                                 android:textStyle="bold" />
 
@@ -199,7 +199,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/laa_havla"
                         android:layout_marginBottom="20dp"
-                        android:backgroundTint="#393939"
+                        android:backgroundTint="?attr/colorPrimaryVariant"
                         app:cardCornerRadius="20dp">
 
                         <LinearLayout
@@ -213,7 +213,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="Саллаллаху ъалайхи ва саллам!"
                                 android:textAlignment="center"
-                                android:textColor="#00BBD3"
+                                android:textColor="?attr/colorSecondary"
                                 android:textSize="30sp"
                                 android:textStyle="bold" />
 
@@ -233,7 +233,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/salavat"
                         android:layout_marginBottom="20dp"
-                        android:backgroundTint="#393939"
+                        android:backgroundTint="?attr/colorPrimaryVariant"
                         app:cardCornerRadius="20dp">
 
                         <LinearLayout
@@ -247,7 +247,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="Астагфируллах!"
                                 android:textAlignment="center"
-                                android:textColor="#00BBD3"
+                                android:textColor="?attr/colorSecondary"
                                 android:textSize="30sp"
                                 android:textStyle="bold" />
 
@@ -267,7 +267,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/astagfirullah"
                         android:layout_marginBottom="20dp"
-                        android:backgroundTint="#393939"
+                        android:backgroundTint="?attr/colorPrimaryVariant"
                         app:cardCornerRadius="20dp">
 
                         <LinearLayout
@@ -281,7 +281,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="Ла илаха илла анта Субханака инни кунту миназ золимин!"
                                 android:textAlignment="center"
-                                android:textColor="#00BBD3"
+                                android:textColor="?attr/colorSecondary"
                                 android:textSize="30sp"
                                 android:textStyle="bold" />
 
@@ -300,7 +300,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/laa_ilaaha_illa_anta"
-                        android:backgroundTint="#393939"
+                        android:backgroundTint="?attr/colorPrimaryVariant"
                         app:cardCornerRadius="20dp">
 
                         <LinearLayout

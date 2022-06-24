@@ -5,7 +5,7 @@
     <corners android:radius="10dp"/>
 
     <stroke android:width="01dp"
-        android:color="@color/dark_blue_1"
+        android:color="?attr/textFillColor"
         />
 
 </shape>
