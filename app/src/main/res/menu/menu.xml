@@ -5,17 +5,26 @@
         <item
             android:id="@+id/id_home_activity"
             android:icon="@drawable/ic_baseline_home_24"
-            android:title="@string/home"
+            android:title="@string/home_kg"
             android:iconTint="@color/black"
             />
         <item
             android:id="@+id/id_about_us_activity"
             android:icon="@drawable/ic_baseline_people_24"
-            android:title="@string/about_us" />
+            android:title="@string/about_us_kg" />
+        <item
+            android:id="@+id/id_contacts"
+            android:icon="@drawable/ic_baseline_contacts"
+            android:title="@string/contacts_kg" />
 
         <item
-            android:id="@+id/id_settings_activity"
-            android:icon="@drawable/ic_baseline_settings_24"
-            android:title="@string/settings" />
+            android:id="@+id/id_privacy_policy"
+            android:icon="@drawable/ic_baseline_lock_person"
+            android:title="@string/privacy_policy_kg" />
+
+<!--        <item-->
+<!--            android:id="@+id/id_settings_activity"-->
+<!--            android:icon="@drawable/ic_baseline_settings_24"-->
+<!--            android:title="@string/settings" />-->
 
 </menu>

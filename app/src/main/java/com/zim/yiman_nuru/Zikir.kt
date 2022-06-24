@@ -36,11 +36,7 @@ class Zikir : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        val itemView = item.itemId
-        when (itemView){
-            android.R.id.home -> finish()
-            R.id.menu -> Toast.makeText(this, "Меню даяр эмес!", Toast.LENGTH_LONG).show()
-        }
+
         return true
     }
 }
