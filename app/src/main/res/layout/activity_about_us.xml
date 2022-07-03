@@ -1,29 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?attr/colorOnPrimary"
+    android:padding="10dp"
     tools:context=".AboutUs">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <include
-            android:id="@+id/toolbar_top"
-            layout="@layout/my_toolbar"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="About Us"
-        android:textSize="40sp"
-        android:textStyle="bold"
-        />
 
-</RelativeLayout>
+
+        <TextView
+            android:id="@+id/title_about_us"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ыйман нуру &amp; ЗИМ"
+            android:textColor="?attr/textFillColor"
+            android:gravity="center"
+            android:textSize="30sp"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:id="@+id/text_about_us"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Бул 'Ыйман нуру' тиркемеси мусулман бир туугандарга пайдасы тийсин деген максатта \nЗИМ ~ Сафарбек уулу Зухридин тарабынан жасалды. Ката кемчиликтер болсо Жараткан өзү кечирсин. Эгер тиркеменин ката иштеп жатканын же болбосо жазылган тексттерде ката бар экенин байкап калсаңыз төмөндө көрсөтүлгөн ТЕЛЕГРАМ тиркемесиндеги баракчага ар ЖУМА күнү билдирсеңиз болот. Тиркемени колдогонуңуздар үчүн Ыракмат!"
+            android:textColor="?attr/textFillColor"
+            app:layout_constraintTop_toBottomOf="@+id/title_about_us"
+            android:textSize="20sp"
+            android:padding="10dp" />
+
+    <LinearLayout
+        android:id="@+id/my_telegram_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/text_about_us"
+        android:layout_marginTop="10dp"
+        android:padding="5dp">
+
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@drawable/ic_telegram_logo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="2dp"
+            android:text="Telegram"
+            android:textAlignment="center"
+            android:textColor="#20C9F1"
+            android:textSize="12sp"
+            tools:ignore="SmallSp" />
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

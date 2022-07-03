@@ -12,31 +12,22 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
+import com.zim.yiman_nuru.databinding.ActivityZikirBinding
 
 class Zikir : AppCompatActivity() {
+    lateinit var binding: ActivityZikirBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_zikir)
-        val my_telegram_btn: LinearLayout = findViewById(R.id.my_telegram_btn)
+        binding = ActivityZikirBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
         // Вверные меню старт
-        setSupportActionBar(findViewById(R.id.my_toolbar))
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.title = "Yiman Nuru"
-        supportActionBar?.subtitle = "MyApp"
-        // Вверные меню енд
-        my_telegram_btn.setOnClickListener {
+        binding.myTelegramBtn.setOnClickListener {
             val intent = Intent(Intent.ACTION_VIEW, Uri.parse("http://t.me/zukh_kamchybekov"))
             startActivity(intent)
         }
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu, menu)
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-
-        return true
+        binding.btnBackNavTop.setOnClickListener {
+            finish()
+        }
     }
 }

@@ -2,183 +2,91 @@
 <androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?attr/colorOnPrimary"
     tools:context=".MainActivity"
-    tools:openDrawer="start"
-    android:id="@+id/drawer"
-    >
+    tools:menu="@menu/bottom_navigation_view">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <include
             android:id="@+id/toolbar_top"
             layout="@layout/my_toolbar"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            />
+            app:layout_constraintTop_toTopOf="parent" />
+
         <RelativeLayout
             android:id="@+id/banner_block"
             android:layout_width="match_parent"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar_top"
             android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar_top"
             tools:ignore="MissingConstraints">
+
             <RelativeLayout
                 android:id="@+id/banner_img_block"
                 android:layout_width="match_parent"
-                android:layout_height="180dp">
+                android:layout_height="220dp"
 
-                <ImageView
-                    android:id="@+id/banner_img"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginTop="-20dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/slide_1"
-                    android:visibility="visible"
-                    tools:ignore="MissingConstraints" />
+                android:paddingTop="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="5dp">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="20dp">
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        >
+
+                        <ImageView
+                            android:id="@+id/banner_img"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/slide_4"
+                            android:visibility="visible"
+                            tools:ignore="MissingConstraints" />
+
+                        <TextView
+                            android:id="@+id/text_banner"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:fontFamily="cursive"
+                            android:text="Yiman nuru"
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            android:textSize="25sp"
+                            app:layout_constraintBottom_toBottomOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
             </RelativeLayout>
 
-            <TextView
-                android:id="@+id/text_yiman_nuru"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/banner_img_block"
-
-                android:layout_marginBottom="0dp"
-                android:background="?attr/colorPrimaryVariant"
-                android:fontFamily="cursive"
-                android:padding="5dp"
-                android:text="@string/text_yiman_nuru"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="20sp"
-                tools:ignore="MissingConstraints,SmallSp" />
 
 
-            <HorizontalScrollView
-                android:id="@+id/horizontal_scroll_activity"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/text_yiman_nuru"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="5dp"
-                android:layout_marginBottom="5dp"
-                android:scrollbarSize="01dp"
-                android:scrollbarStyle="outsideOverlay"
-                android:scrollbarThumbHorizontal="?attr/textFillColor"
-                android:scrollbars="horizontal">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-
-                    >
-
-                    <Button
-                        android:id="@+id/horizontal_btn_main"
-                        style="?android:attr/buttonBarButtonStyle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:background="@drawable/bg_button_outline"
-                        android:padding="10dp"
-                        android:text="@string/main_page"
-                        android:textAllCaps="false"
-                        android:textColor="?attr/textFillColor"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-
-                    <Button
-                        android:id="@+id/horizontal_btn_tasbih"
-                        style="?android:attr/buttonBarButtonStyle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:background="@drawable/bg_button_outline"
-                        android:padding="10dp"
-                        android:text="@string/tasbih"
-                        android:textAllCaps="false"
-                        android:textColor="?attr/textFillColor"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
 
 
-                    <Button
-                        android:id="@+id/horizontal_btn_zikir"
-                        style="?android:attr/buttonBarButtonStyle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:background="@drawable/bg_button_outline"
-                        android:padding="10dp"
-                        android:text="@string/zikirdin_turloru"
-                        android:textAllCaps="false"
-                        android:textColor="?attr/textFillColor"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-
-                    <Button
-                        android:id="@+id/horizontal_btn_masnun_duba"
-                        style="?android:attr/buttonBarButtonStyle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:background="@drawable/bg_button_outline"
-                        android:padding="10dp"
-                        android:text="@string/masnun_dubalar"
-                        android:textAllCaps="false"
-                        android:textColor="?attr/textFillColor"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-
-                    <Button
-                        android:id="@+id/horizontal_btn_alty_sypat"
-                        style="?android:attr/buttonBarButtonStyle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:background="@drawable/bg_button_outline"
-                        android:padding="10dp"
-                        android:text="@string/alty_sypat"
-                        android:textAllCaps="false"
-                        android:textColor="?attr/textFillColor"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-
-                    <Button
-                        android:id="@+id/horizontal_btn_allahtyn_ysymdary"
-                        style="?android:attr/buttonBarButtonStyle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:background="@drawable/bg_button_outline"
-                        android:padding="10dp"
-                        android:text="@string/allanyn_99_ysymy"
-                        android:textAllCaps="false"
-                        android:textColor="?attr/textFillColor"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-
-
-                </LinearLayout>
-            </HorizontalScrollView>
         </RelativeLayout>
 
 
         <RelativeLayout
             android:id="@+id/fragments_block"
-            app:layout_constraintTop_toBottomOf="@+id/banner_block"
-            android:padding="10dp"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-
-            app:layout_constraintBottom_toTopOf="@+id/imageView3"
+            app:layout_constraintBottom_toTopOf="@+id/bottom_navigation_view_id"
+            app:layout_constraintTop_toBottomOf="@+id/banner_block"
             tools:ignore="MissingConstraints">
 
             <ScrollView
@@ -192,19 +100,29 @@
                     android:layout_height="wrap_content" />
 
             </ScrollView>
+
         </RelativeLayout>
 
+        <TextView
+            android:id="@+id/footer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimaryVariant"
+            android:textSize="1sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/toolbar_top"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="SmallSp" />
 
-            <ImageView
-                android:layout_marginTop="10dp"
-                android:id="@+id/imageView3"
-                android:layout_width="match_parent"
-                android:layout_height="33dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                android:background="?attr/colorPrimaryVariant"
-                android:padding="5dp"
-                app:srcCompat="@drawable/designed_by"
-                tools:ignore="MissingConstraints" />
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation_view_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorOnPrimary"
+            app:itemIconTint="?attr/textFillColor"
+            app:itemTextColor="?attr/textFillColor"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:menu="@menu/bottom_navigation_view" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -214,80 +132,157 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        app:headerLayout="@layout/header_layout"
-        app:menu="@menu/menu"
         android:backgroundTint="?attr/colorOnPrimary"
-        >
+        app:headerLayout="@layout/header_layout"
+        app:menu="@menu/menu">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:paddingTop="10dp"
-            >
-           <LinearLayout
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               app:layout_constraintEnd_toEndOf="parent"
-               android:gravity="center_vertical"
-
-               tools:ignore="MissingConstraints">
-               <TextView
-                   android:id="@+id/text_modes"
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:text="light"
-                   android:textColor="@color/white"
-                   android:padding="5dp"
-                   android:textSize="10sp"
-                   android:visibility="visible"
-                   app:layout_constraintEnd_toStartOf="@+id/btn_light_mode"
-                   tools:ignore="SmallSp" />
-               <ImageView
-                   android:background="@null"
-                   android:id="@+id/btn_light_mode"
-                   android:layout_width="22dp"
-                   android:layout_height="25dp"
-                   android:src="@drawable/ic_day_mode_icon"
-                   app:tint="#fff"
-                   app:layout_constraintTop_toTopOf="parent"
-                   app:layout_constraintEnd_toStartOf="@+id/switch_btn_night_mode"
-                   android:padding="5dp"
-                   android:visibility="visible"
-                   tools:ignore="ContentDescription,MissingConstraints,OnClick" />
-
-               <androidx.appcompat.widget.SwitchCompat
-                   android:id="@+id/switch_btn_night_mode"
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   app:layout_constraintEnd_toStartOf="@id/btn_night_mode"
-                   app:layout_constraintTop_toTopOf="parent"
-                   />
-
-               <ImageView
-                   android:background="@null"
-                   android:id="@+id/btn_night_mode"
-                   android:layout_width="22dp"
-                   android:layout_height="22dp"
-                   android:src="@drawable/ic_night_mode_icon"
-                   app:tint="#fff"
-                   app:layout_constraintTop_toTopOf="parent"
-                   app:layout_constraintEnd_toEndOf="parent"
-                   android:visibility="visible"
-                   android:padding="5dp"
-                   tools:ignore="ContentDescription,MissingConstraints" />
+            android:paddingTop="10dp">
 
 
-           </LinearLayout>
-            <ImageView
-                android:id="@+id/logo_bottom_in_menu"
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+
+                tools:ignore="MissingConstraints">
+
+
+                <TextView
+                    android:id="@+id/text_modes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="light"
+                    android:textColor="@color/white"
+                    android:textSize="10sp"
+                    android:visibility="invisible"
+                    app:layout_constraintEnd_toStartOf="@+id/btn_light_mode"
+                    tools:ignore="SmallSp" />
+
+                <ImageView
+                    android:id="@+id/btn_light_mode"
+                    android:layout_width="22dp"
+                    android:layout_height="25dp"
+                    android:background="@null"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_day_mode_icon"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toStartOf="@+id/switch_btn_night_mode"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="#fff"
+                    tools:ignore="ContentDescription,MissingConstraints,OnClick" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/switch_btn_night_mode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toStartOf="@id/btn_night_mode"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/btn_night_mode"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:background="@null"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_night_mode_icon"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="#fff"
+                    tools:ignore="ContentDescription,MissingConstraints" />
+
+
+            </LinearLayout>
+
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="33dp"
-                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content"
                 android:background="?attr/colorPrimaryVariant"
-                android:padding="5dp"
+                android:gravity="center"
+                android:padding="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:srcCompat="@drawable/designed_by"
-                tools:ignore="MissingConstraints" />
+                app:layout_constraintStart_toStartOf="parent">
+
+                <TextView
+                    android:id="@+id/ayat_share"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text='Абдулла бин Амр разияллоху анхудан риваят кылат :
+Расуулуллох саллаллоху алейхи ва саллам :
+"Менден бир аят болсо да жеткиргиле" -деди.
+(Бухари).'
+                    android:textColor="@color/white"
+                    android:textSize="10sp" />
+
+
+                <LinearLayout
+                    android:id="@+id/logo_bottom_in_menu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/ayat_share"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/ic_zim" />
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="10dp"
+                        android:src="@drawable/ic_yiman_nuru" />
+
+                    <LinearLayout
+                        android:id="@+id/share_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:gravity="end">
+
+                        <ImageView
+                            android:layout_width="12dp"
+                            android:layout_height="12dp"
+                            android:src="@drawable/ic_baseline_share"
+                            app:tint="#3D9CFF" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="1dp"
+                            android:text="Тиркемени бөлүшүү"
+                            android:textColor="#3D9CFF"
+                            android:textSize="12sp"
+                            android:textStyle="italic" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/text_yiman_nuru"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/colorPrimaryVariant"
+                android:fontFamily="cursive"
+                android:text=""
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="4sp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:ignore="MissingConstraints,SmallSp" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.navigation.NavigationView>
 

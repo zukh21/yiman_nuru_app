@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.YimanNuru">
         <activity
+            android:name=".TasbihActivity"
+            android:exported="false" />
+        <activity
             android:name=".ContactsBottomSheet"
             android:exported="false" />
         <activity
@@ -32,7 +35,9 @@
             android:exported="false" />
         <activity
             android:name=".IslamTest"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"
+            />
         <activity
             android:name=".SplashScreen"
             android:exported="true"
