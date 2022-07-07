@@ -10,6 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.YimanNuru">
         <activity
+            android:name=".GameResult"
+            android:exported="false" />
+        <activity
+            android:name=".levels.SecondLevelActivity"
+            android:exported="false" />
+        <activity
+            android:name=".levels.FirstLevelActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SplashScreenForTestGame"
+            android:exported="false" />
+        <activity
             android:name=".TasbihActivity"
             android:exported="false" />
         <activity
@@ -36,8 +48,7 @@
         <activity
             android:name=".IslamTest"
             android:exported="false"
-            android:screenOrientation="portrait"
-            />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".SplashScreen"
             android:exported="true"

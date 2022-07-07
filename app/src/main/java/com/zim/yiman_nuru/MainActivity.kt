@@ -69,9 +69,6 @@ class MainActivity : AppCompatActivity() {
 
         navView.setNavigationItemSelectedListener {
             when (it.itemId){
-                R.id.id_home_activity -> {
-                    Toast.makeText(this, "zukh", Toast.LENGTH_LONG).show()
-                }
                 R.id.id_about_us_activity -> {
                     val intent = Intent(this, AboutUs::class.java)
                     startActivity(intent)
@@ -153,15 +150,8 @@ class MainActivity : AppCompatActivity() {
 
         binding.bottomNavigationViewId.setOnNavigationItemSelectedListener {
             when(it.itemId){
-                R.id.bottom_menu_btn_home -> {
-                    supportFragmentManager
-                        .beginTransaction()
-                        .replace(R.id.place_holder, MainFragment.newInstance())
-                        .commit()
-                    binding.textBanner.text = "Yiman nuru"
-                }
                 R.id.bottom_menu_btn_testG -> {
-                    val intent = Intent(this, IslamTest::class.java)
+                    val intent = Intent(this, SplashScreenForTestGame::class.java)
                     startActivity(intent)
                 }
                 R.id.bottom_menu_btn_tasbih -> {

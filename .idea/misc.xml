@@ -5,10 +5,13 @@
       <map>
         <entry key="..\:/Android projects/Yiman_Nuru/app/src/main/res/drawable-v24/bg_gradient_blue_to_green.xml" value="0.112" />
         <entry key="..\:/Android projects/Yiman_Nuru/app/src/main/res/drawable-v24/ic_yyman_nuru.xml" value="0.249" />
+        <entry key="..\:/Android projects/Yiman_Nuru/app/src/main/res/drawable/answers_bg_stroke.xml" value="0.1595" />
         <entry key="..\:/Android projects/Yiman_Nuru/app/src/main/res/drawable/bg_alert.xml" value="0.131" />
         <entry key="..\:/Android projects/Yiman_Nuru/app/src/main/res/drawable/bg_button_outline.xml" value="0.137" />
+        <entry key="..\:/Android projects/Yiman_Nuru/app/src/main/res/drawable/bg_button_outline_green.xml" value="0.1595" />
         <entry key="..\:/Android projects/Yiman_Nuru/app/src/main/res/drawable/bg_sheets.xml" value="0.121" />
         <entry key="..\:/Android projects/Yiman_Nuru/app/src/main/res/drawable/border.xml" value="0.121" />
+        <entry key="..\:/Android projects/Yiman_Nuru/app/src/main/res/drawable/button_bg.xml" value="0.1595" />
         <entry key="..\:/Android projects/Yiman_Nuru/app/src/main/res/drawable/ic___sypat.xml" value="0.131" />
         <entry key="..\:/Android projects/Yiman_Nuru/app/src/main/res/drawable/ic_allanyny_99_ysymy.xml" value="0.131" />
         <entry key="..\:/Android projects/Yiman_Nuru/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.132" />
@@ -30,6 +33,8 @@
         <entry key="..\:/Android projects/Yiman_Nuru/app/src/main/res/drawable/ic_yiman_nuru.xml" value="0.112" />
         <entry key="..\:/Android projects/Yiman_Nuru/app/src/main/res/drawable/ic_zikir_bg.xml" value="0.132" />
         <entry key="..\:/Android projects/Yiman_Nuru/app/src/main/res/drawable/ic_zim.xml" value="0.1595" />
+        <entry key="..\:/Android projects/Yiman_Nuru/app/src/main/res/drawable/levels_bg.xml" value="0.1595" />
+        <entry key="..\:/Android projects/Yiman_Nuru/app/src/main/res/drawable/levels_bg_after_click.xml" value="0.1595" />
         <entry key="..\:/Android projects/Yiman_Nuru/app/src/main/res/drawable/query_bg.xml" value="0.1595" />
         <entry key="..\:/Android projects/Yiman_Nuru/app/src/main/res/drawable/splash_screen.xml" value="0.249" />
         <entry key="..\:/Android projects/Yiman_Nuru/app/src/main/res/drawable/text_bg_blue.xml" value="0.121" />
@@ -40,17 +45,21 @@
         <entry key="..\:/Android projects/Yiman_Nuru/app/src/main/res/layout/activity_alty_sypat.xml" value="0.18779342723004694" />
         <entry key="..\:/Android projects/Yiman_Nuru/app/src/main/res/layout/activity_answers.xml" value="0.20512820512820512" />
         <entry key="..\:/Android projects/Yiman_Nuru/app/src/main/res/layout/activity_contacts_bottom_sheet.xml" value="0.264" />
-        <entry key="..\:/Android projects/Yiman_Nuru/app/src/main/res/layout/activity_islam_test.xml" value="0.10989583333333333" />
+        <entry key="..\:/Android projects/Yiman_Nuru/app/src/main/res/layout/activity_first_level.xml" value="0.1986842105263158" />
+        <entry key="..\:/Android projects/Yiman_Nuru/app/src/main/res/layout/activity_islam_test.xml" value="0.25" />
         <entry key="..\:/Android projects/Yiman_Nuru/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Android projects/Yiman_Nuru/app/src/main/res/layout/activity_masnun_dubalar.xml" value="0.10989583333333333" />
         <entry key="..\:/Android projects/Yiman_Nuru/app/src/main/res/layout/activity_question_answer.xml" value="0.20512820512820512" />
+        <entry key="..\:/Android projects/Yiman_Nuru/app/src/main/res/layout/activity_second_level.xml" value="0.21052631578947367" />
         <entry key="..\:/Android projects/Yiman_Nuru/app/src/main/res/layout/activity_settings.xml" value="0.1" />
         <entry key="..\:/Android projects/Yiman_Nuru/app/src/main/res/layout/activity_setttings.xml" value="0.1" />
         <entry key="..\:/Android projects/Yiman_Nuru/app/src/main/res/layout/activity_splash_screen.xml" value="0.152" />
+        <entry key="..\:/Android projects/Yiman_Nuru/app/src/main/res/layout/activity_splash_screen_for_test_game.xml" value="0.20512820512820512" />
         <entry key="..\:/Android projects/Yiman_Nuru/app/src/main/res/layout/activity_suroo_joop.xml" value="0.20512820512820512" />
         <entry key="..\:/Android projects/Yiman_Nuru/app/src/main/res/layout/activity_tasbih.xml" value="0.1" />
         <entry key="..\:/Android projects/Yiman_Nuru/app/src/main/res/layout/activity_zikir.xml" value="0.18518518518518517" />
         <entry key="..\:/Android projects/Yiman_Nuru/app/src/main/res/layout/bg_button_outline.xml" value="0.20512820512820512" />
+        <entry key="..\:/Android projects/Yiman_Nuru/app/src/main/res/layout/dialog_for_game_test.xml" value="0.152" />
         <entry key="..\:/Android projects/Yiman_Nuru/app/src/main/res/layout/fragment_about_me.xml" value="0.20512820512820512" />
         <entry key="..\:/Android projects/Yiman_Nuru/app/src/main/res/layout/fragment_blank.xml" value="0.1" />
         <entry key="..\:/Android projects/Yiman_Nuru/app/src/main/res/layout/fragment_custom_dialog.xml" value="0.1" />
@@ -67,6 +76,7 @@
         <entry key="..\:/Android projects/Yiman_Nuru/app/src/main/res/layout/question_answer_items.xml" value="0.20512820512820512" />
         <entry key="..\:/Android projects/Yiman_Nuru/app/src/main/res/layout/search_toolbar.xml" value="0.264" />
         <entry key="..\:/Android projects/Yiman_Nuru/app/src/main/res/layout/suroo_layout.xml" value="0.20512820512820512" />
+        <entry key="..\:/Android projects/Yiman_Nuru/app/src/main/res/layout/test_result.xml" value="0.21052631578947367" />
         <entry key="..\:/Android projects/Yiman_Nuru/app/src/main/res/layout/top_bar.xml" value="0.20512820512820512" />
         <entry key="..\:/Android projects/Yiman_Nuru/app/src/main/res/menu/bottom_navigation_view.xml" value="0.1902497027348395" />
         <entry key="..\:/Android projects/Yiman_Nuru/app/src/main/res/menu/main.xml" value="0.1" />

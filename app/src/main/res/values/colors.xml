@@ -15,5 +15,8 @@
     <color name="dark_blue_3">#17212B</color>
     <color name="yellow">#FFF200</color>
     <color name="red">#EA1000</color>
+    <color name="green">#00C241</color>
     <color name="transparent">@null</color>
+    <color name="background_for_levels_game_test">#0A5B37</color>
+    <color name="text_color_for_levels_game_test">#fff</color>
 </resources>

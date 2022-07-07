@@ -4,17 +4,280 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@drawable/app_islam_test_bg"
     tools:context=".IslamTest">
+    <ImageView
+        android:id="@+id/sky_img"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@drawable/sky"
+        android:layout_alignParentTop="true"
+        />
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/first_blog"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/text_test"
-        android:layout_centerInParent="true"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="30sp"
-        tools:ignore="MissingConstraints" />
+        android:layout_below="@+id/sky_img"
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp"
+        android:padding="10dp"
+        >
+
+
+        <TextView
+            android:id="@+id/button_back_game"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/exit"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:background="@drawable/bg_button_outline"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="20dp"
+            android:paddingStart="20dp"
+            android:elevation="5dp"
+            android:textSize="20sp"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/first_blog"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:padding="5dp"
+
+            android:gravity="center"
+            >
+                <TextView
+                    android:id="@+id/btn_level_one"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="@color/text_color_for_levels_game_test"
+                    android:background="@drawable/levels_bg"
+                    android:padding="20dp"
+                    android:layout_margin="5dp"
+                    android:drawableStart="@drawable/ic_baseline_lock_24"
+                    android:textStyle="bold" />
+            <TextView
+                android:id="@+id/btn_level_two"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/text_color_for_levels_game_test"
+                android:background="@drawable/levels_bg"
+                android:padding="20dp"
+                android:layout_margin="5dp"
+                android:drawableStart="@drawable/ic_baseline_lock_24"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/btn_level_three"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/text_color_for_levels_game_test"
+                android:background="@drawable/levels_bg"
+                android:padding="20dp"
+                android:layout_margin="5dp"
+                android:drawableStart="@drawable/ic_baseline_lock_24"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/btn_level_four"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/text_color_for_levels_game_test"
+                android:background="@drawable/levels_bg"
+                android:padding="20dp"
+                android:layout_margin="5dp"
+                android:drawableStart="@drawable/ic_baseline_lock_24"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:padding="5dp"
+            android:gravity="center"
+
+            >
+            <TextView
+                android:id="@+id/btn_level_fife"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/text_color_for_levels_game_test"
+                android:background="@drawable/levels_bg"
+                android:padding="20dp"
+                android:layout_margin="5dp"
+                android:drawableStart="@drawable/ic_baseline_lock_24"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/btn_level_six"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/text_color_for_levels_game_test"
+                android:background="@drawable/levels_bg"
+                android:padding="20dp"
+                android:layout_margin="5dp"
+                android:drawableStart="@drawable/ic_baseline_lock_24"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/btn_level_seven"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/text_color_for_levels_game_test"
+                android:background="@drawable/levels_bg"
+                android:padding="20dp"
+                android:layout_margin="5dp"
+                android:drawableStart="@drawable/ic_baseline_lock_24"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/btn_level_eight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/text_color_for_levels_game_test"
+                android:background="@drawable/levels_bg"
+                android:padding="20dp"
+                android:layout_margin="5dp"
+                android:drawableStart="@drawable/ic_baseline_lock_24"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:padding="5dp"
+            android:gravity="center"
+
+            >
+            <TextView
+                android:id="@+id/btn_level_nine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/text_color_for_levels_game_test"
+                android:background="@drawable/levels_bg"
+                android:padding="20dp"
+                android:layout_margin="5dp"
+                android:drawableStart="@drawable/ic_baseline_lock_24"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/btn_level_ten"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/text_color_for_levels_game_test"
+                android:background="@drawable/levels_bg"
+                android:padding="20dp"
+                android:layout_margin="5dp"
+                android:drawableStart="@drawable/ic_baseline_lock_24"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/btn_level_eleven"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/text_color_for_levels_game_test"
+                android:background="@drawable/levels_bg"
+                android:padding="20dp"
+                android:layout_margin="5dp"
+                android:drawableStart="@drawable/ic_baseline_lock_24"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/btn_level_twelve"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/text_color_for_levels_game_test"
+                android:background="@drawable/levels_bg"
+                android:padding="20dp"
+                android:layout_margin="5dp"
+                android:drawableStart="@drawable/ic_baseline_lock_24"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:padding="5dp"
+            android:gravity="center"
+            >
+            <TextView
+                android:id="@+id/btn_level_thirteen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/text_color_for_levels_game_test"
+                android:background="@drawable/levels_bg"
+                android:padding="20dp"
+                android:layout_margin="5dp"
+                android:drawableStart="@drawable/ic_baseline_lock_24"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/btn_level_fourteen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/text_color_for_levels_game_test"
+                android:background="@drawable/levels_bg"
+                android:padding="20dp"
+                android:layout_margin="5dp"
+                android:drawableStart="@drawable/ic_baseline_lock_24"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/btn_level_fifteen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/text_color_for_levels_game_test"
+                android:background="@drawable/levels_bg"
+                android:padding="20dp"
+                android:layout_margin="5dp"
+                android:drawableStart="@drawable/ic_baseline_lock_24"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/btn_level_sixteen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/text_color_for_levels_game_test"
+                android:background="@drawable/levels_bg"
+                android:padding="20dp"
+                android:layout_margin="5dp"
+                android:drawableStart="@drawable/ic_baseline_lock_24"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@drawable/ic_mechet_vector_bg"
+        android:layout_alignParentBottom="true"
+        />
+
+
 
 </RelativeLayout>

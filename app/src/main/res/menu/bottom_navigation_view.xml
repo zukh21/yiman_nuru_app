@@ -2,13 +2,13 @@
 <menu xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item android:id="@+id/bottom_menu_btn_home"
-        android:title="@string/main_page"
-        android:icon="@drawable/ic_baseline_home"
-        android:iconTint="?attr/textFillColor"
-        app:showAsAction="ifRoom"
-        android:orderInCategory="1"
-        />
+<!--    <item android:id="@+id/bottom_menu_btn_home"-->
+<!--        android:title="@string/main_page"-->
+<!--        android:icon="@drawable/ic_baseline_home"-->
+<!--        android:iconTint="?attr/textFillColor"-->
+<!--        app:showAsAction="ifRoom"-->
+<!--        android:orderInCategory="1"-->
+<!--        />-->
     <item android:id="@+id/bottom_menu_btn_testG"
         android:title="@string/question_answer"
         android:icon="@drawable/ic_baseline_cyclone"

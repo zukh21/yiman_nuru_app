@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="question_first_first_level">Ислам дининде пайгамбар ким?</string>
+    <string name="question_second_first_level">Ыйык диндердин эң акыркысы?</string>
+    <string name="question_third_first_level">Исламга кирүү үчүн эмне кылуу керек?</string>
+    <string name="question_fourth_first_level">Ислам аалымдарынын көз караштары боюнча кыз балдар үчүн, эркек балдар үчүн балакат жашы канча жаш болуп эсептелет?</string>
+    <string name="question_fifth_first_level">Ислам дининде жасалышы жана пайдаланышына кескин түрдө тыюу салынган нерселер, Алкоголдук ичимдиктерди ичүү, кумар ойноо, ойноштук кылуу, адам өлтүрүү, жалаа жабуу ж.б.?</string>
+
+</resources>
