@@ -1,66 +1,396 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/ic_zikir_bg"
+    android:background="?attr/colorOnPrimary"
     tools:context=".Zikir">
-    <com.google.android.material.navigation.NavigationView
-        android:id="@+id/navigation_view"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        app:headerLayout="@layout/header_layout"
-        app:menu="@menu/menu"
 
-        />
+    <LinearLayout
+        android:id="@+id/nav_view_top"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginTop="0dp"
+        android:layout_alignParentTop="true"
+        android:background="?attr/colorPrimaryVariant"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="5dp"
+        >
+        <ImageView
+            android:id="@+id/btn_back_nav_top"
+            android:layout_width="20dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_baseline_arrow_back_ios_new_24"
+            android:layout_marginStart="10dp"
+            android:contentDescription="back"
+            app:tint="@color/white"
+            tools:ignore="HardcodedText" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="10dp"
+            android:textColor="@color/white"
+            android:text="@string/app_name"
+            />
+    </LinearLayout>
+
+    <ScrollView
+
+        android:id="@+id/zikir_blog_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/nav_view_top"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/zikir_blog_relative_in_scroll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/subhaanallah"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:backgroundTint="?attr/colorPrimaryVariant"
+                    app:cardCornerRadius="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Субханаллах!"
+                            android:textAlignment="center"
+                            android:textColor="?attr/colorSecondary"
+                            android:textSize="30sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="( Аллах баардык айып-кемчиликтерден таза! )"
+                            android:textAlignment="center"
+                            android:textColor="#FFFFFF"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/alhamdulillah"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/subhaanallah"
+                    android:layout_marginBottom="20dp"
+                    android:backgroundTint="?attr/colorPrimaryVariant"
+                    app:cardCornerRadius="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Алхамдулиллах!"
+                            android:textAlignment="center"
+                            android:textColor="?attr/colorSecondary"
+                            android:textSize="30sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="( Аллахка шүгүрлөр болсун! )"
+                            android:textAlignment="center"
+                            android:textColor="#fff"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/allohu_akbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/alhamdulillah"
+                    android:layout_marginBottom="20dp"
+                    android:backgroundTint="?attr/colorPrimaryVariant"
+                    app:cardCornerRadius="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Аллаху Акбар!"
+                            android:textAlignment="center"
+                            android:textColor="?attr/colorSecondary"
+                            android:textSize="30sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="( Аллах улук! )"
+                            android:textAlignment="center"
+                            android:textColor="#fff"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/shahadat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/allohu_akbar"
+                    android:layout_marginBottom="20dp"
+                    android:backgroundTint="?attr/colorPrimaryVariant"
+                    app:cardCornerRadius="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Лаа Илааха Иллаллох!"
+                            android:textAlignment="center"
+                            android:textColor="?attr/colorSecondary"
+                            android:textSize="30sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="( Аллахтан башка кудай жок! )"
+                            android:textAlignment="center"
+                            android:textColor="#fff"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/laa_havla"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/shahadat"
+                    android:layout_marginBottom="20dp"
+                    android:backgroundTint="?attr/colorPrimaryVariant"
+                    app:cardCornerRadius="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Ла хавла вала куввата илла биллах!"
+                            android:textAlignment="center"
+                            android:textColor="?attr/colorSecondary"
+                            android:textSize="30sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="( Сактоочу жана күч кубат берүүчү бир гана Аллах! )"
+                            android:textAlignment="center"
+                            android:textColor="#fff"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/salavat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/laa_havla"
+                    android:layout_marginBottom="20dp"
+                    android:backgroundTint="?attr/colorPrimaryVariant"
+                    app:cardCornerRadius="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Саллаллаху ъалайхи ва саллам!"
+                            android:textAlignment="center"
+                            android:textColor="?attr/colorSecondary"
+                            android:textSize="30sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="( Алланын элчисине салам салаваттар болсун! )"
+                            android:textAlignment="center"
+                            android:textColor="#fff"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/astagfirullah"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/salavat"
+                    android:layout_marginBottom="20dp"
+                    android:backgroundTint="?attr/colorPrimaryVariant"
+                    app:cardCornerRadius="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Астагфируллах!"
+                            android:textAlignment="center"
+                            android:textColor="?attr/colorSecondary"
+                            android:textSize="30sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="( Аллах кечир! )"
+                            android:textAlignment="center"
+                            android:textColor="#fff"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/laa_ilaaha_illa_anta"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/astagfirullah"
+                    android:layout_marginBottom="20dp"
+                    android:backgroundTint="?attr/colorPrimaryVariant"
+                    app:cardCornerRadius="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Ла илаха илла анта Субханака инни кунту миназ золимин!"
+                            android:textAlignment="center"
+                            android:textColor="?attr/colorSecondary"
+                            android:textSize="30sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="( Сенден башка кудай жок, Кемчиликсизсиң, Албетте, Мен заалымдардан болдум! )"
+                            android:textAlignment="center"
+                            android:textColor="#fff"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/contact"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/laa_ilaaha_illa_anta"
+                    android:backgroundTint="?attr/colorPrimaryVariant"
+                    app:cardCornerRadius="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/zikir_blog_relative_in_scroll"
+                        android:layout_alignParentBottom="true"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Катачылыктар болсо бул жака жазыңыз, Аллах ыраазы болсун!"
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            android:textSize="10sp"
+                            tools:ignore="SmallSp" />
+
+                        <LinearLayout
+                            android:id="@+id/my_telegram_btn"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:padding="5dp">
+
+                            <ImageView
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:src="@drawable/ic_telegram_logo" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="2dp"
+                                android:text="Telegram"
+                                android:textAlignment="center"
+                                android:textColor="#20C9F1"
+                                android:textSize="12sp"
+                                tools:ignore="SmallSp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
 
 
 
-<!--    <LinearLayout-->
-<!--        android:id="@+id/top_bar_block_menu"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="50dp"-->
-<!--        android:orientation="horizontal"-->
-<!--        android:layout_alignParentTop="true"-->
-<!--        android:padding="8dp"-->
-<!--        android:background="#097869"-->
-<!--        >-->
-<!--        <TableLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent">-->
-<!--            <TableRow>-->
-<!--                <ImageView-->
-<!--                    android:id="@+id/back_btn"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:src="@drawable/ic_baseline_arrow_back_24"-->
-<!--                    android:layout_weight="2"-->
-<!--                    />-->
-<!--                <TextView-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:text="@string/app_name"-->
-<!--                    android:textSize="25sp"-->
-<!--                    android:textAlignment="center"-->
-<!--                    android:textColor="@color/white"-->
-<!--                    android:textStyle="bold"-->
-<!--                    android:layout_weight="4"-->
-<!--                    />-->
-<!--                <ImageView-->
-<!--                    android:id="@+id/menu_btn"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:src="@drawable/ic_baseline_menu_24"-->
-<!--                    android:layout_weight="2"-->
-<!--                    />-->
-<!--            </TableRow>-->
-
-<!--        </TableLayout>-->
-<!--    </LinearLayout>-->
 
 
 
 
-</androidx.drawerlayout.widget.DrawerLayout>
+
+</RelativeLayout>

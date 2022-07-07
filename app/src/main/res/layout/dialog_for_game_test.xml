@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dialog_bg"
+    android:id="@+id/dialogFon"
+    android:layout_gravity="center"
+    android:layout_margin="10dp"
+    app:cardCornerRadius="20dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:src="@drawable/dialog_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <ImageView
+            android:id="@+id/close_dialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:src="@drawable/ic_baseline_close"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/dark_blue_1" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="250dp"
+            android:src="@drawable/peoples_alert"
+            android:layout_marginTop="10dp"
+            />
+        <TextView
+            android:id="@+id/text_alert_dialog"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:text="@string/text_for_level_one"
+            android:layout_weight="30"
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            />
+        
+        <Button
+            android:id="@+id/btnContinue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/continue_kg"
+            android:textAllCaps="true"
+            android:background="@drawable/button_bg"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:paddingLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:paddingRight="15dp"
+
+            />
+
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

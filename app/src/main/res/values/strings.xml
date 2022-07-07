@@ -28,4 +28,12 @@
     <string name="privacy_policy_kg">Купуялык саясаты</string>
     <string name="contacts_ru">Контакты</string>
     <string name="contacts_kg">Байланыштар</string>
+    <string name="question_answer">Суроо-Жооп</string>
+    <string name="time_kg">Саат:</string>
+    <string name="start">Баштоо</string>
+    <string name="level_kg">Деңгээл:</string>
+    <string name="exit">Чыгуу</string>
+    <string name="continue_kg">Улантуу</string>
+    <string name="remaining_time_kg">Калган убакыт:</string>
+    <string name="next">Кийинки</string>
 </resources>

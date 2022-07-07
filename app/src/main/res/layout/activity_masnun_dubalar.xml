@@ -4,20 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/masnun_dubalar_bg"
+    android:background="@drawable/bg_gradient_light_blue_to_dark"
     tools:context=".MasnunDubalar"
     android:padding="20dp">
-
-<LinearLayout
+<TextView
+    android:id="@+id/changed_text"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    tools:ignore="UselessLeaf,UselessParent">
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="170dp"
-        android:src="@drawable/ic_d1"
-        android:padding="5dp"
-        tools:ignore="ContentDescription" />
-</LinearLayout>
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:textSize="40sp"
+    android:text="@string/app_name"
+    android:textColor="@color/white"
+    android:textStyle="bold"
+    />
+<!--<LinearLayout-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    tools:ignore="UselessLeaf,UselessParent">-->
+<!--    <ImageView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="170dp"-->
+<!--        android:src="@drawable/ic_d1"-->
+<!--        android:padding="5dp"-->
+<!--        tools:ignore="ContentDescription" />-->
+<!--</LinearLayout>-->
 
 </RelativeLayout>

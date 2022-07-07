@@ -2,12 +2,12 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     >
-        <item
-            android:id="@+id/id_home_activity"
-            android:icon="@drawable/ic_baseline_home_24"
-            android:title="@string/home_kg"
-            android:iconTint="@color/black"
-            />
+<!--        <item-->
+<!--            android:id="@+id/id_home_activity"-->
+<!--            android:icon="@drawable/ic_baseline_home_24"-->
+<!--            android:title="@string/home_kg"-->
+<!--            android:iconTint="@color/black"-->
+<!--            />-->
         <item
             android:id="@+id/id_about_us_activity"
             android:icon="@drawable/ic_baseline_people_24"
