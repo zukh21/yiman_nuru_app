@@ -10,7 +10,7 @@
 <!--        android:orderInCategory="1"-->
 <!--        />-->
     <item android:id="@+id/bottom_menu_btn_testG"
-        android:title="@string/question_answer"
+        android:title="Ислам викторина"
         android:icon="@drawable/ic_baseline_cyclone"
         android:iconTint="?attr/textFillColor"
         app:showAsAction="ifRoom"

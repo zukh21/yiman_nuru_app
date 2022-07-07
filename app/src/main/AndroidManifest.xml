@@ -10,9 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.YimanNuru">
         <activity
-            android:name=".GameResult"
-            android:exported="false" />
-        <activity
             android:name=".levels.SecondLevelActivity"
             android:exported="false" />
         <activity
