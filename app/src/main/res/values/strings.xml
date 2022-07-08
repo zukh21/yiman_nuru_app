@@ -36,4 +36,6 @@
     <string name="continue_kg">Улантуу</string>
     <string name="remaining_time_kg">Калган убакыт:</string>
     <string name="next">Кийинки</string>
+    <string name="stay_kg">Калуу</string>
+    <string name="start_kg">Баштоо</string>
 </resources>

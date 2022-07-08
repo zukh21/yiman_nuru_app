@@ -34,7 +34,7 @@
 
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="250dp"
+            android:layout_height="200dp"
             android:src="@drawable/peoples_alert"
             android:layout_marginTop="10dp"
             />
@@ -47,16 +47,16 @@
             android:textSize="20sp"
             android:layout_marginTop="10dp"
             android:textColor="@color/white"
-            android:textStyle="italic"
+            android:textStyle="bold"
             />
         
         <Button
             android:id="@+id/btnContinue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/continue_kg"
+            android:text="@string/start_kg"
             android:textAllCaps="true"
-            android:background="@drawable/button_bg"
+            android:background="@drawable/answers_bg_change_color_green"
             android:textColor="@color/white"
             android:textSize="24sp"
             android:paddingLeft="15dp"

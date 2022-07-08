@@ -29,6 +29,7 @@ class FirstLevelActivity : AppCompatActivity() {
     lateinit var qa: QA
     var correctAnswerCount = 0
     var wrongAnswerCount = 0
+    private var backPressedTime = 0L
     val testDBManager = TestDBManager(this)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,7 +49,7 @@ class FirstLevelActivity : AppCompatActivity() {
         addQAs(QA(question = "'_____ - Ыймандын жарымы' (хадис)", option1 = "Тазалык", option2 = "Такыбалык", option3 = "Жылмаюу", correct_answer = "Тазалык"))
         addQAs(QA(question = "Ислам дининде рамазан айында орозо кармоо ____", option1 = "Важиб", option2 = "Парз", option3 = "Нафил", correct_answer = "Парз"))
         addQAs(QA(question = "Шариат белгилеген убакытта атайын белгиленген амалдар менен Байтул харамды зыярат кылуу ибадаты эмне деп аталат?", option1 = "Намаз", option2 = "Ажылык", option3 = "Саякат", correct_answer = "Ажылык"))
-        addQAs(QA(question = "Ачык айкын, күмөнсүз далилдер менен келген Алла Тааланын, же пайгамбарынын (САВ) буйруктарына карата айтылат. М: Беш убак намаз окуу, орозо кармоо, ж.б", option1 = "Парз", option2 = "Сүннөт", option3 = "Парз", correct_answer = "Парз"))
+        addQAs(QA(question = "Ачык айкын, күмөнсүз далилдер менен келген Алла Тааланын, же пайгамбарынын (САВ) буйруктарына карата айтылат. М: Беш убак намаз окуу, орозо кармоо, ж.б", option1 = "Парз", option2 = "Сүннөт", option3 = "Важиб", correct_answer = "Парз"))
         listQA.shuffle()
         qa = listQA[index]
         setAllQA()
@@ -81,9 +82,9 @@ class FirstLevelActivity : AppCompatActivity() {
     }
 
     fun resetBackground(){
-        binding.option1.setTextColor(Color.WHITE)
-        binding.option2.setTextColor(Color.WHITE)
-        binding.option3.setTextColor(Color.WHITE)
+        binding.option1.setBackgroundResource(R.drawable.answers_bg_stroke)
+        binding.option2.setBackgroundResource(R.drawable.answers_bg_stroke)
+        binding.option3.setBackgroundResource(R.drawable.answers_bg_stroke)
     }
 
     fun onFinish(){
@@ -93,12 +94,15 @@ class FirstLevelActivity : AppCompatActivity() {
             handler.postDelayed({
                 setAllQA()
                 resetBackground()
+                enableButton()
             }, 500)
         }else{
             handler.postDelayed({
                 gameResult()
             }, 500)
-            testDBManager.insertToDB(2)
+            if (correctAnswerCount == listQA.size){
+                testDBManager.insertToDB(2)
+            }
 
         }
     }
@@ -109,13 +113,16 @@ class FirstLevelActivity : AppCompatActivity() {
     }
 
     private fun currectAnswer(option: TextView){
-        option.setTextColor(Color.GREEN)
+        option.setBackgroundResource(R.drawable.answers_bg_change_color_green)
         correctAnswerCount++
     }
 
     private fun wrongAnswer(option: TextView){
-        option.setTextColor(Color.RED)
+        option.setBackgroundResource(R.drawable.answers_bg_change_color_red)
         wrongAnswerCount++
+    }
+    private fun changeBgCorrect(option: TextView){
+        option.setBackgroundResource(R.drawable.answers_bg_change_color_green)
     }
 
     fun optionOneClicked(view: View){
@@ -125,7 +132,12 @@ class FirstLevelActivity : AppCompatActivity() {
                 currectAnswer(binding.option1)
             }else{
                 wrongAnswer(binding.option1)
+                if (qa.option2 == qa.correct_answer){
+                    changeBgCorrect(binding.option2)
+                }else changeBgCorrect(binding.option3)
+
             }
+            disableButton()
             onFinish()
         }
 
@@ -139,7 +151,11 @@ class FirstLevelActivity : AppCompatActivity() {
                 currectAnswer(binding.option2)
             }else{
                 wrongAnswer(binding.option2)
+                if (qa.option1 == qa.correct_answer){
+                    changeBgCorrect(binding.option1)
+                }else changeBgCorrect(binding.option3)
             }
+            disableButton()
             onFinish()
         }
     }
@@ -152,7 +168,11 @@ class FirstLevelActivity : AppCompatActivity() {
                 currectAnswer(binding.option3)
             }else{
                 wrongAnswer(binding.option3)
+                if (qa.option2 == qa.correct_answer){
+                    changeBgCorrect(binding.option2)
+                }else changeBgCorrect(binding.option1)
             }
+            disableButton()
             onFinish()
         }
     }
@@ -229,8 +249,27 @@ class FirstLevelActivity : AppCompatActivity() {
             dialog.dismiss()
         }
         closeDialog.setOnClickListener {
+            startActivity(Intent(this, IslamTest::class.java))
             finish()
             dialog.dismiss()
+        }
+        dialog.show()
+    }
+
+    override fun onBackPressed() {
+        val dialog = Dialog(this)
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog.setCancelable(false)
+        dialog.setContentView(R.layout.dialog_for_exit_game)
+        val btnStay = dialog.findViewById(R.id.btnStay) as Button
+        val btnExit = dialog.findViewById(R.id.btnExit) as Button
+        dialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        btnStay.setOnClickListener {
+            dialog.dismiss()
+        }
+        btnExit.setOnClickListener {
+            super.onBackPressed()
+            startActivity(Intent(this, IslamTest::class.java))
         }
         dialog.show()
     }

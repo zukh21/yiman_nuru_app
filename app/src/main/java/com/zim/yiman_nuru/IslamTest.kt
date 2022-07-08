@@ -6,6 +6,10 @@ import android.os.Bundle
 import android.view.WindowManager
 import android.widget.TextView
 import android.widget.Toast
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdSize
+import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.MobileAds
 import com.zim.yiman_nuru.databinding.ActivityIslamTestBinding
 import com.zim.yiman_nuru.levels.SecondLevelActivity
 import com.zim.yiman_nuru.levels.FirstLevelActivity
@@ -19,15 +23,9 @@ class IslamTest : AppCompatActivity() {
         binding = ActivityIslamTestBinding.inflate(layoutInflater)
         setContentView(binding.root)
         window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
-
-
         binding.buttonBackGame.setOnClickListener {
-            if (backPressedTime + 2000 > System.currentTimeMillis()){
-                super.onBackPressed()
-            }else{
-                Toast.makeText(baseContext, "Чыгуу үчүн, дагы бир жолу басыңыз", Toast.LENGTH_SHORT).show()
-            }
-            backPressedTime = System.currentTimeMillis()
+            super.onBackPressed()
+            binding.buttonBackGame.setBackgroundResource(R.drawable.round_bg)
         }
 
 //        кнопки уровня START
@@ -39,30 +37,32 @@ class IslamTest : AppCompatActivity() {
 
         levelsOnClick(binding.btnLevelOne, 1, FirstLevelActivity())
         levelsOnClick(binding.btnLevelTwo, 2, SecondLevelActivity())
+        levelsOnClick(binding.btnLevelThree, 3, null)
 
 
 //        кнопки уровня END
 
     }
 
-    fun levelsOnClick(clickedButton: TextView, clickedButtonNumber: Int, activity: Any){
+    fun levelsOnClick(clickedButton: TextView, clickedButtonNumber: Int, activity: Any?){
         val dataList = testDBManager.readDBData()
-        if (clickedButtonNumber in dataList){
+
             clickedButton.setOnClickListener {
                 if (clickedButtonNumber in dataList) {
-                    startActivity(Intent(this, activity.javaClass))
+                    if (activity != null) {
+                        startActivity(Intent(this, activity.javaClass))
+                    }
                     finish()
                 }else Toast.makeText(this, "text", Toast.LENGTH_SHORT).show()
             }
+        if (clickedButtonNumber in dataList){
             setStyleToLevelButtons(clickedButton, clickedButtonNumber.toString())
         }
     }
 
      fun setStyleToLevelButtons(button: TextView, buttonNumber: String){
         button.text = buttonNumber
-        button.width = 170
-        button.height = 170
-        button.textSize = 22F
+        button.textSize = 20F
         button.setCompoundDrawablesRelative(null, null, null, null)
         button.setBackgroundResource(R.drawable.levels_bg_after_click)
     }
@@ -73,12 +73,6 @@ class IslamTest : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-        if (backPressedTime + 2000 > System.currentTimeMillis()){
             super.onBackPressed()
-            return
-        }else{
-            Toast.makeText(baseContext, "Чыгуу үчүн, дагы бир жолу басыңыз", Toast.LENGTH_SHORT).show()
-        }
-        backPressedTime = System.currentTimeMillis()
     }
 }

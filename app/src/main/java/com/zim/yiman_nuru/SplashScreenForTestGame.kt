@@ -17,8 +17,7 @@ class SplashScreenForTestGame : AppCompatActivity() {
         window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
 
         binding.buttonStartGame.setOnClickListener {
-            binding.buttonStartGame.setTextColor(Color.GREEN)
-            binding.buttonStartGame.setBackgroundResource(R.drawable.bg_button_outline_green)
+            binding.buttonStartGame.setBackgroundResource(R.drawable.round_bg_second)
             startActivity(Intent(this, IslamTest::class.java))
             finish()
         }
