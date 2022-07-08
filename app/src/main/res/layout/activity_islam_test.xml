@@ -15,33 +15,54 @@
         android:background="@drawable/sky" />
 
     <LinearLayout
-        android:id="@+id/first_blog"
+        android:id="@+id/adViewBlock"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:layout_below="@+id/sky_img"
-        android:layout_marginTop="80dp"
-        android:elevation="30dp"
-        android:gravity="end"
-        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:orientation="vertical"
         android:padding="10dp">
 
-
-        <ImageView
-            android:id="@+id/buttonBackGame"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginEnd="20dp"
-            android:background="@drawable/round_bg_second"
-            android:src="@drawable/off_on_button"
-            app:tint="@color/white" />
-
+        <com.yandex.mobile.ads.banner.BannerAdView
+            android:id="@+id/adView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center" />
     </LinearLayout>
+
+<!--    <LinearLayout-->
+<!--        android:id="@+id/first_blog"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@+id/adViewBlock"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:elevation="30dp"-->
+<!--        android:gravity="end"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:padding="10dp">-->
+
+
+<!--        <ImageView-->
+<!--            android:id="@+id/buttonBackGame"-->
+<!--            android:layout_width="50dp"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:layout_marginEnd="20dp"-->
+<!--            android:background="@drawable/round_bg_second"-->
+<!--            android:src="@drawable/off_on_button"-->
+<!--            app:tint="@color/white" />-->
+
+<!--    </LinearLayout>-->
+
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/first_blog"
+        android:layout_below="@+id/adViewBlock"
         android:elevation="60dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:orientation="vertical">
 
 
