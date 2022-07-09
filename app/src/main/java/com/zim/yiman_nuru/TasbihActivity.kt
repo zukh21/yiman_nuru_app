@@ -100,7 +100,7 @@ class TasbihActivity : AppCompatActivity() {
         val btnStay = dialog.findViewById<Button>(R.id.btnStay)
         val text_alert_dialog = dialog.findViewById<TextView>(R.id.text_alert_dialog)
         val btnExit = dialog.findViewById<Button>(R.id.btnExit)
-        text_alert_dialog.text = "Азыр чыксаңыз тарткан бардык зикириңиз нөлгө барабарланат!"
+        text_alert_dialog.text = "Чыксаңыз тарткан бардык зикириңиз өчөт!"
         btnStay.setOnClickListener {
             dialog.dismiss()
         }

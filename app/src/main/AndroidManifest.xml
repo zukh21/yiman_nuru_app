@@ -3,23 +3,49 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.zim.yiman_nuru">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="com.google.android.gms.permission.AD_ID" tools:node="remove"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission
+        android:name="com.google.android.gms.permission.AD_ID"
+        tools:node="remove" />
 
     <application
-        android:networkSecurityConfig="@xml/network_security_config"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.YimanNuru">
+        <activity
+            android:name=".levels.TenthLevelActivity"
+            android:exported="false" />
+        <activity
+            android:name=".levels.NinthLevelActivity"
+            android:exported="false" />
+        <activity
+            android:name=".levels.EighthsLevelActivity"
+            android:exported="false" />
+        <activity
+            android:name=".levels.SeventhLevelActivity"
+            android:exported="false" />
+        <activity
+            android:name=".levels.SixthLevelActivity"
+            android:exported="false" />
+        <activity
+            android:name=".levels.FifthLevelActivity"
+            android:exported="false" />
+        <activity
+            android:name=".levels.FourthLevelActivity"
+            android:exported="false" />
+        <activity
+            android:name=".levels.ThirdLevelActivity"
+            android:exported="false" />
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-9575316079517567~5505736608"
-            />
+            android:value="ca-app-pub-9575316079517567~5505736608" />
+
         <activity
             android:name=".levels.SecondLevelActivity"
             android:exported="false" />
@@ -77,8 +103,6 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
-
-
     </application>
 
 </manifest>

@@ -15,6 +15,9 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import com.yandex.mobile.ads.banner.AdSize
+import com.yandex.mobile.ads.banner.BannerAdView
+import com.yandex.mobile.ads.common.AdRequest
 import com.zim.yiman_nuru.IslamTest
 import com.zim.yiman_nuru.QA
 import com.zim.yiman_nuru.R
@@ -30,6 +33,7 @@ class FirstLevelActivity : AppCompatActivity() {
     var correctAnswerCount = 0
     var wrongAnswerCount = 0
     private var backPressedTime = 0L
+    var countQuestions = 1
     val testDBManager = TestDBManager(this)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,6 +41,7 @@ class FirstLevelActivity : AppCompatActivity() {
         setContentView(binding.root)
         testDBManager.openDB()
         handler = Handler(Looper.getMainLooper())
+
         showDialog()
         addQAs(QA("Акыркы пайгамбар ким?","Муса", "Ибрахим", "Мухаммад (САВ)", "Мухаммад (САВ)"))
         addQAs(QA("Ыйык диндердин эң акыркысы?", "Ислам","Христин", "Буддизм",  "Ислам"))
@@ -57,7 +62,11 @@ class FirstLevelActivity : AppCompatActivity() {
         optionTwoClicked(binding.option2)
         optionThreeClicked(binding.option3)
 
+
+
+        AdsYandex().ads(binding.adView) //        Рекламный блок
     }
+
 
     fun addQAs(qa: QA){
         listQA.add(qa)
@@ -89,12 +98,17 @@ class FirstLevelActivity : AppCompatActivity() {
 
     fun onFinish(){
         index++
+
+
         if (index < listQA.size){
             qa = listQA[index]
             handler.postDelayed({
                 setAllQA()
                 resetBackground()
                 enableButton()
+                countQuestions++
+                binding.countQuestionsView.text = "Суроо: $countQuestions"
+
             }, 500)
         }else{
             handler.postDelayed({
@@ -137,6 +151,7 @@ class FirstLevelActivity : AppCompatActivity() {
                 }else changeBgCorrect(binding.option3)
 
             }
+
             disableButton()
             onFinish()
         }
@@ -155,6 +170,7 @@ class FirstLevelActivity : AppCompatActivity() {
                     changeBgCorrect(binding.option1)
                 }else changeBgCorrect(binding.option3)
             }
+
             disableButton()
             onFinish()
         }
@@ -172,6 +188,7 @@ class FirstLevelActivity : AppCompatActivity() {
                     changeBgCorrect(binding.option2)
                 }else changeBgCorrect(binding.option1)
             }
+
             disableButton()
             onFinish()
         }

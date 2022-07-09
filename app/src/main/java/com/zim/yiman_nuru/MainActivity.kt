@@ -32,13 +32,14 @@ class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var handler: Handler
-
+    private val YANDEX_MOBILE_ADS_TAG = "YandexMobileAds"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        MobileAds.initialize(this
+        ) { Log.d(YANDEX_MOBILE_ADS_TAG, "SDK initialized") }
 
 
         drawerLayout = findViewById(R.id.drawer)
@@ -48,13 +49,23 @@ class MainActivity : AppCompatActivity() {
 
 //        Запуск инстаграма START
 
-        val logo_bottom_in_menu: LinearLayout = findViewById(R.id.logo_bottom_in_menu)
+        val logo_bottom_in_menu: ImageView = findViewById(R.id.logo_bottom_in_menu)
         logo_bottom_in_menu.setOnClickListener {
             val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.instagram.com/kg.zim.company/"))
             startActivity(intent)
         }
 
 //        Запуск инстаграма END
+//
+//        Запуск Telegram START
+
+        val share_btn: LinearLayout = findViewById(R.id.share_btn)
+        share_btn.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.t.me/yiman_nuru_zim"))
+            startActivity(intent)
+        }
+
+//        Запуск Telegram END
 
 
 
@@ -187,58 +198,6 @@ class MainActivity : AppCompatActivity() {
             .commit()
         text_banner.text = "Yiman nuru"
     }
-//
-//    fun onClickHorizontalActivity() {
-//    val text_banner: TextView = findViewById(R.id.text_banner)
-//    val horizontal_btn_tasbih = findViewById<Button>(R.id.horizontal_btn_tasbih)
-//    val horizontal_btn_zikir = findViewById<Button>(R.id.horizontal_btn_zikir)
-//    val horizontal_btn_masnun_duba = findViewById<Button>(R.id.horizontal_btn_masnun_duba)
-//    val horizontal_btn_alty_sypat = findViewById<Button>(R.id.horizontal_btn_alty_sypat)
-//    val horizontal_btn_allahtyn_ysymdary = findViewById<Button>(R.id.horizontal_btn_allahtyn_ysymdary)
-//    val share_btn = findViewById<LinearLayout>(R.id.share_btn)
-//    share_btn.setOnClickListener {
-//        val shareIntent = Intent(Intent.ACTION_SEND)
-//        shareIntent.type = "text/plain"
-//        shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Yiman nuru")
-//        var shareMessage = "\nАссаламу алайкум, кыргыз тилиндеги мусулманча тесттер жана дубаларды көчүрүп алаңыз! Ыйман нуру \n\n"
-//        shareMessage =
-//            """
-//                    ${shareMessage}https://zukh21.github.io/download-app-yiman-nuru/
-//
-//                """.trimIndent()
-//        shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage)
-//        startActivity(Intent.createChooser(shareIntent, "choose one"))
-//
-////            Toast.makeText(context, "Share", Toast.LENGTH_SHORT).show()
-//    }
-//
-//
-//
-//    horizontal_btn_tasbih.setOnClickListener {
-//        supportFragmentManager
-//            .beginTransaction()
-//            .replace(R.id.place_holder, TasbihFragment.newInstance())
-//            .commit()
-//        text_banner.text = "Tasbih"
-//    }
-//    horizontal_btn_zikir.setOnClickListener {
-//        supportFragmentManager
-//            .beginTransaction()
-//            .replace(R.id.place_holder, ZikirTypesFragment.newInstance())
-//            .commit()
-//        text_banner.text = "Zikirdin turloru"
-//    }
-//    horizontal_btn_masnun_duba.setOnClickListener {
-//        startActivity(Intent(this, MasnunDubalar::class.java))
-//    }
-//    horizontal_btn_alty_sypat.setOnClickListener {
-//        startActivity(Intent(this, AltySypat::class.java))
-//    }
-//    horizontal_btn_allahtyn_ysymdary.setOnClickListener {
-//        startActivity(Intent(this, AllahtynYsymdary::class.java))
-//    }
-//
-//}
 
 
 }

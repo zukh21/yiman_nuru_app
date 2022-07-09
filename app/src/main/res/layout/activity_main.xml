@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     android:background="?attr/colorOnPrimary"
     tools:context=".MainActivity"
+    tools:openDrawer="start"
     tools:menu="@menu/bottom_navigation_view">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -222,7 +223,7 @@
 
 
                 <LinearLayout
-                    android:id="@+id/logo_bottom_in_menu"
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/ayat_share"
@@ -232,6 +233,8 @@
                     android:orientation="horizontal">
 
                     <ImageView
+
+                        android:id="@+id/logo_bottom_in_menu"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:src="@drawable/ic_zim" />
@@ -259,7 +262,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="1dp"
-                            android:text="Тиркемени бөлүшүү"
+                            android:text="@string/share_kg"
                             android:textColor="#3D9CFF"
                             android:textSize="12sp"
                             android:textStyle="italic" />

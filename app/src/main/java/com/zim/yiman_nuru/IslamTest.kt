@@ -12,20 +12,18 @@ import com.yandex.mobile.ads.banner.BannerAdView
 import com.yandex.mobile.ads.common.AdRequest
 import com.yandex.mobile.ads.common.MobileAds
 import com.zim.yiman_nuru.databinding.ActivityIslamTestBinding
-import com.zim.yiman_nuru.levels.SecondLevelActivity
-import com.zim.yiman_nuru.levels.FirstLevelActivity
+import com.zim.yiman_nuru.levels.*
 
-class IslamTest : AppCompatActivity() {
+open class IslamTest : AppCompatActivity() {
     private var backPressedTime = 0L
-    private val YANDEX_MOBILE_ADS_TAG = "YandexMobileAds"
+
     lateinit var binding: ActivityIslamTestBinding
     val testDBManager = TestDBManager(this)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityIslamTestBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        MobileAds.initialize(this
-        ) { Log.d(YANDEX_MOBILE_ADS_TAG, "SDK initialized") }
+
         window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
 
 //        binding.buttonBackGame.setOnClickListener {
@@ -40,20 +38,33 @@ class IslamTest : AppCompatActivity() {
         val dataList = testDBManager.readDBData()
 
 
-        levelsOnClick(binding.btnLevelOne, 1, FirstLevelActivity())
-        levelsOnClick(binding.btnLevelTwo, 2, SecondLevelActivity())
-        levelsOnClick(binding.btnLevelThree, 3, null)
 
+        buttonsGroup() // кнопки уровня
 
 //        кнопки уровня END
 
-        val banner = findViewById<BannerAdView>(R.id.adView)
-        banner.setAdUnitId("R-M-DEMO-320x100")
-        banner.setAdSize(AdSize.BANNER_320x100)
+        AdsYandex().ads(binding.adView)     // Рекламный блок
 
-        val adRequest = AdRequest.Builder().build()
-        banner.loadAd(adRequest)
+    }
 
+
+    fun buttonsGroup(){
+        levelsOnClick(binding.btnLevelOne, 1, FirstLevelActivity())
+        levelsOnClick(binding.btnLevelTwo, 2, SecondLevelActivity())
+        levelsOnClick(binding.btnLevelThree, 3, ThirdLevelActivity())
+        levelsOnClick(binding.btnLevelFour, 4, FourthLevelActivity())
+        levelsOnClick(binding.btnLevelFife, 5, FifthLevelActivity())
+        levelsOnClick(binding.btnLevelSix, 6, SixthLevelActivity())
+        levelsOnClick(binding.btnLevelSeven, 7, SeventhLevelActivity())
+        levelsOnClick(binding.btnLevelEight, 8, EighthsLevelActivity())
+        levelsOnClick(binding.btnLevelNine, 9, NinthLevelActivity())
+        levelsOnClick(binding.btnLevelTen, 10, TenthLevelActivity())
+        levelsOnClick(binding.btnLevelEleven, 11, null)
+        levelsOnClick(binding.btnLevelTwelve, 12, null)
+        levelsOnClick(binding.btnLevelThirteen, 13, null)
+        levelsOnClick(binding.btnLevelFourteen, 14, null)
+        levelsOnClick(binding.btnLevelFifteen, 15, null)
+        levelsOnClick(binding.btnLevelSixteen, 16, null)
     }
 
     fun levelsOnClick(clickedButton: TextView, clickedButtonNumber: Int, activity: Any?){
@@ -65,7 +76,7 @@ class IslamTest : AppCompatActivity() {
                         startActivity(Intent(this, activity.javaClass))
                     }
                     finish()
-                }else Toast.makeText(this, "text", Toast.LENGTH_SHORT).show()
+                }else Toast.makeText(this, "Мурдагы деңгээлди аяктаңыз!", Toast.LENGTH_SHORT).show()
             }
         if (clickedButtonNumber in dataList){
             setStyleToLevelButtons(clickedButton, clickedButtonNumber.toString())
