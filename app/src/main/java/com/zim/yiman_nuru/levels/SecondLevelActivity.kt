@@ -212,8 +212,8 @@ class SecondLevelActivity : AppCompatActivity() {
         val closeDialog = dialog.findViewById(R.id.close_dialog) as ImageView
 
         if (correctAnswerCount > listQA.size / 2 && correctAnswerCount < listQA.size) {
-            motiv.text = "Баракелде кичине аракет кылыңыз"
-            btnNext.text = "Кайра баштоо"
+            motiv.text = getString(R.string.norm_and_recreate_this_level)
+            btnNext.text = getString(R.string.restart_level)
             btnNext.setOnClickListener {
                 recreate()
                 dialog.dismiss()
@@ -224,7 +224,7 @@ class SecondLevelActivity : AppCompatActivity() {
                 dialog.dismiss()
             }
         } else if (correctAnswerCount == listQA.size) {
-            motiv.text = "Баракелде өтө жакшы!"
+            motiv.text = getString(R.string.best_and_to_next_level)
             btnNext.setOnClickListener {
                 dialog.dismiss()
                 startActivity(Intent(this, IslamTest::class.java))
@@ -237,8 +237,8 @@ class SecondLevelActivity : AppCompatActivity() {
                 dialog.dismiss()
             }
         } else {
-            motiv.text = "Жамааан, кайрадан аракет кылыңыз"
-            btnNext.text = "Кайра баштоо"
+            motiv.text = getString(R.string.bad_and_recreate_this_level)
+            btnNext.text = getString(R.string.restart_level)
             btnNext.setOnClickListener {
                 recreate()
                 dialog.dismiss()

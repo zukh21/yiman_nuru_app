@@ -45,6 +45,7 @@ class FirstLevelActivity : AppCompatActivity() {
         showDialog()
         addQAs(QA("Акыркы пайгамбар ким?","Муса", "Ибрахим", "Мухаммад (САВ)", "Мухаммад (САВ)"))
         addQAs(QA("Ыйык диндердин эң акыркысы?", "Ислам","Христин", "Буддизм",  "Ислам"))
+        addQAs(QA("Исламда канча түркүк бар?", "3","5", "4",  "5"))
         addQAs(QA("Ислам аалымдарынын көз караштары боюнча кыз балдардын балагат жашы канча жаш болуп эсептелет", "9-18 жаш","7-9 жаш", "9-15 жаш",  "9-15 жаш"))
         addQAs(QA("Ислам дининде жасалышы жана пайдаланышы кескин түрдө тыюу салынган нерселер.", "Мандуб","Харам", "Макрух",  "Харам"))
         addQAs(QA("Исламга кирүү үчүн эмне кылуу керек?", "Орозо тутуу", "Шахадат келмесин айтуу","Намаз окуу", "Шахадат келмесин айтуу"))
@@ -55,7 +56,7 @@ class FirstLevelActivity : AppCompatActivity() {
         addQAs(QA(question = "Ислам дининде рамазан айында орозо кармоо ____", option1 = "Важиб", option2 = "Парз", option3 = "Нафил", correct_answer = "Парз"))
         addQAs(QA(question = "Шариат белгилеген убакытта атайын белгиленген амалдар менен Байтул харамды зыярат кылуу ибадаты эмне деп аталат?", option1 = "Намаз", option2 = "Ажылык", option3 = "Саякат", correct_answer = "Ажылык"))
         addQAs(QA(question = "Ачык айкын, күмөнсүз далилдер менен келген Алла Тааланын, же пайгамбарынын (САВ) буйруктарына карата айтылат. М: Беш убак намаз окуу, орозо кармоо, ж.б", option1 = "Парз", option2 = "Сүннөт", option3 = "Важиб", correct_answer = "Парз"))
-        listQA.shuffle()
+            listQA.shuffle()
         qa = listQA[index]
         setAllQA()
         optionOneClicked(binding.option1)
@@ -209,8 +210,8 @@ class FirstLevelActivity : AppCompatActivity() {
         val closeDialog = dialog.findViewById(R.id.close_dialog) as ImageView
 
         if (correctAnswerCount > listQA.size / 2 && correctAnswerCount < listQA.size) {
-            motiv.text = "Баракелде кичине аракет кылыңыз"
-            btnNext.text = "Кайра баштоо"
+            motiv.text = getString(R.string.norm_and_recreate_this_level)
+            btnNext.text = getString(R.string.restart_level)
             btnNext.setOnClickListener {
                 recreate()
                 dialog.dismiss()
@@ -221,7 +222,7 @@ class FirstLevelActivity : AppCompatActivity() {
                 dialog.dismiss()
             }
         } else if (correctAnswerCount == listQA.size) {
-            motiv.text = "Баракелде өтө жакшы!"
+            motiv.text = getString(R.string.best_and_to_next_level)
             btnNext.setOnClickListener {
                 dialog.dismiss()
                 startActivity(Intent(this, IslamTest::class.java))
@@ -234,8 +235,8 @@ class FirstLevelActivity : AppCompatActivity() {
                 dialog.dismiss()
             }
         } else {
-            motiv.text = "Жамааан, кайрадан аракет кылыңыз"
-            btnNext.text = "Кайра баштоо"
+            motiv.text = getString(R.string.bad_and_recreate_this_level)
+            btnNext.text = getString(R.string.restart_level)
             btnNext.setOnClickListener {
                 recreate()
                 dialog.dismiss()

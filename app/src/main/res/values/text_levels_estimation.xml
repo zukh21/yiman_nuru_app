@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="best_and_to_next_level">Баракелде өтө жакшы!</string>
+    <string name="bad_and_recreate_this_level">Жамааан, кайрадан аракет кылыңыз!</string>
+    <string name="norm_and_recreate_this_level">Баракелде кичине аракет кылыңыз</string>
+
+</resources>
