@@ -39,4 +39,6 @@
     <string name="stay_kg">Калуу</string>
     <string name="start_kg">Баштоо</string>
     <string name="share_kg">Тиркемени бөлүшүү</string>
+    <string name="question_at_time_text">Учурдагы суроо:</string>
+    <string name="all_questions_text">Бардык суроо:</string>
 </resources>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".levels.ThirdLevelActivity"
+    tools:context=".levels.SecondLevelActivity"
     android:background="@drawable/app_islam_test_bg"
     >
 
@@ -23,6 +23,15 @@
         >
         <TextView
             android:id="@+id/countQuestionsView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Суроо: 1"
+            android:textAlignment="textEnd"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            />
+        <TextView
+            android:id="@+id/allQuestionsView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Суроо: 1"
@@ -109,7 +118,18 @@
                 />
         </LinearLayout>
 
+
     </LinearLayout>
+    <com.yandex.mobile.ads.banner.BannerAdView
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/first_blog"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="20dp"
+        android:elevation="100dp"
+        android:gravity="center" />
 
 
 

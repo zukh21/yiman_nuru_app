@@ -2,7 +2,6 @@ package com.zim.yiman_nuru.levels
 
 import android.app.Dialog
 import android.content.Intent
-import android.content.SharedPreferences
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
@@ -14,18 +13,14 @@ import android.view.Window
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
-import com.yandex.mobile.ads.banner.AdSize
-import com.yandex.mobile.ads.banner.BannerAdView
-import com.yandex.mobile.ads.common.AdRequest
 import com.zim.yiman_nuru.IslamTest
 import com.zim.yiman_nuru.QA
 import com.zim.yiman_nuru.R
 import com.zim.yiman_nuru.TestDBManager
-import com.zim.yiman_nuru.databinding.ActivityFirstLevelBinding
+import com.zim.yiman_nuru.databinding.SampleQaScreenBinding
 
 class ThirdLevelActivity : AppCompatActivity() {
-    lateinit var binding: ActivityFirstLevelBinding
+    lateinit var binding: SampleQaScreenBinding
     var listQA = mutableListOf<QA>()
     var index = 0
     lateinit var handler: Handler
@@ -37,7 +32,7 @@ class ThirdLevelActivity : AppCompatActivity() {
     val testDBManager = TestDBManager(this)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityFirstLevelBinding.inflate(layoutInflater)
+        binding = SampleQaScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
         testDBManager.openDB()
         handler = Handler(Looper.getMainLooper())
@@ -106,7 +101,8 @@ class ThirdLevelActivity : AppCompatActivity() {
                 resetBackground()
                 enableButton()
                 countQuestions++
-                binding.countQuestionsView.text = "Суроо: $countQuestions"
+                binding.countQuestionsView.text = "${getString(R.string.question_at_time_text)} ${countQuestions}"
+                binding.allQuestionsView.text = "${getString(R.string.all_questions_text)} ${listQA.size}"
 
             }, 500)
         }else{

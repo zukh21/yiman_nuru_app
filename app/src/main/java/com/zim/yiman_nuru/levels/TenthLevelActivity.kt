@@ -3,10 +3,13 @@ package com.zim.yiman_nuru.levels
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.zim.yiman_nuru.R
+import com.zim.yiman_nuru.databinding.SampleQaScreenBinding
 
 class TenthLevelActivity : AppCompatActivity() {
+    lateinit var binding: SampleQaScreenBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_tenth_level)
+        binding = SampleQaScreenBinding.inflate(layoutInflater)
+        setContentView(binding.root)
     }
 }
