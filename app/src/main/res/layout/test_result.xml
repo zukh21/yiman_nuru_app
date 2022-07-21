@@ -62,9 +62,9 @@
         <TextView
             android:id="@+id/motivText"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="fdgdgdjfdljgldkljglkdjgkljdlljgdjgkldjkgfjd"
+            android:text="fdgdgdjfdljgldkljglkdjgkljdlljgdjgkldjkgfjddgsdvfsdbsdfbsfbsfdbdsvfdzvwefscfdgdgdjfdljgldkljglkdjgkljdlljgdjgkldjkgfjddgsdvfsdbsdfbsfbsfdbdsvfdzvwefsc"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold" />

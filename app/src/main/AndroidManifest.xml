@@ -18,6 +18,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.YimanNuru">
         <activity
+            android:name=".levels.TenthActivity"
+            android:exported="false" />
+        <activity
             android:name=".levels.TenthLevelActivity"
             android:exported="false" />
         <activity

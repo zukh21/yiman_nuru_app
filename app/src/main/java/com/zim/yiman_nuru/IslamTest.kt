@@ -58,7 +58,7 @@ open class IslamTest : AppCompatActivity() {
         levelsOnClick(binding.btnLevelSeven, 7, SeventhLevelActivity())
         levelsOnClick(binding.btnLevelEight, 8, EighthsLevelActivity())
         levelsOnClick(binding.btnLevelNine, 9, NinthLevelActivity())
-        levelsOnClick(binding.btnLevelTen, 10, TenthLevelActivity())
+        levelsOnClick(binding.btnLevelTen, 10, TenthActivity())
         levelsOnClick(binding.btnLevelEleven, 11, null)
         levelsOnClick(binding.btnLevelTwelve, 12, null)
         levelsOnClick(binding.btnLevelThirteen, 13, null)

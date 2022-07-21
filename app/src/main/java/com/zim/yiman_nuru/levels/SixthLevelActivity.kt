@@ -59,6 +59,8 @@ class SixthLevelActivity : AppCompatActivity() {
 
 
         AdsYandex().ads(binding.adView) //        Рекламный блок
+        binding.countQuestionsView.text = "${getString(R.string.question_at_time_text)} ${countQuestions}"
+        binding.allQuestionsView.text = "${getString(R.string.all_questions_text)} ${listQA.size}"
     }
 
 

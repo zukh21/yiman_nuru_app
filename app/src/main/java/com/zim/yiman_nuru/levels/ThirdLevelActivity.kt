@@ -1,5 +1,6 @@
 package com.zim.yiman_nuru.levels
 
+import android.annotation.SuppressLint
 import android.app.Dialog
 import android.content.Intent
 import android.graphics.Color
@@ -21,15 +22,15 @@ import com.zim.yiman_nuru.databinding.SampleQaScreenBinding
 
 class ThirdLevelActivity : AppCompatActivity() {
     lateinit var binding: SampleQaScreenBinding
-    var listQA = mutableListOf<QA>()
-    var index = 0
+    private var listQA = mutableListOf<QA>()
+    private var index = 0
     lateinit var handler: Handler
     lateinit var qa: QA
-    var correctAnswerCount = 0
-    var wrongAnswerCount = 0
-    private var backPressedTime = 0L
-    var countQuestions = 1
+    private var correctAnswerCount = 0
+    private var wrongAnswerCount = 0
+    private var countQuestions = 1
     val testDBManager = TestDBManager(this)
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = SampleQaScreenBinding.inflate(layoutInflater)
@@ -59,37 +60,40 @@ class ThirdLevelActivity : AppCompatActivity() {
 
 
         AdsYandex().ads(binding.adView) //        Рекламный блок
+        binding.countQuestionsView.text = "${getString(R.string.question_at_time_text)} $countQuestions"
+        binding.allQuestionsView.text = "${getString(R.string.all_questions_text)} ${listQA.size}"
     }
 
 
-    fun addQAs(qa: QA){
+    private fun addQAs(qa: QA){
         listQA.add(qa)
     }
 
-    fun setAllQA(){
+    private fun setAllQA(){
         binding.questionLine.text = qa.question
         binding.option1.text = qa.option1
         binding.option2.text = qa.option2
         binding.option3.text = qa.option3
     }
 
-    fun enableButton(){
+    private fun enableButton(){
         binding.option1.isClickable=true
         binding.option2.isClickable=true
         binding.option3.isClickable=true
     }
-    fun disableButton(){
+    private fun disableButton(){
         binding.option1.isClickable=false
         binding.option2.isClickable=false
         binding.option3.isClickable=false
     }
 
-    fun resetBackground(){
+    private fun resetBackground(){
         binding.option1.setBackgroundResource(R.drawable.answers_bg_stroke)
         binding.option2.setBackgroundResource(R.drawable.answers_bg_stroke)
         binding.option3.setBackgroundResource(R.drawable.answers_bg_stroke)
     }
 
+    @SuppressLint("SetTextI18n")
     fun onFinish(){
         index++
 
@@ -101,7 +105,7 @@ class ThirdLevelActivity : AppCompatActivity() {
                 resetBackground()
                 enableButton()
                 countQuestions++
-                binding.countQuestionsView.text = "${getString(R.string.question_at_time_text)} ${countQuestions}"
+                binding.countQuestionsView.text = "${getString(R.string.question_at_time_text)} $countQuestions"
                 binding.allQuestionsView.text = "${getString(R.string.all_questions_text)} ${listQA.size}"
 
             }, 500)
@@ -134,7 +138,7 @@ class ThirdLevelActivity : AppCompatActivity() {
         option.setBackgroundResource(R.drawable.answers_bg_change_color_green)
     }
 
-    fun optionOneClicked(view: View){
+    private fun optionOneClicked(view: View){
         view.setOnClickListener {
             if (qa.option1 == qa.correct_answer){
 //            binding.option1.setTextColor(Color.GREEN)
@@ -152,11 +156,10 @@ class ThirdLevelActivity : AppCompatActivity() {
         }
 
     }
-    fun optionTwoClicked(view: View){
+    private fun optionTwoClicked(view: View){
 
         view.setOnClickListener {
             if (qa.option2 == qa.correct_answer){
-//            binding.option1.setTextColor(Color.GREEN)
 
                 currectAnswer(binding.option2)
             }else{
@@ -170,11 +173,10 @@ class ThirdLevelActivity : AppCompatActivity() {
             onFinish()
         }
     }
-    fun optionThreeClicked(view: View){
+    private fun optionThreeClicked(view: View){
 
         view.setOnClickListener {
             if (qa.option3 == qa.correct_answer){
-//            binding.option1.setTextColor(Color.GREEN)
 
                 currectAnswer(binding.option3)
             }else{
@@ -189,6 +191,7 @@ class ThirdLevelActivity : AppCompatActivity() {
         }
     }
 
+    @SuppressLint("SetTextI18n")
     fun gameResult(){
         val dialog = Dialog(this)
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
@@ -249,7 +252,7 @@ class ThirdLevelActivity : AppCompatActivity() {
 
 
 
-    fun showDialog(){
+    private fun showDialog(){
         val dialog = Dialog(this)
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
         dialog.setCancelable(false)

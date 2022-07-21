@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="best_and_to_next_level">Баракелде өтө жакшы!</string>
-    <string name="bad_and_recreate_this_level">Жамааан, кайрадан аракет кылыңыз!</string>
-    <string name="norm_and_recreate_this_level">Баракелде кичине аракет кылыңыз</string>
+    <string name="best_and_to_next_level" translatable="false">Баракелде өтө жакшы!</string>
+    <string name="best_and_to_next_level_last_txt" translatable="false">Баракелде өтө жакшы, бул биздин акыркы тест болчу, тиркеменин кийинки версияларында сурооолор кошулат!</string>
+    <string name="bad_and_recreate_this_level" translatable="false">Жамааан, кайрадан аракет кылыңыз!</string>
+    <string name="norm_and_recreate_this_level" translatable="false">Баракелде кичине аракет кылыңыз</string>
 
 </resources>

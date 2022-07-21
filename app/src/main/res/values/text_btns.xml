@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="restart_level">"Кайра баштоо"</string>
+    <string name="restart_level" translatable="false">"Кайра баштоо"</string>
 </resources>

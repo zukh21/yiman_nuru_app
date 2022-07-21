@@ -32,7 +32,6 @@ class FirstLevelActivity : AppCompatActivity() {
     lateinit var qa: QA
     var correctAnswerCount = 0
     var wrongAnswerCount = 0
-    private var backPressedTime = 0L
     var countQuestions = 1
     val testDBManager = TestDBManager(this)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,7 +40,6 @@ class FirstLevelActivity : AppCompatActivity() {
         setContentView(binding.root)
         testDBManager.openDB()
         handler = Handler(Looper.getMainLooper())
-
         showDialog()
         addQAs(QA("Акыркы пайгамбар ким?","Муса", "Ибрахим", "Мухаммад (САВ)", "Мухаммад (САВ)"))
         addQAs(QA("Ыйык диндердин эң акыркысы?", "Ислам","Христин", "Буддизм",  "Ислам"))
@@ -66,6 +64,8 @@ class FirstLevelActivity : AppCompatActivity() {
 
 
         AdsYandex().ads(binding.adView) //        Рекламный блок
+        binding.countQuestionsView.text = "${getString(R.string.question_at_time_text)} ${countQuestions}"
+        binding.allQuestionsView.text = "${getString(R.string.all_questions_text)} ${listQA.size}"
     }
 
 

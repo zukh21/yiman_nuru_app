@@ -45,16 +45,11 @@
             app:cardCornerRadius="12dp"
             android:layout_marginTop="20dp"
             >
-            <TextView
-                android:id="@+id/question_line"
+            <ImageView
+                android:id="@+id/img_question_line"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="10dp"
-                android:text="vrfhftdyjyutuku"
-                android:textSize="18sp"
-                android:textColor="@color/black"
-                android:textAlignment="center"
-                android:gravity="center"
+                android:scaleType="centerCrop"
                 />
 
         </androidx.cardview.widget.CardView>
